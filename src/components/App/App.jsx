@@ -1,7 +1,7 @@
 import './App.scss';
 
 function App() {
-  return <div>coucou</div>;
+  return <div className="App">coucou</div>;
 }
 
 export default App;
