@@ -1,4 +1,6 @@
 import HeaderLogo from './HeaderLogo/HeaderLogo';
+import HeaderNav from './HeaderNav/HeaderNav';
+import HeaderLang from './HeaderLang/HeaderLang';
 
 import './Header.scss';
 
@@ -7,6 +9,8 @@ const Header = () => {
     <header className="Header">
       <div className="Header-wrapper">
         <HeaderLogo />
+        <HeaderNav />
+        <HeaderLang />
       </div>
     </header>
   );

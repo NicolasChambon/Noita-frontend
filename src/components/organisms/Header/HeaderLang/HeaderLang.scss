@@ -1,0 +1,35 @@
+@use '../../../../styles/variables' as v;
+
+.HeaderLang {
+  align-items: end;
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+
+  &-btn {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    width: 20%;
+
+    &:hover {
+      // shadow on the text with tansition
+      text-shadow: 0 0 5px v.$primaryColor;
+      transition: text-shadow 0.3s;
+    }
+    transition: text-shadow 0.3s;
+
+    &.fr {
+      border-bottom: 1px solid v.$primaryColor;
+      padding-bottom: 0.1rem;
+    }
+    &.de {
+      border-top: 1px solid v.$primaryColor;
+      padding-top: 0.2rem;
+    }
+    &.active {
+      font-weight: 800;
+    }
+  }
+}

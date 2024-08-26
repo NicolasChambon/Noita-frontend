@@ -1,6 +1,8 @@
 @use '../../../../styles/variables' as v;
 
 .HeaderLogo {
+  width: 20%;
+
   &-img {
     height: 3rem;
   }

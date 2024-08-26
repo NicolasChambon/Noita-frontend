@@ -1,0 +1,38 @@
+@use '../../../../styles/variables' as v;
+
+.HeaderNav {
+  width: 70%;
+
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+    &-item {
+      &-link {
+        color: v.$secondaryColor;
+        font-weight: 500;
+        padding: 1rem 0;
+
+        position: relative;
+        &::after {
+          background-color: v.$primaryColorLight2;
+          content: '';
+          height: 3px;
+          left: -5%;
+          position: absolute;
+          bottom: -15%;
+          transition: width 0.3s;
+          width: 0;
+        }
+        &:hover::after {
+          width: 110%;
+        }
+        &.active::after {
+          width: 110%;
+          background-color: v.$primaryColor;
+        }
+      }
+    }
+  }
+}

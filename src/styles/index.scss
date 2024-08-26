@@ -41,6 +41,10 @@ p {
   line-height: 2ch;
 }
 
+button {
+  font-family: v.$mainFont;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
