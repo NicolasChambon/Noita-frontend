@@ -1,21 +1,17 @@
-@use '../../../../styles/variables' as v;
+@use '../../../../../styles/variables' as v;
 
-.HeaderLang {
-  align-items: end;
+.MenuLang {
   display: flex;
-  flex-direction: column;
-  width: 10%;
-
-  @media (max-width: 599px) {
-    display: none;
-  }
+  padding: 1rem;
 
   &-btn {
     background-color: transparent;
     border: none;
     display: flex;
+    font-size: 0.9rem;
     justify-content: center;
-    width: 20%;
+    padding: 0.5rem;
+    width: 50%;
 
     &:hover {
       text-shadow: 0 0 5px v.$primaryColor;
@@ -24,12 +20,10 @@
     transition: text-shadow 0.3s;
 
     &.fr {
-      border-bottom: 1px solid v.$secondaryColor;
-      padding-bottom: 0.1rem;
+      border-right: 1px solid v.$secondaryColor;
     }
     &.de {
-      border-top: 1px solid v.$secondaryColor;
-      padding-top: 0.2rem;
+      border-left: 1px solid v.$secondaryColor;
     }
     &.active {
       font-weight: 800;

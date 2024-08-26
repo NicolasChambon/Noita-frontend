@@ -1,7 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
 
-import NoitaLogo from '../../../../assets/logos/noita-logo.svg';
-
 import './HeaderNav.scss';
 
 const HeaderNav = () => {

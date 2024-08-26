@@ -1,0 +1,31 @@
+@use '../../../../../styles/variables' as v;
+
+.MenuNav {
+  &-list {
+    display: flex;
+    flex-direction: column;
+
+    &-item {
+      color: v.$secondaryColor;
+      font-weight: 500;
+      text-align: center;
+      width: 100%;
+
+      &-link {
+        display: block;
+        padding: 1rem 6rem;
+
+        &:hover {
+          background-color: v.$secondaryColorLight2;
+          transition: all 0.3s;
+        }
+        transition: all 0.3s;
+
+        &.active {
+          background-color: v.$secondaryColor;
+          color: v.$secondaryColorLight3;
+        }
+      }
+    }
+  }
+}
