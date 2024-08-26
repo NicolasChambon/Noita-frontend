@@ -1,2 +1,2 @@
-# No-ta-frontend
+# Noïta-frontend
 Noïta choir website
