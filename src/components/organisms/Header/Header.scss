@@ -1,0 +1,17 @@
+@use '../../../styles/variables' as v;
+
+.Header {
+  background-color: v.$secondaryColorLight3;
+  height: 4rem;
+  position: sticky;
+  top: 0;
+
+  &-wrapper {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    max-width: 1350px;
+    margin: auto;
+    padding: 0.5rem 2rem;
+  }
+}

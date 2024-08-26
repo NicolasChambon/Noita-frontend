@@ -1,5 +1,5 @@
 @use '../../styles/variables' as v;
 
 .App {
-  font-family: 'Gaya', sans-serif;
+  font-family: v.$titleFont;
 }
