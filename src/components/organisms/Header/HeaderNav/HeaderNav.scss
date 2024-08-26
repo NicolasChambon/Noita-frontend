@@ -3,6 +3,10 @@
 .HeaderNav {
   width: 70%;
 
+  @media (max-width: 599px) {
+    display: none;
+  }
+
   &-list {
     display: flex;
     justify-content: space-between;

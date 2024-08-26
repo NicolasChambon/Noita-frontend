@@ -6,6 +6,10 @@
   flex-direction: column;
   width: 10%;
 
+  @media (max-width: 599px) {
+    display: none;
+  }
+
   &-btn {
     background-color: transparent;
     border: none;

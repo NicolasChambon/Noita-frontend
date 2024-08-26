@@ -1,7 +1,8 @@
-import { TOOGLE_LANGUAGE } from '../actions/globalActions';
+import { TOOGLE_LANGUAGE, TOOGLE_HEADER_MENU } from '../actions/globalActions';
 
 export const initialState = {
   language: 'fr',
+  headerMenu: false,
 };
 
 const globalReducer = (state = initialState, action = {}) => {
@@ -10,6 +11,11 @@ const globalReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         language: action.language,
+      };
+    case TOOGLE_HEADER_MENU:
+      return {
+        ...state,
+        headerMenu: !state.headerMenu,
       };
     default:
       return state;
