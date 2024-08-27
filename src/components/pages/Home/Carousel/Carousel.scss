@@ -7,6 +7,19 @@
   margin: 0 auto;
   width: 34rem;
 
+  @media (max-width: 1240px) {
+    height: 20rem;
+    width: 28rem;
+  }
+  @media (max-width: 1040px) {
+    height: 18rem;
+    width: 22rem;
+  }
+  @media (max-width: 430px) {
+    height: 15rem;
+    width: 19rem;
+  }
+
   &-slider {
     height: 100%;
     width: 100%;

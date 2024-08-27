@@ -6,4 +6,17 @@
   margin: 0 auto;
   overflow: hidden;
   width: 34rem;
+
+  @media (max-width: 1240px) {
+    height: 25.8rem;
+    width: 28rem;
+  }
+  @media (max-width: 1040px) {
+    height: 20.5rem;
+    width: 22rem;
+  }
+  @media (max-width: 430px) {
+    height: 17.5rem;
+    width: 19rem;
+  }
 }

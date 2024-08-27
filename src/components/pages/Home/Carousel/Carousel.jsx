@@ -27,20 +27,40 @@ const Carousel = () => {
   return (
     <div className="Carousel">
       <Slider {...settings}>
-        <div>
-          <img src={img1} alt="Noita Vertanzt 1" />
+        <div className="Carousel-slider-card">
+          <img
+            className="Carousel-slider-card-img"
+            src={img1}
+            alt="Noita Vertanzt 1"
+          />
         </div>
-        <div>
-          <img src={img2} alt="Noita Vertanzt 2" />
+        <div className="Carousel-slider-card">
+          <img
+            className="Carousel-slider-card-img"
+            src={img2}
+            alt="Noita Vertanzt 2"
+          />
         </div>
-        <div>
-          <img src={img3} alt="Noita Vertanzt 3" />
+        <div className="Carousel-slider-card">
+          <img
+            className="Carousel-slider-card-img"
+            src={img3}
+            alt="Noita Vertanzt 3"
+          />
         </div>
-        <div>
-          <img src={img4} alt="Noita Vertanzt 4" />
+        <div className="Carousel-slider-card">
+          <img
+            className="Carousel-slider-card-img"
+            src={img4}
+            alt="Noita Vertanzt 4"
+          />
         </div>
-        <div>
-          <img src={img5} alt="Noita Vertanzt 5" />
+        <div className="Carousel-slider-card">
+          <img
+            className="Carousel-slider-card-img"
+            src={img5}
+            alt="Noita Vertanzt 5"
+          />
         </div>
       </Slider>
     </div>
