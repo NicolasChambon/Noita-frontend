@@ -1,12 +1,12 @@
 import ReactPlayer from 'react-player';
 
-import './Video.scss';
+import './Carousel.scss';
 
-const Video = () => {
+const Carousel = () => {
   return (
-    <div className="Video">
+    <div className="Carousel">
       <ReactPlayer
-        className="Video-player"
+        className="Carousel-player"
         url="https://www.youtube.com/embed/djUySOtNbj8"
         width="100%"
         height="100%"
@@ -18,4 +18,4 @@ const Video = () => {
   );
 };
 
-export default Video;
+export default Carousel;

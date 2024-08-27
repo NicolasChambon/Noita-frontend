@@ -1,4 +1,13 @@
 @use '../../../styles/variables' as v;
 
 .Home {
+  &-media {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 4rem);
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 4rem 0;
+  }
 }

@@ -1,23 +1,9 @@
 @use '../../../../styles/variables' as v;
 
 .Video {
-  position: relative;
-  padding-bottom: 56.25%; /* Ratio 16:9 */
-  height: 0;
+  border-radius: v.$borderRadius2;
+  height: 31.25rem;
+  margin: 0 auto;
   overflow: hidden;
-  max-width: 100%;
-  background: black;
-
-  &-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.Video .ytp-endscreen-content {
-  // margin-top: 16px;
-  display: none;
+  width: 34rem;
 }

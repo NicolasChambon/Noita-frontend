@@ -35,6 +35,15 @@ const HeaderNav = () => {
           <Link
             className="HeaderNav-list-item-link"
             to="#"
+            onClick={() => scrollToSection('media')}
+          >
+            Médias
+          </Link>
+        </li>
+        <li className="HeaderNav-list-item">
+          <Link
+            className="HeaderNav-list-item-link"
+            to="#"
             onClick={() => scrollToSection('dates')}
           >
             Concerts
