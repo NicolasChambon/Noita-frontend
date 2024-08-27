@@ -1,7 +1,30 @@
 @use '../../../../styles/variables' as v;
 
 .Carousel {
-  height: 35rem;
+  align-items: center;
+  display: flex;
+  height: 25rem;
   margin: 0 auto;
-  width: 35.9rem;
+  width: 34rem;
+
+  &-slider {
+    height: 100%;
+    width: 100%;
+
+    & .slick-arrow::before {
+      color: v.$secondaryColor;
+    }
+
+    & div {
+      padding: 0 0.2rem;
+      height: 100%;
+      width: 100%;
+
+      & img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
 }
