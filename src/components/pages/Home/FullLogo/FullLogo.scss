@@ -1,0 +1,32 @@
+@use '../../../../styles/variables' as v;
+
+.FullLogo {
+  overflow: hidden;
+  height: calc(100vh - 4rem);
+
+  &-img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &-textLogo {
+    height: 12rem;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 38vh;
+    right: 0;
+    width: max-content;
+
+    @media (max-width: 630px) {
+      height: 10rem;
+    }
+    @media (max-width: 540px) {
+      height: 8rem;
+    }
+    @media (max-width: 420px) {
+      height: 6.5rem;
+    }
+  }
+}
