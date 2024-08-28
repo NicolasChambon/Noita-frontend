@@ -20,39 +20,6 @@
       flex-direction: column;
     }
 
-    &-logoSocials {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-
-      @media (max-width: 670px) {
-        align-items: center;
-        border-bottom: 1px solid v.$secondaryColorLight2;
-        padding-bottom: 1.5rem;
-        text-align: center;
-      }
-
-      &-link {
-        &-logo {
-          width: 3rem;
-        }
-      }
-
-      &-socials {
-        align-items: center;
-        display: flex;
-        gap: 2rem;
-
-        &-link {
-          font-size: 2rem;
-
-          &.YT {
-            font-size: 2.5rem;
-          }
-        }
-      }
-    }
-
     &-news {
       display: flex;
       flex-direction: column;

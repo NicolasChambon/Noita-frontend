@@ -1,26 +1,11 @@
 import { Link } from 'react-router-dom';
 
-import { GrInstagram } from 'react-icons/gr';
-import { RiYoutubeLine } from 'react-icons/ri';
-
-import noitaLogo from '../../../assets/logos/noita-footer-logo-gradient.svg';
-
 import FooterTopDivider from './FooterTopDivider/FooterTopDivider';
+import FooterLogoSocials from './FooterLogoSocials/FooterLogoSocials';
 
 import './Footer.scss';
 
 const Footer = () => {
-  const handleLogoClick = () => {
-    if (window.location.pathname === '/') {
-      const page = document.querySelector('.App');
-      page.scrollIntoView({
-        top: 0,
-        left: 0,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     const offset = 64; // 64px is the height of the fixed header
@@ -40,43 +25,8 @@ const Footer = () => {
   return (
     <footer className="Footer">
       <FooterTopDivider />
-
       <div className="Footer-top">
-        <div className="Footer-top-logoSocials">
-          <Link
-            className="Footer-top-logoSocials-link"
-            onClick={handleLogoClick}
-          >
-            <img
-              className="Footer-top-logoSocials-link-logo"
-              src={noitaLogo}
-              alt="Noïta logo"
-            />
-          </Link>
-
-          <p className="Footer-top-logoSocials-text">
-            Rejoignez-nous sur nos réseaux sociaux.
-          </p>
-
-          <div className="Footer-top-logoSocials-socials">
-            <Link
-              className="Footer-top-logoSocials-socials-link"
-              to="https://www.instagram.com/noitachor/"
-              target="_blank"
-            >
-              <GrInstagram />
-            </Link>
-
-            <Link
-              className="Footer-top-logoSocials-socials-link YT"
-              to="https://www.youtube.com/@Noïta-s6b"
-              target="_blank"
-            >
-              <RiYoutubeLine />
-            </Link>
-          </div>
-        </div>
-
+        <FooterLogoSocials />
         <div className="Footer-top-news">
           <Link className="Footer-top-news-link">
             <h4 className="Footer-top-news-link-title">Actualités</h4>
