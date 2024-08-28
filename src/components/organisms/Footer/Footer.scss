@@ -3,6 +3,11 @@
 .Footer {
   color: v.$secondaryColorLight3;
   background-color: v.$secondaryColor;
-  height: 20rem;
   position: relative;
+
+  &-top {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 3rem 0;
+  }
 }
