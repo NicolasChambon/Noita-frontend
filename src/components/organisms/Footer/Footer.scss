@@ -1,0 +1,8 @@
+@use '../../../styles/variables' as v;
+
+.Footer {
+  color: v.$secondaryColorLight3;
+  background-color: v.$secondaryColor;
+  height: 20rem;
+  position: relative;
+}
