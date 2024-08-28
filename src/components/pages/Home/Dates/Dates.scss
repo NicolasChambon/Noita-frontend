@@ -5,16 +5,11 @@
   border-top: v.$secondaryColorLight1 1px solid;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin: 0 auto;
   min-height: calc(100vh - 4rem);
   padding: 4rem;
   width: 90%;
-
-  &-title {
-    color: v.$secondaryColor;
-    margin-bottom: 3rem;
-    text-align: center;
-  }
 
   &-list {
     margin-bottom: 4rem;
@@ -25,6 +20,12 @@
     }
     @media (max-width: 540px) {
       width: 20rem;
+    }
+
+    &-title {
+      color: v.$secondaryColor;
+      margin-bottom: 3rem;
+      text-align: center;
     }
 
     &-item {

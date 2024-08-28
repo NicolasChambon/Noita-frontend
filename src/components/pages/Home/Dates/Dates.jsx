@@ -5,8 +5,8 @@ import './Dates.scss';
 const Dates = () => {
   return (
     <section className="Dates" id="dates">
-      <h2 className="Dates-title">Prochaines dates</h2>
       <ul className="Dates-list">
+        <h2 className="Dates-list-title">Prochaines dates</h2>
         <li className="Dates-list-item">
           <Link
             className="Dates-list-item-link first"
@@ -20,9 +20,6 @@ const Dates = () => {
               </div>
               <div className="Dates-list-item-link-location-city">Zürich</div>
             </div>
-            <div className="Dates-list-item-link-location-event">
-              Vertanzt Festival
-            </div>
           </Link>
         </li>
 
@@ -39,9 +36,6 @@ const Dates = () => {
               </div>
               <div className="Dates-list-item-link-location-city">Zürich</div>
             </div>
-            <div className="Dates-list-item-link-location-event">
-              Vertanzt Festival
-            </div>
           </Link>
         </li>
 
@@ -57,15 +51,13 @@ const Dates = () => {
                 Galotti Musikwerkstatt
               </div>
               <div className="Dates-list-item-link-location-city">Zürich</div>
-            </div>
-            <div className="Dates-list-item-link-location-event">
-              Vertanzt Festival
             </div>
           </Link>
         </li>
       </ul>
-      <h2 className="Dates-title">Nous y étions</h2>
+
       <ul className="Dates-list">
+        <h2 className="Dates-list-title">Nous y étions</h2>
         <li className="Dates-list-item">
           <Link
             className="Dates-list-item-link first"
