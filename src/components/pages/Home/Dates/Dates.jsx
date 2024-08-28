@@ -10,17 +10,15 @@ const Dates = () => {
         <li className="Dates-list-item">
           <Link
             className="Dates-list-item-link first"
-            to="https://www.vertanzt.ch/fr/"
+            to="https://www.galotti.ch/story/freitag-6-9-24-bandnacht/"
             target="_blank"
           >
-            <div className="Dates-list-item-link-date">19 JUIL. 2024</div>
+            <div className="Dates-list-item-link-date">6 DEC. 2024</div>
             <div className="Dates-list-item-link-location">
               <div className="Dates-list-item-link-location-place">
-                Parc des spectacles
+                Galotti Musikwerkstatt
               </div>
-              <div className="Dates-list-item-link-location-city">
-                Röthenbach Im Emmental
-              </div>
+              <div className="Dates-list-item-link-location-city">Zürich</div>
             </div>
             <div className="Dates-list-item-link-location-event">
               Vertanzt Festival
@@ -31,17 +29,15 @@ const Dates = () => {
         <li className="Dates-list-item">
           <Link
             className="Dates-list-item-link"
-            to="https://www.vertanzt.ch/fr/"
+            to="https://www.galotti.ch/story/freitag-6-9-24-bandnacht/"
             target="_blank"
           >
-            <div className="Dates-list-item-link-date">19 JUIL. 2024</div>
+            <div className="Dates-list-item-link-date">6 DEC. 2024</div>
             <div className="Dates-list-item-link-location">
               <div className="Dates-list-item-link-location-place">
-                Parc des spectacles
+                Galotti Musikwerkstatt
               </div>
-              <div className="Dates-list-item-link-location-city">
-                Röthenbach Im Emmental
-              </div>
+              <div className="Dates-list-item-link-location-city">Zürich</div>
             </div>
             <div className="Dates-list-item-link-location-event">
               Vertanzt Festival
@@ -52,17 +48,15 @@ const Dates = () => {
         <li className="Dates-list-item">
           <Link
             className="Dates-list-item-link"
-            to="https://www.vertanzt.ch/fr/"
+            to="https://www.galotti.ch/story/freitag-6-9-24-bandnacht/"
             target="_blank"
           >
-            <div className="Dates-list-item-link-date">19 JUIL. 2024</div>
+            <div className="Dates-list-item-link-date">6 DEC. 2024</div>
             <div className="Dates-list-item-link-location">
               <div className="Dates-list-item-link-location-place">
-                Parc des spectacles
+                Galotti Musikwerkstatt
               </div>
-              <div className="Dates-list-item-link-location-city">
-                Röthenbach Im Emmental
-              </div>
+              <div className="Dates-list-item-link-location-city">Zürich</div>
             </div>
             <div className="Dates-list-item-link-location-event">
               Vertanzt Festival
@@ -78,7 +72,7 @@ const Dates = () => {
             to="https://www.vertanzt.ch/fr/"
             target="_blank"
           >
-            <div className="Dates-list-item-link-date">19 JUIL. 2024</div>
+            <div className="Dates-list-item-link-date">20 JUIL. 2024</div>
             <div className="Dates-list-item-link-location">
               <div className="Dates-list-item-link-location-place">
                 Parc des spectacles
@@ -99,7 +93,7 @@ const Dates = () => {
             to="https://www.vertanzt.ch/fr/"
             target="_blank"
           >
-            <div className="Dates-list-item-link-date">19 JUIL. 2024</div>
+            <div className="Dates-list-item-link-date">20 JUIL. 2024</div>
             <div className="Dates-list-item-link-location">
               <div className="Dates-list-item-link-location-place">
                 Parc des spectacles
