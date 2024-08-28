@@ -1,8 +1,9 @@
 @use '../../../../styles/variables' as v;
 
 .FullLogo {
-  overflow: hidden;
   height: calc(100vh - 4rem);
+  overflow: hidden;
+  position: relative;
 
   &-img {
     height: 100%;
@@ -15,7 +16,7 @@
     left: 0;
     margin: auto;
     position: absolute;
-    top: 38vh;
+    top: 31vh;
     right: 0;
     width: max-content;
 
