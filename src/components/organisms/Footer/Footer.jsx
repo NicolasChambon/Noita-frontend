@@ -10,12 +10,43 @@ import FooterTopDivider from './FooterTopDivider/FooterTopDivider';
 import './Footer.scss';
 
 const Footer = () => {
+  const handleLogoClick = () => {
+    if (window.location.pathname === '/') {
+      const page = document.querySelector('.App');
+      page.scrollIntoView({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    const offset = 64; // 64px is the height of the fixed header
+
+    // element.getBoundingClientRect().top => distance from the top of the element to the top of the viewport
+    // window.scrollY => distance from the top of the document to the top of the viewport
+    const elementPosition =
+      element.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <footer className="Footer">
       <FooterTopDivider />
+
       <div className="Footer-top">
         <div className="Footer-top-logoSocials">
-          <Link className="Footer-top-logoSocials-link">
+          <Link
+            className="Footer-top-logoSocials-link"
+            onClick={handleLogoClick}
+          >
             <img
               className="Footer-top-logoSocials-link-logo"
               src={noitaLogo}
@@ -24,37 +55,70 @@ const Footer = () => {
           </Link>
 
           <p className="Footer-top-logoSocials-text">
-            Rejoignez-nous sur nos réseaux sociaux
+            Rejoignez-nous sur nos réseaux sociaux.
           </p>
+
           <div className="Footer-top-logoSocials-socials">
-            <Link className="Footer-top-logoSocials-socials-link">
+            <Link
+              className="Footer-top-logoSocials-socials-link"
+              to="https://www.instagram.com/noitachor/"
+              target="_blank"
+            >
               <GrInstagram />
             </Link>
-            <Link className="Footer-top-logoSocials-socials-link">
+
+            <Link
+              className="Footer-top-logoSocials-socials-link YT"
+              to="https://www.youtube.com/@Noïta-s6b"
+              target="_blank"
+            >
               <RiYoutubeLine />
             </Link>
           </div>
         </div>
+
         <div className="Footer-top-news">
-          <h4 className="Footer-top-news-title">Actualités</h4>
+          <Link className="Footer-top-news-link">
+            <h4 className="Footer-top-news-link-title">Actualités</h4>
+          </Link>
           <p className="Footer-top-news-text">
-            Suivez les dernières nouvelles du groupe
+            Suivez les dernières nouvelles du groupe.
           </p>
         </div>
         <nav className="Footer-top-nav">
           <h4 className="Footer-top-nav-title">Navigation</h4>
           <ul className="Footer-top-nav-list">
             <li className="Footer-top-nav-list-item">
-              <Link className="Footer-top-nav-list-item-link">Indentité</Link>
+              <Link
+                className="Footer-top-nav-list-item-link"
+                onClick={() => scrollToSection('identity')}
+              >
+                Indentité
+              </Link>
             </li>
             <li className="Footer-top-nav-list-item">
-              <Link className="Footer-top-nav-list-item-link">Médias</Link>
+              <Link
+                className="Footer-top-nav-list-item-link"
+                onClick={() => scrollToSection('media')}
+              >
+                Médias
+              </Link>
             </li>
             <li className="Footer-top-nav-list-item">
-              <Link className="Footer-top-nav-list-item-link">Concerts</Link>
+              <Link
+                className="Footer-top-nav-list-item-link"
+                onClick={() => scrollToSection('dates')}
+              >
+                Concerts
+              </Link>
             </li>
             <li className="Footer-top-nav-list-item">
-              <Link className="Footer-top-nav-list-item-link">Contact</Link>
+              <Link
+                className="Footer-top-nav-list-item-link"
+                onClick={() => scrollToSection('contact')}
+              >
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>
