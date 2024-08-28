@@ -1,6 +1,6 @@
 @use '../../../../../styles/variables' as v;
 
-.BottomDivider {
+.FullLogoBottomDivider {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -10,13 +10,13 @@
   transform: rotate(180deg);
 }
 
-.BottomDivider svg {
+.FullLogoBottomDivider svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
   height: 27px;
 }
 
-.BottomDivider .shape-fill {
+.FullLogoBottomDivider .shape-fill {
   fill: #1f153a;
 }

@@ -14,23 +14,18 @@
 
   &-text {
     align-items: center;
-
-    // background start with 1.0 opacity on the top and ends with 0.733 opacity on the bottom
-
     background: linear-gradient(
       to bottom,
       rgba(31, 21, 58, 1) 0%,
       rgba(31, 31, 58, 0.733) 100%
     );
-
-    // background-color: rgba(40, 20, 60, 0.733);
     color: v.$secondaryColorLight3;
     display: flex;
     flex-direction: column;
     font-size: 1.3rem;
     height: 100%;
     justify-content: space-around;
-    padding: 0 2rem;
+    padding: 2rem;
     position: absolute;
     text-align: center;
     top: 0;

@@ -1,3 +1,5 @@
+import IdentityBottomDivider from './IdentityBottomDivider/IdentityBottomDivider';
+
 import background from '../../../../assets/images/noita-on-stage.jpg';
 
 import './Identity.scss';
@@ -25,6 +27,7 @@ const Identity = () => {
           Noïta, ça s&apos;écoute et ça se danse dans la joie
         </p>
       </div>
+      <IdentityBottomDivider />
     </div>
   );
 };
