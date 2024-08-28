@@ -5,12 +5,12 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import './Carousel.scss';
 
-import img1 from '../../../../assets/carousel/noita_vertanzt_1.jpg';
-import img2 from '../../../../assets/carousel/noita_vertanzt_2.jpg';
-import img3 from '../../../../assets/carousel/noita_vertanzt_3.jpg';
-import img4 from '../../../../assets/carousel/noita_vertanzt_4.jpg';
-import img5 from '../../../../assets/carousel/noita_vertanzt_5.jpg';
-import img6 from '../../../../assets/carousel/noita_vertanzt_6.jpg';
+import img1 from '../../../../../assets/carousel/noita_vertanzt_1.jpg';
+import img2 from '../../../../../assets/carousel/noita_vertanzt_2.jpg';
+import img3 from '../../../../../assets/carousel/noita_vertanzt_3.jpg';
+import img4 from '../../../../../assets/carousel/noita_vertanzt_4.jpg';
+import img5 from '../../../../../assets/carousel/noita_vertanzt_5.jpg';
+import img6 from '../../../../../assets/carousel/noita_vertanzt_6.jpg';
 
 const Carousel = () => {
   const settings = {
@@ -60,6 +60,13 @@ const Carousel = () => {
             className="Carousel-slider-card-img"
             src={img5}
             alt="Noita Vertanzt 5"
+          />
+        </div>
+        <div className="Carousel-slider-card">
+          <img
+            className="Carousel-slider-card-img"
+            src={img6}
+            alt="Noita Vertanzt 6"
           />
         </div>
       </Slider>

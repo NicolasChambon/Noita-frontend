@@ -6,7 +6,7 @@ import './Identity.scss';
 
 const Identity = () => {
   return (
-    <div className="Identity" id="identity">
+    <section className="Identity" id="identity">
       <img className="Identity-img" src={background} alt="Noita on stage" />
       <div className="Identity-text">
         <p className="Identity-text-item">
@@ -28,7 +28,7 @@ const Identity = () => {
         </p>
       </div>
       <IdentityBottomDivider />
-    </div>
+    </section>
   );
 };
 

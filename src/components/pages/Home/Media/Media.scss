@@ -1,0 +1,17 @@
+@use '../../../../styles/variables' as v;
+
+.Media {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 4rem);
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+
+  @media (max-width: 830px) {
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-around;
+  }
+}

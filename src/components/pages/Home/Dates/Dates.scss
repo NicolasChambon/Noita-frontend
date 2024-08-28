@@ -1,5 +1,60 @@
 @use '../../../../styles/variables' as v;
 
 .Dates {
+  align-items: center;
+  border-top: v.$secondaryColorLight1 1px solid;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
   min-height: calc(100vh - 4rem);
+  padding: 4rem;
+  width: 90%;
+
+  @media (max-width: 460px) {
+    padding: 4rem 2rem;
+  }
+  @media (max-width: 410px) {
+    padding: 4rem 1rem;
+  }
+
+  &-title {
+    color: v.$secondaryColor;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  &-list {
+    margin-bottom: 4rem;
+
+    &-item {
+      color: v.$secondaryColorLight1;
+      &-link {
+        border-bottom: v.$secondaryColorLight2 1px solid;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 0.5rem;
+
+        &.first {
+          border-top: v.$secondaryColorLight2 1px solid;
+        }
+
+        &:hover {
+          background-color: v.$secondaryColorLight2;
+          transition: background-color 0.3s;
+        }
+        transition: background-color 0.3s;
+
+        &-date {
+          font-weight: 800;
+        }
+
+        &-location {
+          display: flex;
+          font-weight: 500;
+          gap: 4rem;
+        }
+      }
+    }
+  }
 }

@@ -7,7 +7,7 @@ import './FullLogo.scss';
 
 const FullLogo = () => {
   return (
-    <div className="FullLogo">
+    <section className="FullLogo">
       <img className="FullLogo-img" src={moonLandscape} alt="moon landscape" />
       <img
         className="FullLogo-textLogo"
@@ -15,7 +15,7 @@ const FullLogo = () => {
         alt="Noita text logo"
       />
       <FullLogoBottomDivider />
-    </div>
+    </section>
   );
 };
 
