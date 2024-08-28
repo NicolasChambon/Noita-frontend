@@ -2,9 +2,11 @@
 
 .Carousel {
   align-items: center;
+  border-radius: v.$borderRadius2;
   display: flex;
   height: 25rem;
   margin: 0 auto;
+  overflow: hidden;
   width: 34rem;
 
   @media (max-width: 1240px) {
@@ -24,8 +26,18 @@
     height: 100%;
     width: 100%;
 
+    & .slick-prev {
+      left: 2.5%;
+      z-index: 1;
+    }
+
+    & .slick-next {
+      right: 1.5%;
+      z-index: 1;
+    }
+
     & .slick-arrow::before {
-      color: v.$secondaryColor;
+      color: white;
     }
 
     & div {
