@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './FooterNav.scss';
 
@@ -19,16 +20,20 @@ const FooterNav = () => {
     });
   };
 
+  const language = useSelector((state) => state.global.language);
+
   return (
     <nav className="FooterNav">
-      <h4 className="FooterNav-title">Navigation</h4>
+      <h4 className="FooterNav-title">
+        {language === 'fr' ? 'Navigation' : 'Navigation'}
+      </h4>
       <ul className="FooterNav-list">
         <li className="FooterNav-list-item">
           <Link
             className="FooterNav-list-item-link"
             onClick={() => scrollToSection('identity')}
           >
-            Indentité
+            {language === 'fr' ? 'Identité' : 'Identität'}
           </Link>
         </li>
         <li className="FooterNav-list-item">
@@ -36,7 +41,7 @@ const FooterNav = () => {
             className="FooterNav-list-item-link"
             onClick={() => scrollToSection('media')}
           >
-            Médias
+            {language === 'fr' ? 'Médias' : 'Medien'}
           </Link>
         </li>
         <li className="FooterNav-list-item">
@@ -44,7 +49,7 @@ const FooterNav = () => {
             className="FooterNav-list-item-link"
             onClick={() => scrollToSection('dates')}
           >
-            Concerts
+            {language === 'fr' ? 'Concerts' : 'Konzerte'}
           </Link>
         </li>
         <li className="FooterNav-list-item">
@@ -52,7 +57,7 @@ const FooterNav = () => {
             className="FooterNav-list-item-link"
             onClick={() => scrollToSection('contact')}
           >
-            Contact
+            {language === 'fr' ? 'Contact' : 'Kontakt'}
           </Link>
         </li>
       </ul>
