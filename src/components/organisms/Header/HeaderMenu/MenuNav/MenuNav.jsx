@@ -1,8 +1,15 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 
 import './MenuNav.scss';
 
 const MenuNav = () => {
+  const language = useSelector((state) => state.global.language);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [targetSection, setTargetSection] = useState('');
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     const offset = 64; // 64px is the height of the fixed header
@@ -19,6 +26,24 @@ const MenuNav = () => {
     });
   };
 
+  // This function is called when a link is clicked
+  const handleLinkClick = (id) => {
+    if (location.pathname !== '/') {
+      setTargetSection(id);
+      navigate('/');
+    } else {
+      scrollToSection(id);
+    }
+  };
+
+  // This effect is called when the location changes
+  useEffect(() => {
+    if (location.pathname === '/' && targetSection) {
+      scrollToSection(targetSection);
+      setTargetSection('');
+    }
+  }, [location.pathname, targetSection]);
+
   return (
     <nav className="MenuNav">
       <ul className="MenuNav-list">
@@ -26,41 +51,53 @@ const MenuNav = () => {
           <Link
             className="MenuNav-list-item-link"
             to="#"
-            onClick={() => scrollToSection('identity')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick('identity');
+            }}
           >
-            Identité
+            {language === 'fr' ? 'Identité' : 'Identität'}
           </Link>
         </li>
         <li className="MenuNav-list-item">
           <Link
             className="MenuNav-list-item-link"
             to="#"
-            onClick={() => scrollToSection('media')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick('media');
+            }}
           >
-            Médias
+            {language === 'fr' ? 'Médias' : 'Medien'}
           </Link>
         </li>
         <li className="MenuNav-list-item">
           <Link
             className="MenuNav-list-item-link"
             to="#"
-            onClick={() => scrollToSection('dates')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick('dates');
+            }}
           >
-            Concerts
+            {language === 'fr' ? 'Concerts' : 'Konzerte'}
           </Link>
         </li>
         <li className="MenuNav-list-item">
           <Link
             className="MenuNav-list-item-link"
             to="#"
-            onClick={() => scrollToSection('contact')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick('contact');
+            }}
           >
-            Contact
+            {language === 'fr' ? 'Contact' : 'Kontakt'}
           </Link>
         </li>
         <li className="MenuNav-list-item">
           <NavLink className="MenuNav-list-item-link" to="/news">
-            Actualités
+            {language === 'fr' ? 'Actualités' : 'Nachrichten'}
           </NavLink>
         </li>
       </ul>
