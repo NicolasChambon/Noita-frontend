@@ -12,7 +12,7 @@ const Contact = () => {
       <div className="Contact-texts">
         <div className="Contact-texts-text left">
           <p className="Contact-texts-text-p question">
-            Tu es une organisatrice et tu souhaites nous inviter ?
+            Tu es un(e) organisateur(trice) et tu souhaites nous inviter ?
           </p>
           <p className="Contact-texts-text-p">
             Nous jouons aussi bien en acoustique qu&apos;avec sonorisation.

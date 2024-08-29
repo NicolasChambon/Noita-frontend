@@ -27,41 +27,5 @@
       margin-bottom: 3rem;
       text-align: center;
     }
-
-    &-item {
-      color: v.$secondaryColorLight1;
-      &-link {
-        border-bottom: v.$secondaryColorLight2 1px solid;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 1rem 0.5rem;
-
-        &.first {
-          border-top: v.$secondaryColorLight2 1px solid;
-        }
-
-        &:hover {
-          background-color: v.$secondaryColorLight2;
-          transition: background-color 0.3s;
-        }
-        transition: background-color 0.3s;
-
-        &-date {
-          font-weight: 800;
-        }
-
-        &-location {
-          display: flex;
-          font-weight: 500;
-          gap: 4rem;
-          justify-content: space-between;
-
-          &-city {
-            text-align: right;
-          }
-        }
-      }
-    }
   }
 }
