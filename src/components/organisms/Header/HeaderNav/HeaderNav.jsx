@@ -2,6 +2,12 @@ import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
+import {
+  scrollIfOnSamePage,
+  scrollToSection,
+  handleLinkClick,
+} from '../../../../utils/scrollUtils';
+
 import './HeaderNav.scss';
 
 const HeaderNav = () => {
@@ -9,32 +15,6 @@ const HeaderNav = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [targetSection, setTargetSection] = useState('');
-
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    const offset = 64; // 64px is the height of the fixed header
-
-    // element.getBoundingClientRect().top => distance from the top of the element to the top of the viewport
-    // window.scrollY => distance from the top of the document to the top of the viewport
-    const elementPosition =
-      element.getBoundingClientRect().top + window.scrollY;
-    const offsetPosition = elementPosition - offset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth',
-    });
-  };
-
-  // This function is called when a link is clicked
-  const handleLinkClick = (id) => {
-    if (location.pathname !== '/') {
-      setTargetSection(id);
-      navigate('/');
-    } else {
-      scrollToSection(id);
-    }
-  };
 
   // This effect is called when the location changes
   useEffect(() => {
@@ -50,10 +30,9 @@ const HeaderNav = () => {
         <li className="HeaderNav-list-item">
           <Link
             className="HeaderNav-list-item-link"
-            to="/"
             onClick={(e) => {
               e.preventDefault();
-              handleLinkClick('identity');
+              handleLinkClick('identity', location, navigate, setTargetSection);
             }}
           >
             {language === 'fr' ? 'Identité' : 'Identität'}
@@ -62,10 +41,9 @@ const HeaderNav = () => {
         <li className="HeaderNav-list-item">
           <Link
             className="HeaderNav-list-item-link"
-            to="/"
             onClick={(e) => {
               e.preventDefault();
-              handleLinkClick('media');
+              handleLinkClick('media', location, navigate, setTargetSection);
             }}
           >
             {language === 'fr' ? 'Médias' : 'Medien'}
@@ -74,10 +52,9 @@ const HeaderNav = () => {
         <li className="HeaderNav-list-item">
           <Link
             className="HeaderNav-list-item-link"
-            to="/"
             onClick={(e) => {
               e.preventDefault();
-              handleLinkClick('dates');
+              handleLinkClick('dates', location, navigate, setTargetSection);
             }}
           >
             {language === 'fr' ? 'Concerts' : 'Konzerte'}
@@ -86,17 +63,22 @@ const HeaderNav = () => {
         <li className="HeaderNav-list-item">
           <Link
             className="HeaderNav-list-item-link"
-            to="/"
             onClick={(e) => {
               e.preventDefault();
-              handleLinkClick('contact');
+              handleLinkClick('contact', location, navigate, setTargetSection);
             }}
           >
             {language === 'fr' ? 'Contact' : 'Kontakt'}
           </Link>
         </li>
         <li className="HeaderNav-list-item">
-          <NavLink className="HeaderNav-list-item-link" to="/news">
+          <NavLink
+            className="HeaderNav-list-item-link"
+            to="/news"
+            onClick={() => {
+              scrollIfOnSamePage('/news');
+            }}
+          >
             {language === 'fr' ? 'Actualités' : 'Nachrichten'}
           </NavLink>
         </li>

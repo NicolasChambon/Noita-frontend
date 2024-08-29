@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+import { scrollIfOnSamePage } from '../../../../utils/scrollUtils';
+
 import './FooterNews.scss';
 
 const FooterNews = () => {
@@ -8,7 +10,13 @@ const FooterNews = () => {
 
   return (
     <div className="FooterNews">
-      <Link className="FooterNews-link">
+      <Link
+        className="FooterNews-link"
+        to="/news"
+        onClick={() => {
+          scrollIfOnSamePage('/news');
+        }}
+      >
         <h4 className="FooterNews-link-title">
           {language === 'fr' ? 'Actualités' : 'Nachrichten'}
         </h4>

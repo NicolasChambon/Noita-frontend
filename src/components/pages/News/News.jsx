@@ -1,14 +1,12 @@
 import { useEffect } from 'react';
 
+import { scrollUpInstantly } from '../../../utils/scrollUtils';
+
 import './News.scss';
 
 const News = () => {
   useEffect(() => {
-    const page = document.querySelector('.App');
-    page.scrollIntoView({
-      top: 0,
-      left: 0,
-    });
+    scrollUpInstantly();
   }, []);
 
   return (
