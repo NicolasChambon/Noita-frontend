@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import Header from '../organisms/Header/Header';
 import Home from '../pages/Home/Home';
+import News from '../pages/News/News';
 import Footer from '../organisms/Footer/Footer';
 
 import './App.scss';
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/news" element={<News />} />
       </Routes>
       <Footer />
     </div>

@@ -1,7 +1,7 @@
 @use '../../../../styles/variables' as v;
 
 .HeaderNav {
-  width: 70%;
+  width: 75%;
 
   @media (max-width: 639px) {
     display: none;

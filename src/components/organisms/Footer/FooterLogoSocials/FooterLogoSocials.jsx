@@ -24,7 +24,7 @@ const FooterLogoSocials = () => {
 
   return (
     <div className="FooterLogoSocials">
-      <Link className="FooterLogoSocials-link" onClick={handleLogoClick}>
+      <Link className="FooterLogoSocials-link" to="/" onClick={handleLogoClick}>
         <img
           className="FooterLogoSocials-link-logo"
           src={noitaLogo}
