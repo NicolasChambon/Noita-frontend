@@ -18,7 +18,7 @@ const FooterNews = () => {
         }}
       >
         <h4 className="FooterNews-link-title">
-          {language === 'fr' ? 'Actualités' : 'Nachrichten'}
+          {language === 'fr' ? 'Actualités' : 'News'}
         </h4>
       </Link>
       <p className="FooterNews-text">

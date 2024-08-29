@@ -17,7 +17,7 @@
     width: 20%;
 
     &:hover {
-      text-shadow: 0 0 5px v.$primaryColor;
+      text-shadow: 0 0 5px v.$secondaryColor;
       transition: text-shadow 0.3s;
     }
     transition: text-shadow 0.3s;

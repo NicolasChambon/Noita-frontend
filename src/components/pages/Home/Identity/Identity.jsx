@@ -16,32 +16,32 @@ const Identity = () => {
         <p className="Identity-text-item">
           {language === 'fr'
             ? 'Noïta, ce sont des femmes qui chantent et qui jouent des percussions'
-            : 'Noïta, das sind Frauen, die singen und Perkussion spielen'}
+            : 'Noïta sind Frauen, die singen und Percussion spielen'}
         </p>
         <p className="Identity-text-item">
           {language === 'fr'
             ? 'Noïta, ce sont des chants traditionnels mais aussi modernes'
-            : 'Noïta, das sind traditionelle, aber auch moderne Lieder'}
+            : 'Noïta sind traditionelle, aber auch moderne Lieder'}
         </p>
         <p className="Identity-text-item">
           {language === 'fr'
             ? "Noïta, ce sont des sons qui viennent d'Occitanie, de Grèce, de Finlande, du Mexique, de partout"
-            : 'Noïta, das sind Klänge aus Okzitanien, Griechenland, Finnland, Mexiko, überall her'}
+            : 'Noïta sind Klänge aus Okzitanien, Griechenland, Finnland, Mexiko und von überall her'}
         </p>
         <p className="Identity-text-item">
           {language === 'fr'
             ? 'Noïta, ça veut dire Sorcière'
-            : 'Noïta, das bedeutet Hexe'}
+            : 'Noïta bedeutet Hexe'}
         </p>
         <p className="Identity-text-item">
           {language === 'fr'
             ? "Noïta, c'est la femme libre qui vit en harmonie avec le vivant"
-            : 'Noïta, das ist die freie Frau, die im Einklang mit dem Leben lebt'}
+            : 'Noïta ist die freie Frau, die im Einklang mit allem Lebendigen lebt'}
         </p>
         <p className="Identity-text-item">
           {language === 'fr'
             ? "Noïta, ça s'écoute et ça se danse dans la joie"
-            : 'Noïta, das kann man hören und in Freude tanzen'}
+            : 'Noïta lässt sich hören, aber auch dazu in Freude tanzen'}
         </p>
       </div>
       <IdentityBottomDivider />

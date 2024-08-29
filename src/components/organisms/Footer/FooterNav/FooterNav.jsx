@@ -37,7 +37,7 @@ const FooterNav = () => {
               handleLinkClick('identity', location, navigate, setTargetSection);
             }}
           >
-            {language === 'fr' ? 'Identité' : 'Identität'}
+            {language === 'fr' ? 'Présentation' : 'Über uns'}
           </Link>
         </li>
         <li className="FooterNav-list-item">

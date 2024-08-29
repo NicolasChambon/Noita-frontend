@@ -14,7 +14,7 @@ const ContactLink = () => {
       to="mailto:noitachor@gmail.com"
       target="_blank"
     >
-      {language === 'fr' ? 'Écris nous ici' : 'Schreib uns hier'}{' '}
+      {language === 'fr' ? 'Écris-nous ici' : 'Schreib uns hier'}{' '}
       <FaArrowRight />
     </Link>
   );

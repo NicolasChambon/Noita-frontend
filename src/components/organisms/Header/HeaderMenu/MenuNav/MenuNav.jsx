@@ -35,7 +35,7 @@ const MenuNav = () => {
               handleLinkClick('identity', location, navigate, setTargetSection);
             }}
           >
-            {language === 'fr' ? 'Identité' : 'Identität'}
+            {language === 'fr' ? 'Présentation' : 'Über uns'}
           </Link>
         </li>
         <li className="MenuNav-list-item">
@@ -79,7 +79,7 @@ const MenuNav = () => {
               scrollIfOnSamePage('/news');
             }}
           >
-            {language === 'fr' ? 'Actualités' : 'Nachrichten'}
+            {language === 'fr' ? 'Actualités' : 'News'}
           </NavLink>
         </li>
       </ul>

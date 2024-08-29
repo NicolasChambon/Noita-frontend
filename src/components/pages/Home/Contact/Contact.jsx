@@ -18,20 +18,20 @@ const Contact = () => {
         <ContactTextBox
           question={
             language === 'fr'
-              ? 'Tu es un(e) organisateur(trice) et tu souhaites nous inviter ?'
-              : 'Bist du ein(e) Organisator(in) und möchtest uns einladen ?'
+              ? 'Tu es une organisatrice et tu souhaites nous inviter ?'
+              : 'Bist du eine Veranstalterin und möchtest uns einladen ? ?'
           }
           text={
             language === 'fr'
-              ? "Nous jouons aussi bien en acoustique qu'avec sonorisation."
-              : 'Wir spielen sowohl akustisch als auch mit Sound.'
+              ? 'Nous jouons aussi bien en acoustique que sonorisées.'
+              : 'Wir spielen sowohl akustisch als auch mit Tonanlage.'
           }
         />
         <ContactTextBox
           question={
             language === 'fr'
               ? 'Tu es une chanteuse et tu souhaites te joindre à nous ?'
-              : 'Bist du eine Sängerin und möchtest uns beitreten ?'
+              : 'Bist du eine Sängerin und möchtest mitmachen ?'
           }
           text={
             language === 'fr'
