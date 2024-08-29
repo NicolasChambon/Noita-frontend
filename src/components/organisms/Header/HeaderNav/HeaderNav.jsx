@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './HeaderNav.scss';
 
@@ -19,6 +20,8 @@ const HeaderNav = () => {
     });
   };
 
+  const language = useSelector((state) => state.global.language);
+
   return (
     <nav className="HeaderNav">
       <ul className="HeaderNav-list">
@@ -28,7 +31,7 @@ const HeaderNav = () => {
             to="#"
             onClick={() => scrollToSection('identity')}
           >
-            Identité
+            {language === 'fr' ? 'Identité' : 'Identität'}
           </Link>
         </li>
         <li className="HeaderNav-list-item">
@@ -37,7 +40,7 @@ const HeaderNav = () => {
             to="#"
             onClick={() => scrollToSection('media')}
           >
-            Médias
+            {language === 'fr' ? 'Médias' : 'Medien'}
           </Link>
         </li>
         <li className="HeaderNav-list-item">
@@ -46,7 +49,7 @@ const HeaderNav = () => {
             to="#"
             onClick={() => scrollToSection('dates')}
           >
-            Concerts
+            {language === 'fr' ? 'Concerts' : 'Konzerte'}
           </Link>
         </li>
         <li className="HeaderNav-list-item">
@@ -55,12 +58,12 @@ const HeaderNav = () => {
             to="#"
             onClick={() => scrollToSection('contact')}
           >
-            Contact
+            {language === 'fr' ? 'Contact' : 'Kontakt'}
           </Link>
         </li>
         <li className="HeaderNav-list-item">
           <NavLink className="HeaderNav-list-item-link" to="/news">
-            Actualités
+            {language === 'fr' ? 'Actualités' : 'Nachrichten'}
           </NavLink>
         </li>
       </ul>

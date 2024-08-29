@@ -1,7 +1,7 @@
 import { TOOGLE_LANGUAGE, TOOGLE_HEADER_MENU } from '../actions/globalActions';
 
 export const initialState = {
-  language: 'fr',
+  language: 'de',
   headerMenu: false,
 };
 

@@ -18,18 +18,18 @@
     width: 20%;
 
     &:hover {
-      text-shadow: 0 0 5px v.$secondaryColor;
+      text-shadow: 0 0 5px v.$primaryColor;
       transition: text-shadow 0.3s;
     }
     transition: text-shadow 0.3s;
 
     &.fr {
-      border-bottom: 1px solid v.$primaryColor;
-      padding-bottom: 0.1rem;
+      border-top: 1px solid v.$primaryColor;
+      padding-top: 0.1rem;
     }
     &.de {
-      border-top: 1px solid v.$primaryColor;
-      padding-top: 0.2rem;
+      border-bottom: 1px solid v.$primaryColor;
+      padding-bottom: 0.2rem;
     }
     &.active {
       font-weight: 800;

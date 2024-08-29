@@ -11,16 +11,16 @@ const HeaderLang = () => {
   return (
     <div className="HeaderLang">
       <button
-        className={`HeaderLang-btn fr ${lang === 'fr' ? 'active' : ''}`}
-        onClick={() => dispatch(toogleLanguage('fr'))}
-      >
-        FR
-      </button>
-      <button
         className={`HeaderLang-btn de ${lang === 'de' ? 'active' : ''}`}
         onClick={() => dispatch(toogleLanguage('de'))}
       >
         DE
+      </button>
+      <button
+        className={`HeaderLang-btn fr ${lang === 'fr' ? 'active' : ''}`}
+        onClick={() => dispatch(toogleLanguage('fr'))}
+      >
+        FR
       </button>
     </div>
   );
