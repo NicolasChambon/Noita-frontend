@@ -1,0 +1,22 @@
+@use '../../../../../styles/variables' as v;
+
+.ContactTextBox {
+  background-color: gray;
+  border-radius: v.$borderRadius;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 15rem;
+  padding: 2rem;
+  width: 50%;
+
+  &-p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    width: 80%;
+
+    &.question {
+      font-weight: 600;
+    }
+  }
+}

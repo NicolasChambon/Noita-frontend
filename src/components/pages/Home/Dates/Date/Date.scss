@@ -1,20 +1,20 @@
 @use '../../../../../styles/variables' as v;
 
 .Date {
-  color: v.$secondaryColorLight1;
+  color: v.$primaryColorLight1;
   &-link {
-    border-bottom: v.$secondaryColorLight2 1px solid;
+    border-bottom: v.$primaryColorLight2 1px solid;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem 0.5rem;
 
     &.first {
-      border-top: v.$secondaryColorLight2 1px solid;
+      border-top: v.$primaryColorLight2 1px solid;
     }
 
     &:hover {
-      background-color: v.$secondaryColorLight2;
+      background-color: v.$primaryColorLight2;
       transition: background-color 0.3s;
     }
     transition: background-color 0.3s;

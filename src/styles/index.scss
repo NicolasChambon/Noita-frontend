@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: v.$secondaryColorLight3;
+  background-color: v.$primaryColorLight3;
   font-family: v.$mainFont;
   font-size: v.$textSize;
 }
@@ -50,12 +50,12 @@ button {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: v.$secondaryColorLight3;
+  background: v.$primaryColorLight3;
 }
 ::-webkit-scrollbar-thumb {
-  background: v.$secondaryColorLight1;
+  background: v.$primaryColorLight1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: v.$secondaryColor;
+  background: v.$primaryColor;
 }

@@ -2,7 +2,7 @@
 
 .Dates {
   align-items: center;
-  border-top: v.$secondaryColorLight1 1px solid;
+  border-top: v.$primaryColorLight1 1px solid;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,7 +23,7 @@
     }
 
     &-title {
-      color: v.$secondaryColor;
+      color: v.$primaryColor;
       margin-bottom: 3rem;
       text-align: center;
     }

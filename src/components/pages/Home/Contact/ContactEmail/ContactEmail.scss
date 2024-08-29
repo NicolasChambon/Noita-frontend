@@ -1,0 +1,26 @@
+@use '../../../../../styles/variables' as v;
+
+.ContactEmail {
+  align-items: center;
+  background-color: v.$secondaryColorLight3;
+  border: v.$secondaryColor 2px solid;
+  border-radius: v.$borderRadius;
+  color: v.$secondaryColor;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+
+  &-icon {
+    font-size: 2.5rem;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    &-adress {
+      font-weight: 600;
+    }
+  }
+}

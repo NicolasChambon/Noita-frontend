@@ -14,13 +14,13 @@
 
     &-item {
       &-link {
-        color: v.$secondaryColor;
+        color: v.$primaryColor;
         font-weight: 500;
         padding: 1rem 0;
 
         position: relative;
         &::after {
-          background-color: v.$primaryColorLight2;
+          background-color: v.$secondaryColorLight2;
           content: '';
           height: 3px;
           left: -5%;
@@ -34,7 +34,7 @@
         }
         &.active::after {
           width: 110%;
-          background-color: v.$primaryColor;
+          background-color: v.$secondaryColor;
         }
       }
     }
