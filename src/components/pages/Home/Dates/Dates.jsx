@@ -11,26 +11,22 @@ const Dates = () => {
     <section className="Dates" id="dates">
       <ul className="Dates-list">
         <h2 className="Dates-list-title">
-          {language === 'fr' ? 'Prochaines dates' : 'Nächste Konzerte'}
+          {language === 'fr' ? 'On y sera' : 'Wir sind dabei'}
         </h2>
-        <Date date="6 DEC. 2024" place="Galotti Musikwerkstatt" city="Zürich" />
-        <Date date="6 DEC. 2024" place="Galotti Musikwerkstatt" city="Zürich" />
-        <Date date="6 DEC. 2024" place="Galotti Musikwerkstatt" city="Zürich" />
+        <Date
+          date="6 SEPT. 2024"
+          place="Galotti Musikwerkstatt"
+          city="Zürich"
+        />
       </ul>
 
       <ul className="Dates-list">
         <h2 className="Dates-list-title">
-          {language === 'fr' ? 'Nous y étions' : 'Wir waren da'}
+          {language === 'fr' ? 'On y était' : 'Wir waren dabei'}
         </h2>
         <Date
-          date="20 JUIL. 2024"
-          place="Parc des spectacles"
-          city="Röthenbach Im Emmental"
-          event="Vertanzt Festival"
-        />
-        <Date
-          date="20 JUIL. 2024"
-          place="Parc des spectacles"
+          date={language === 'fr' ? '20 JUIL. 2024' : '20 JULI 2024'}
+          // place="Parc des spectacles"
           city="Röthenbach Im Emmental"
           event="Vertanzt Festival"
         />

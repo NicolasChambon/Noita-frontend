@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 $titleFont: 'Gaya', sans-serif;
-$mainFont: 'Roboto', sans-serif;
+$mainFont: 'Inter', sans-serif;
 
 $textSize: 1rem;
 
@@ -12,7 +11,8 @@ $borderRadius2: 0.75rem;
 $primaryColor: #28143c;
 $primaryColorLight1: #6c417d;
 $primaryColorLight2: #e9cdff;
-$primaryColorLight3: #f3e7fc;
+// $primaryColorLight3: #f3e7fc;
+$primaryColorLight3: #f7f0fc;
 
 $secondaryColor: #dc554b;
 $secondaryColorLight1: #ff7e75;

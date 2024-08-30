@@ -23,8 +23,8 @@ const FooterNews = () => {
       </Link>
       <p className="FooterNews-text">
         {language === 'fr'
-          ? 'Restez informé des dernières actualités du groupe.'
-          : 'Bleiben Sie über die neuesten Nachrichten der Gruppe informiert.'}
+          ? 'Reste informée de nos dernières actualités.'
+          : 'Bleib auf dem Laufenden über unsere neuesten Nachrichten.'}
       </p>
     </div>
   );

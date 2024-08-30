@@ -19,7 +19,7 @@ const Contact = () => {
           question={
             language === 'fr'
               ? 'Tu es une organisatrice et tu souhaites nous inviter ?'
-              : 'Bist du eine Veranstalterin und möchtest uns einladen ? ?'
+              : 'Bist du eine Veranstalterin und möchtest uns einladen ?'
           }
           text={
             language === 'fr'
