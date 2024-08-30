@@ -22,6 +22,7 @@ const FooterBottom = () => {
           className="FooterBottom-credits-link"
           to="https://nicolaschambondev.vercel.app/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Nicolas Chambon
         </Link>

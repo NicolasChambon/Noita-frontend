@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
 import './ContactTextBox.scss';
@@ -5,8 +7,15 @@ import './ContactTextBox.scss';
 const ContactTextBox = ({ question, text }) => {
   return (
     <div className="ContactTextBox">
-      <p className="ContactTextBox-p question">{question}</p>
-      <p className="ContactTextBox-p">{text}</p>
+      <Link
+        className="ContactTextBox-link"
+        to="mailto:noitachor@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <p className="ContactTextBox-link-p question">{question}</p>
+        <p className="ContactTextBox-link-p">{text}</p>
+      </Link>
     </div>
   );
 };

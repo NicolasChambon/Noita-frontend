@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 
 import ContactTextBox from './ContactTextBox/ContactTextBox';
 import ContactLink from './ContactLink/ContactLink';
-import ContactEmail from './ContactEmail/ContactEmail';
 
 import './Contact.scss';
 
@@ -42,14 +41,6 @@ const Contact = () => {
       </div>
 
       <ContactLink />
-
-      <p className="Contact-textAdress">
-        {language === 'fr'
-          ? 'Ou en utilisant notre adresse e-mail :'
-          : 'Oder per E-Mail :'}
-      </p>
-
-      <ContactEmail />
     </section>
   );
 };

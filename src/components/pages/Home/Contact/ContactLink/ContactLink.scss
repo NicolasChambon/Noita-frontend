@@ -1,6 +1,7 @@
 @use '../../../../../styles/variables' as v;
 
 .ContactLink {
+  align-items: center;
   background-color: v.$primaryColorLight2;
   border: v.$primaryColorLight1 2px solid;
   border-radius: v.$borderRadius;
@@ -21,4 +22,24 @@
   transition:
     background-color 0.3s,
     color 0.3s;
+
+  &-text {
+    white-space: nowrap;
+
+    @media (max-width: 540px) {
+      display: none;
+    }
+  }
+
+  &-icon {
+    @media (max-width: 540px) {
+      order: 2;
+    }
+  }
+
+  &-email {
+    @media (max-width: 540px) {
+      order: 1;
+    }
+  }
 }

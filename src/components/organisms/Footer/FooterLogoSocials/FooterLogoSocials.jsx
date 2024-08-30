@@ -35,6 +35,7 @@ const FooterLogoSocials = () => {
           className="FooterLogoSocials-socials-link"
           to="https://www.instagram.com/noitachor/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <GrInstagram />
         </Link>
@@ -42,6 +43,7 @@ const FooterLogoSocials = () => {
           className="FooterLogoSocials-socials-link YT"
           to="https://www.youtube.com/@Noïta-s6b"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <RiYoutubeLine />
         </Link>
@@ -49,6 +51,7 @@ const FooterLogoSocials = () => {
           className="FooterLogoSocials-socials-link YT"
           to="https://www.facebook.com/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <AiOutlineFacebook />
         </Link>

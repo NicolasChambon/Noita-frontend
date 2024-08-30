@@ -11,6 +11,7 @@ const Date = ({ date, place, city, event }) => {
         className="Date-link first"
         to="https://www.galotti.ch/story/freitag-6-9-24-bandnacht/"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <div className="Date-link-info">
           <div className="Date-link-info-date">{date}</div>

@@ -27,13 +27,25 @@
     }
 
     & > div:first-child {
-      background-color: v.$primaryColor;
+      background-color: v.$primaryColorLight1;
       color: v.$primaryColorLight3;
+
+      &:hover {
+        background-color: v.$primaryColor;
+        transition: background-color 0.3s;
+      }
+      transition: background-color 0.3s;
     }
 
     & > div:nth-child(2) {
-      background-color: v.$secondaryColor;
+      background-color: v.$secondaryColorLight1;
       color: v.$secondaryColorLight3;
+
+      &:hover {
+        background-color: v.$secondaryColor;
+        transition: background-color 0.3s;
+      }
+      transition: background-color 0.3s;
     }
 
     & > div {

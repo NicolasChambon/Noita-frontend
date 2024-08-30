@@ -13,9 +13,15 @@ const ContactLink = () => {
       className="ContactLink"
       to="mailto:noitachor@gmail.com"
       target="_blank"
+      rel="noopener noreferrer"
     >
-      {language === 'fr' ? 'Écris-nous ici' : 'Schreib uns hier'}{' '}
-      <FaArrowRight />
+      <p className="ContactLink-text">
+        {language === 'fr' ? 'Écris-nous ici' : 'Schreib uns hier'}
+      </p>
+
+      <FaArrowRight className="ContactLink-icon" />
+
+      <p className="ContactLink-email">noitachor@gmail.com</p>
     </Link>
   );
 };

@@ -27,7 +27,6 @@ const Dates = () => {
         <Date
           date={language === 'fr' ? '20 JUILLET 2024' : '20 JULI 2024'}
           city="Röthenbach Im Emmental"
-          place="Le jardin de toto"
           event="Vertanzt Festival"
         />
       </ul>
