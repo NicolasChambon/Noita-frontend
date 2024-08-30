@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 import './Date.scss';
 
-const Date = ({ date, place, city, event }) => {
+const Date = ({ date, place, city, event, link }) => {
   return (
     <li className="Date">
       <Link
         className="Date-link first"
-        to="https://www.galotti.ch/story/freitag-6-9-24-bandnacht/"
+        to={link}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -25,10 +25,11 @@ const Date = ({ date, place, city, event }) => {
 };
 
 Date.propTypes = {
-  date: PropTypes.string,
+  date: PropTypes.string.isRequired,
   place: PropTypes.string,
-  city: PropTypes.string,
+  city: PropTypes.string.isRequired,
   event: PropTypes.string,
+  link: PropTypes.string.isRequired,
 };
 
 export default Date;

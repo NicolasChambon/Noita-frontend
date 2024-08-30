@@ -1,0 +1,60 @@
+@use '../../../../styles/variables' as v;
+
+.Post {
+  border-bottom: 1px solid v.$primaryColorLight2;
+  display: flex;
+  gap: 2rem;
+  margin: 0 2rem;
+  padding: 2rem;
+  text-align: justify;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  @media (max-width: 450px) {
+    padding: 1rem;
+  }
+
+  &-titleDatePicture {
+    color: v.$primaryColor;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    @media (max-width: 800px) {
+      width: 100%;
+    }
+
+    &-title {
+      margin-bottom: 0.25rem;
+    }
+
+    &-date {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    &-imgContainer {
+      border-radius: v.$borderRadius;
+      overflow: hidden;
+
+      &-img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  &-content {
+    padding-top: 3.5rem;
+    text-indent: 3rem;
+    width: 50%;
+
+    @media (max-width: 800px) {
+      padding-top: 0;
+      width: 100%;
+    }
+  }
+}
