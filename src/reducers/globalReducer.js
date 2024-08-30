@@ -1,8 +1,13 @@
-import { TOOGLE_LANGUAGE, TOOGLE_HEADER_MENU } from '../actions/globalActions';
+import {
+  TOOGLE_LANGUAGE,
+  TOOGLE_HEADER_MENU,
+  SET_TARGET_SECTION,
+} from '../actions/globalActions';
 
 export const initialState = {
   language: 'de',
   headerMenu: false,
+  targetSection: '',
 };
 
 const globalReducer = (state = initialState, action = {}) => {
@@ -16,6 +21,11 @@ const globalReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         headerMenu: !state.headerMenu,
+      };
+    case SET_TARGET_SECTION:
+      return {
+        ...state,
+        targetSection: action.targetSection,
       };
     default:
       return state;

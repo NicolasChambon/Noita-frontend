@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
 
 import { GrInstagram } from 'react-icons/gr';
 import { RiYoutubeLine } from 'react-icons/ri';
@@ -20,8 +19,6 @@ const FooterLogoSocials = () => {
     }
   };
 
-  // const language = useSelector((state) => state.global.language);
-
   return (
     <div className="FooterLogoSocials">
       <Link className="FooterLogoSocials-link" to="/" onClick={handleLogoClick}>
@@ -31,12 +28,6 @@ const FooterLogoSocials = () => {
           alt="Noïta logo"
         />
       </Link>
-
-      {/* <p className="FooterLogoSocials-text">
-        {language === 'fr'
-          ? 'Rejoignez-nous sur nos réseaux sociaux.'
-          : 'Folge uns auf unseren sozialen Netzwerken.'}
-      </p> */}
 
       <div className="FooterLogoSocials-socials">
         <Link

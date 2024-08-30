@@ -1,3 +1,6 @@
+import store from '../store';
+import { setTargetSection } from '../actions/globalActions';
+
 export const scrollIfOnSamePage = (path) => {
   if (window.location.pathname === path) {
     const page = document.querySelector('.App');
@@ -24,10 +27,10 @@ export const scrollToSection = (id) => {
   });
 };
 
-export const handleLinkClick = (id, location, navigate, setTargetSection) => {
+export const handleLinkClick = (id, location, navigate) => {
   if (location.pathname !== '/') {
-    setTargetSection(id);
     navigate('/');
+    store.dispatch(setTargetSection(id));
   } else {
     scrollToSection(id);
   }
