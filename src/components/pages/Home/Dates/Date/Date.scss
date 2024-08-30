@@ -3,10 +3,12 @@
 .Date {
   color: v.$primaryColorLight1;
   &-link {
+    align-items: center;
     border-bottom: v.$primaryColorLight2 1px solid;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
+    justify-content: space-between;
     padding: 1rem 0.5rem;
 
     &.first {
@@ -19,19 +21,24 @@
     }
     transition: background-color 0.3s;
 
-    &-date {
-      font-weight: 800;
+    &-info {
+      display: flex;
+      gap: 0.25rem;
+      flex-direction: column;
+
+      &-date {
+        font-weight: 800;
+      }
+
+      &-place {
+        font-weight: 500;
+      }
     }
 
-    &-location {
-      display: flex;
+    &-city {
       font-weight: 500;
-      gap: 4rem;
-      justify-content: space-between;
-
-      &-city {
-        text-align: right;
-      }
+      text-align: right;
+      width: 50%;
     }
   }
 }

@@ -14,7 +14,7 @@ const Dates = () => {
           {language === 'fr' ? 'On y sera' : 'Wir sind dabei'}
         </h2>
         <Date
-          date="6 SEPT. 2024"
+          date={language === 'fr' ? '6 SEPTEMBRE 2024' : '6 SEPTEMBER 2024'}
           place="Galotti Musikwerkstatt"
           city="Zürich"
         />
@@ -25,9 +25,9 @@ const Dates = () => {
           {language === 'fr' ? 'On y était' : 'Wir waren dabei'}
         </h2>
         <Date
-          date={language === 'fr' ? '20 JUIL. 2024' : '20 JULI 2024'}
-          // place="Parc des spectacles"
+          date={language === 'fr' ? '20 JUILLET 2024' : '20 JULI 2024'}
           city="Röthenbach Im Emmental"
+          place="Le jardin de toto"
           event="Vertanzt Festival"
         />
       </ul>

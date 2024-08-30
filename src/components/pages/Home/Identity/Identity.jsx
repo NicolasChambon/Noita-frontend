@@ -30,8 +30,8 @@ const Identity = () => {
         </p>
         <p className="Identity-text-item">
           {language === 'fr'
-            ? 'Noïta, ça veut dire Sorcière'
-            : 'Noïta bedeutet Hexe'}
+            ? 'Noïta, ça veut dire Sorcière, ça veut dire Nuit'
+            : 'Noïta bedeutet Hexe, bedeutet Nacht'}
         </p>
         <p className="Identity-text-item">
           {language === 'fr'

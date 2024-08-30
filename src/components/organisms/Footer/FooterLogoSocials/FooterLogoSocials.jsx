@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { GrInstagram } from 'react-icons/gr';
 import { RiYoutubeLine } from 'react-icons/ri';
+import { AiOutlineFacebook } from 'react-icons/ai';
 
 import noitaLogo from '../../../../assets/logos/noita-footer-logo-gradient.svg';
 
@@ -37,13 +38,19 @@ const FooterLogoSocials = () => {
         >
           <GrInstagram />
         </Link>
-
         <Link
           className="FooterLogoSocials-socials-link YT"
           to="https://www.youtube.com/@Noïta-s6b"
           target="_blank"
         >
           <RiYoutubeLine />
+        </Link>
+        <Link
+          className="FooterLogoSocials-socials-link YT"
+          to="https://www.facebook.com/"
+          target="_blank"
+        >
+          <AiOutlineFacebook />
         </Link>
       </div>
     </div>

@@ -12,12 +12,12 @@ const Date = ({ date, place, city, event }) => {
         to="https://www.galotti.ch/story/freitag-6-9-24-bandnacht/"
         target="_blank"
       >
-        <div className="Date-link-date">{date}</div>
-        <div className="Date-link-location">
-          <div className="Date-link-location-place">{place}</div>
-          <div className="Date-link-location-city">{city}</div>
+        <div className="Date-link-info">
+          <div className="Date-link-info-date">{date}</div>
+          <div className="Date-link-info-place">{place}</div>
+          <div className="Dates-link-info-event">{event}</div>
         </div>
-        <div className="Dates-list-item-link-location-event">{event}</div>
+        <div className="Date-link-city">{city}</div>
       </Link>
     </li>
   );
