@@ -5,6 +5,8 @@ import { scrollUpInstantly } from '../../../utils/scrollUtils';
 
 import Post from './Post/Post';
 
+import picturePost2 from '../../../assets/images/Post-01-09-24.jpg';
+
 import './News.scss';
 
 const News = () => {
@@ -31,7 +33,7 @@ const News = () => {
             ? "Répétition générale aujourd'hui, il fait chaud sous le Hardbrücke !\nOn vous prépare un set aux petits oignons et même un featuring surprise 🙂!\nVenetz !"
             : 'Generalprobe heute. Es wird heisst unter der Hardbrücke !\nWir basteln euch ein mega cooles Set zusammen, sogar mit einem Überraschungs Featuring 🙂!\nVenetz !'
         }
-        urlImage="./src/assets/images/Post-01-09-24.jpg"
+        urlImage={picturePost2}
       />
       <Post
         title={language === 'fr' ? 'Merci Vertantzt !' : 'Danke, Vertantzt !'}
