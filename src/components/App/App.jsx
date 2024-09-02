@@ -1,21 +1,19 @@
 import { Route, Routes } from 'react-router-dom';
 
-import Header from '../organisms/Header/Header';
 import Home from '../pages/Home/Home';
 import News from '../pages/News/News';
-import Footer from '../organisms/Footer/Footer';
+import BoHome from '../pages/BoHome/BoHome';
 
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
+        <Route path="/admin" element={<BoHome />} />
       </Routes>
-      <Footer />
     </div>
   );
 }

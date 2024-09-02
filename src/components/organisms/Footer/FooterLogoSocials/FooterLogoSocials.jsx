@@ -4,22 +4,13 @@ import { GrInstagram } from 'react-icons/gr';
 import { RiYoutubeLine } from 'react-icons/ri';
 import { AiOutlineFacebook } from 'react-icons/ai';
 
+import { handleLogoClick } from '../../../../utils/scrollUtils';
+
 import noitaLogo from '../../../../assets/logos/noita-footer-logo-gradient.svg';
 
 import './FooterLogoSocials.scss';
 
 const FooterLogoSocials = () => {
-  const handleLogoClick = () => {
-    if (window.location.pathname === '/') {
-      const page = document.querySelector('.App');
-      page.scrollIntoView({
-        top: 0,
-        left: 0,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
     <div className="FooterLogoSocials">
       <Link className="FooterLogoSocials-link" to="/" onClick={handleLogoClick}>

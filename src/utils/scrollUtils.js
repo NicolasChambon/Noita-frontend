@@ -43,3 +43,14 @@ export const scrollUpInstantly = () => {
     left: 0,
   });
 };
+
+export const handleLogoClick = () => {
+  if (window.location.pathname === '/') {
+    const page = document.querySelector('.App');
+    page.scrollIntoView({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
+};

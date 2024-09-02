@@ -1,0 +1,8 @@
+@use '../../../../styles/variables' as v;
+
+.BoHeaderLogo {
+  &-img {
+    height: 3rem;
+    width: 3rem;
+  }
+}

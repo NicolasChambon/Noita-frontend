@@ -5,11 +5,13 @@ import { useEffect } from 'react';
 import { setTargetSection } from '../../../actions/globalActions';
 import { scrollUpInstantly, scrollToSection } from '../../../utils/scrollUtils';
 
+import Header from '../../organisms/Header/Header';
 import FullLogo from './FullLogo/FullLogo';
 import Identity from './Identity/Identity';
 import Media from './Media/Media';
 import Dates from './Dates/Dates';
 import Contact from './Contact/Contact';
+import Footer from '../../organisms/Footer/Footer';
 
 import './Home.scss';
 
@@ -29,13 +31,17 @@ const Home = () => {
   }, [targetSection, dispatch]);
 
   return (
-    <main className="Home">
-      <FullLogo />
-      <Identity />
-      <Media />
-      <Dates />
-      <Contact />
-    </main>
+    <>
+      <Header />
+      <main className="Home">
+        <FullLogo />
+        <Identity />
+        <Media />
+        <Dates />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 };
 
