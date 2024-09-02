@@ -1,8 +1,17 @@
 @use '../../../../styles/variables' as v;
 
 .BoHeaderLogo {
+  align-items: center;
+  color: v.$primaryColor;
+  display: flex;
+  gap: 0.25rem;
+
   &-img {
     height: 3rem;
     width: 3rem;
+  }
+
+  &-title {
+    color: v.$primaryColorLight3;
   }
 }

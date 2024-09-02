@@ -1,7 +1,7 @@
 @use '../../../styles/variables' as v;
 
 .BoHeader {
-  background-color: v.$primaryColorLight3;
+  background-color: v.$primaryColor;
   border-bottom: v.$primaryColorLight2 1px solid;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 4rem;

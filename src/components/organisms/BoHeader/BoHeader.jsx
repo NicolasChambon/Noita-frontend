@@ -1,15 +1,15 @@
 import BoHeaderLogo from './BoHeaderLogo/BoHeaderLogo';
+import BoHeaderNav from './BoHeaderNav/BoHeaderNav';
 
 import './BoHeader.scss';
 
 const BoHeader = () => {
   return (
     <header className="BoHeader">
-      <div className="Header-wrapper">
+      <div className="BoHeader-wrapper">
         <BoHeaderLogo />
 
-        {/* Disappears below 600px */}
-        {/* <HeaderNav /> */}
+        <BoHeaderNav />
       </div>
     </header>
   );
