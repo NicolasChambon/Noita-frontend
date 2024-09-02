@@ -11,7 +11,7 @@ const Dates = () => {
     <section className="Dates" id="dates">
       <ul className="Dates-list">
         <h2 className="Dates-list-title">
-          {language === 'fr' ? 'On y sera' : 'Wir sind dabei'}
+          {language === 'fr' ? 'On y sera' : 'Wir kommen'}
         </h2>
         <Date
           date={language === 'fr' ? '6 SEPTEMBRE 2024' : '6 SEPTEMBER 2024'}
@@ -23,7 +23,7 @@ const Dates = () => {
 
       <ul className="Dates-list">
         <h2 className="Dates-list-title">
-          {language === 'fr' ? 'On y était' : 'Wir waren dabei'}
+          {language === 'fr' ? 'On y était' : 'Wir waren da'}
         </h2>
         <Date
           date={language === 'fr' ? '20 JUILLET 2024' : '20 JULI 2024'}

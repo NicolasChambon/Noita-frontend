@@ -20,19 +20,27 @@ const News = () => {
         {language === 'fr' ? 'Actualités' : 'News'}
       </h2>
       <Post
-        title="Vertanzt Festival 2024"
-        date={language === 'fr' ? '24 Juillet 2024' : '24 Juli 2024'}
-        content={'Bla bliblou gertul til frutctipolstul prost brest dep frulmentoum ti loups linvacat. '.repeat(
-          10,
-        )}
-        urlImage="https://www.vertanzt.ch/wp-content/uploads/Gelaende-in-der-Daemmerung-1-1024x683.jpg"
+        title={
+          language === 'fr'
+            ? 'Galotti Bandacht, on arrive !'
+            : 'Galotti Bandacht, wir kommen !'
+        }
+        date={language === 'fr' ? '01 Septembre 2024' : '01 September 2024'}
+        content={
+          language === 'fr'
+            ? "Répétition générale aujourd'hui, il fait chaud sous le Hardbrücke !\nOn vous prépare un set aux petits oignons et même un featuring surprise 🙂!\nVenetz !"
+            : 'Generalprobe heute. Es wird heisst unter der Hardbrücke !\nWir basteln euch ein mega cooles Set zusammen, sogar mit einem Überraschungs Featuring 🙂!\nVenetz !'
+        }
+        urlImage="./src/assets/images/Post-01-09-24.jpg"
       />
       <Post
-        title="Vertanzt Festival 2024"
-        date={language === 'fr' ? '24 Juillet 2024' : '24 Juli 2024'}
-        content={'Bla bliblou gertul til frutctipolstul prost brest dep frulmentoum ti loups linvacat. '.repeat(
-          10,
-        )}
+        title={language === 'fr' ? 'Merci Vertantzt !' : 'Danke, Vertantzt !'}
+        date={language === 'fr' ? '22 Juillet 2024' : '22 Juli 2024'}
+        content={
+          language === 'fr'
+            ? "C'était incroyable ! Merci pour votre formidable écoute ! On était ravies de vous présenter Noïta 👏 À l'année prochaine !?!"
+            : "Es war unglaublich! Danke für's enthusiastische Zuhören! Wir haben uns mega gefreut, euch Noïta zu zeigen 👏 Bis nächstes Jahr !?"
+        }
         urlImage="https://www.vertanzt.ch/wp-content/uploads/Gelaende-in-der-Daemmerung-1-1024x683.jpg"
       />
     </main>

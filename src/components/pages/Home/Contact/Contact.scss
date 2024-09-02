@@ -47,15 +47,6 @@
       }
       transition: background-color 0.3s;
     }
-
-    & > div {
-      @media (max-width: 800px) {
-        width: 100%;
-      }
-      @media (max-width: 440px) {
-        width: 140%;
-      }
-    }
   }
 
   &-textAdress {

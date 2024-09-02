@@ -49,12 +49,16 @@
 
   &-content {
     padding-top: 3.5rem;
-    text-indent: 3rem;
+    text-indent: 2rem;
     width: 50%;
 
     @media (max-width: 800px) {
       padding-top: 0;
       width: 100%;
+    }
+
+    &-p {
+      margin-bottom: 0.5rem;
     }
   }
 }

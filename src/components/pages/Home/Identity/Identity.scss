@@ -1,28 +1,25 @@
 @use '../../../../styles/variables' as v;
 
 .Identity {
+  font-family: 'gaya';
   height: calc(100vh - 4rem);
   overflow: hidden;
   position: relative;
-
-  &-img {
-    filter: blur(4px);
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-  }
 
   &-text {
     align-items: center;
     background: linear-gradient(
       to bottom,
-      rgba(40, 20, 60, 1) 0%,
-      rgba(40, 20, 60, 0.733) 100%
+      rgba(31, 21, 58, 1) 0%,
+      rgba(31, 21, 58, 0.733) 200%
     );
-    color: v.$primaryColorLight3;
+
+    color: v.$secondaryColorLight1;
+
     display: flex;
     flex-direction: column;
-    font-size: 1.3rem;
+    font-size: 2rem;
+
     height: 100%;
     justify-content: space-around;
     padding: 2rem;
@@ -30,5 +27,13 @@
     text-align: center;
     top: 0;
     width: 100%;
+
+    @media (max-width: 780px) {
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 593px) {
+      font-size: 1.3rem;
+    }
   }
 }

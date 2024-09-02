@@ -29,13 +29,13 @@ const Contact = () => {
         <ContactTextBox
           question={
             language === 'fr'
-              ? 'Tu es une chanteuse et tu souhaites te joindre à nous ?'
-              : 'Bist du eine Sängerin und möchtest mitmachen ?'
+              ? 'Tu es musicienne et souhaites te joindre à nous ?'
+              : 'Bist du Musikerin und möchtest mitmachen ?'
           }
           text={
             language === 'fr'
-              ? 'Nous recherchons de nouvelles voix heureuses.'
-              : 'Wir suchen neue glückliche Stimmen.'
+              ? 'Nous recherchons une percussionniste.'
+              : 'Wir suchen eine Perkussionistin.'
           }
         />
       </div>
