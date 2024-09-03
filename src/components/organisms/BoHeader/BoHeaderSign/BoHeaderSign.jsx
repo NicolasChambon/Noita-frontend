@@ -1,4 +1,3 @@
-import { IoMdLogIn } from 'react-icons/io';
 import { IoMdLogOut } from 'react-icons/io';
 
 import './BoHeaderSign.scss';
@@ -6,8 +5,8 @@ import './BoHeaderSign.scss';
 const BoHeaderSign = () => {
   return (
     <button className="BoHeaderSign">
-      <p className="BoHeaderSign-text">Login</p>
-      <IoMdLogIn className="BoHeaderSign-icon" />
+      <p className="BoHeaderSign-text">Logout</p>
+      <IoMdLogOut className="BoHeaderSign-icon" />
     </button>
   );
 };

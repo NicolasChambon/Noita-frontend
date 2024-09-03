@@ -1,7 +1,6 @@
 @use '../../../../styles/variables' as v;
 
 .BoHomeBtn {
-  align-items: center;
   background-color: v.$primaryColorLight1;
   border-radius: v.$borderRadius;
   display: flex;
@@ -9,6 +8,12 @@
   justify-content: space-around;
   padding: 1rem 2rem;
   width: 30rem;
+
+  &:hover {
+    background-color: v.$primaryColor;
+    transition: background-color 0.3s;
+  }
+  transition: background-color 0.3s;
 
   &-title {
     color: v.$primaryColorLight3;
@@ -20,4 +25,13 @@
     color: v.$primaryColorLight3;
     font-size: 3rem;
   }
+}
+
+.LoginForm {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
