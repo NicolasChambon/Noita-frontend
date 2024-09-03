@@ -31,7 +31,7 @@ const News = () => {
               ? 'Galotti Bandacht, on arrive !'
               : 'Galotti Bandacht, wir kommen !'
           }
-          date={language === 'fr' ? '01 Septembre 2024' : '01 September 2024'}
+          date={language === 'fr' ? '01.09.2024' : '1.9.2024'}
           content={
             language === 'fr'
               ? "Répétition générale aujourd'hui, il fait chaud sous le Hardbrücke !\nOn vous prépare un set aux petits oignons et même un featuring surprise 🙂!\nVenetz !"
@@ -41,7 +41,7 @@ const News = () => {
         />
         <Post
           title={language === 'fr' ? 'Merci Vertantzt !' : 'Danke, Vertantzt !'}
-          date={language === 'fr' ? '22 Juillet 2024' : '22 Juli 2024'}
+          date={language === 'fr' ? '22.07.2024' : '22.7.2024'}
           content={
             language === 'fr'
               ? "C'était incroyable ! Merci pour votre formidable écoute ! On était ravies de vous présenter Noïta 👏 À l'année prochaine !?!"

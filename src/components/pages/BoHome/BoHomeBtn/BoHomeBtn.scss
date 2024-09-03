@@ -1,0 +1,23 @@
+@use '../../../../styles/variables' as v;
+
+.BoHomeBtn {
+  align-items: center;
+  background-color: v.$primaryColorLight1;
+  border-radius: v.$borderRadius;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  padding: 1rem 2rem;
+  width: 30rem;
+
+  &-title {
+    color: v.$primaryColorLight3;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  &-icon {
+    color: v.$primaryColorLight3;
+    font-size: 3rem;
+  }
+}

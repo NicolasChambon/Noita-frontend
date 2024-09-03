@@ -2,10 +2,10 @@
 
 .ContactLink {
   align-items: center;
-  background-color: v.$primaryColorLight2;
-  border: v.$primaryColorLight1 2px solid;
+  background-color: v.$primaryColorLight1;
+  border: v.$primaryColor 2px solid;
   border-radius: v.$borderRadius;
-  color: v.$primaryColor;
+  color: v.$primaryColorLight3;
   display: flex;
   font-weight: 500;
   gap: 1rem;
@@ -13,15 +13,10 @@
   padding: 1rem;
 
   &:hover {
-    background-color: v.$primaryColorLight1;
-    color: v.$primaryColorLight3;
-    transition:
-      background-color 0.3s,
-      color 0.3s;
+    background-color: v.$primaryColor;
+    transition: background-color 0.3s;
   }
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  transition: background-color 0.3s;
 
   &-text {
     white-space: nowrap;

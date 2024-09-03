@@ -10,15 +10,15 @@ const Identity = () => {
   return (
     <section className="Identity" id="identity">
       <div className="Identity-text">
-        <p className="Identity-text-item">
+        <p className="Identity-text-item first">
           {language === 'fr'
             ? 'Noïta, ce sont des femmes qui chantent et qui jouent des percussions'
             : 'Noïta steht für Frauen, die singen und trommeln'}
         </p>
         <p className="Identity-text-item">
           {language === 'fr'
-            ? 'Noïta, ce sont des chants traditionnels mais aussi modernes'
-            : 'Noïta sind traditionelle, aber auch moderne Lieder'}
+            ? 'Noïta interprète des chants issus de la tradition orale ainsi que des compositions plus récentes'
+            : 'Noïta interpretiert Lieder aus der mündlichen Tradition sowie neueren Kompositionen'}
         </p>
         <p className="Identity-text-item">
           {language === 'fr'

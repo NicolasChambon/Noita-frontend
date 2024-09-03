@@ -1,4 +1,11 @@
 @use '../../../styles/variables' as v;
 
 .BoHome {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 1350px;
+  height: calc(100vh - 4rem);
 }
