@@ -1,0 +1,30 @@
+@use '../../../../styles/variables' as v;
+
+.BoHeaderSign {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  color: v.$primaryColorLight3;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  &:hover {
+    text-shadow: 0 0 5px v.$primaryColorLight3;
+    filter: drop-shadow(0 0 5px v.$primaryColorLight3);
+    transition:
+      text-shadow,
+      filter 0.3s;
+  }
+  transition:
+    text-shadow,
+    filter 0.3s;
+
+  &-text {
+    font-size: 0.85rem;
+  }
+
+  &-icon {
+    font-size: 1.25rem;
+  }
+}

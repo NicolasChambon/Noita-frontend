@@ -1,7 +1,7 @@
 @use '../../../../styles/variables' as v;
 
 .BoHeaderNav {
-  width: 75%;
+  width: 60%;
 
   &-list {
     display: flex;
@@ -16,12 +16,12 @@
 
         position: relative;
         &::after {
-          background-color: v.$secondaryColorLight2;
+          background-color: v.$primaryColorLight2;
           content: '';
           height: 3px;
           left: -5%;
           position: absolute;
-          bottom: -12%;
+          bottom: -11%;
           transition: width 0.3s;
           width: 0;
         }
@@ -30,7 +30,7 @@
         }
         &.active::after {
           width: 110%;
-          background-color: v.$secondaryColor;
+          background-color: v.$primaryColorLight3;
         }
       }
     }
