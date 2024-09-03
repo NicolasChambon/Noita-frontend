@@ -34,8 +34,8 @@ const News = () => {
           date={language === 'fr' ? '01.09.2024' : '1.9.2024'}
           content={
             language === 'fr'
-              ? "Répétition générale aujourd'hui, il fait chaud sous le Hardbrücke !\nOn vous prépare un set aux petits oignons et même un featuring surprise 🙂!\nVenetz !"
-              : 'Generalprobe heute. Es wird heisst unter der Hardbrücke !\nWir basteln euch ein mega cooles Set zusammen, sogar mit einem Überraschungs Featuring 🙂!\nVenetz !'
+              ? "Répétition générale aujourd'hui, il fait chaud sous le Hardbrücke ! On vous prépare un set aux petits oignons et même un featuring surprise 🙂!\nVenetz !"
+              : 'Generalprobe heute. Es wird heisst unter der Hardbrücke ! Wir basteln euch ein mega cooles Set zusammen, sogar mit einem Überraschungs Featuring 🙂!\nVenetz !'
           }
           urlImage={picturePost2}
         />
@@ -44,8 +44,8 @@ const News = () => {
           date={language === 'fr' ? '22.07.2024' : '22.7.2024'}
           content={
             language === 'fr'
-              ? "C'était incroyable ! Merci pour votre formidable écoute ! On était ravies de vous présenter Noïta 👏 À l'année prochaine !?!"
-              : "Es war unglaublich! Danke für's enthusiastische Zuhören! Wir haben uns mega gefreut, euch Noïta zu zeigen 👏 Bis nächstes Jahr !?"
+              ? "C'était incroyable ! Merci pour votre formidable écoute ! On était ravies de vous présenter Noïta 👏\nÀ l'année prochaine !?!"
+              : "Es war unglaublich! Danke für's enthusiastische Zuhören! Wir haben uns mega gefreut, euch Noïta zu zeigen 👏\nBis nächstes Jahr !?"
           }
           urlImage="https://www.vertanzt.ch/wp-content/uploads/Gelaende-in-der-Daemmerung-1-1024x683.jpg"
         />
