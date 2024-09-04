@@ -20,10 +20,10 @@
     transition: text-shadow 0.3s;
 
     &.fr {
-      border-right: 1px solid v.$primaryColor;
+      border-left: 1px solid v.$primaryColor;
     }
     &.de {
-      border-left: 1px solid v.$primaryColor;
+      border-right: 1px solid v.$primaryColor;
     }
     &.active {
       font-weight: 800;
