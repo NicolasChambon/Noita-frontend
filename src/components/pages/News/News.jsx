@@ -28,8 +28,8 @@ const News = () => {
         <Post
           title={
             language === 'fr'
-              ? 'Galotti Bandacht, on arrive !'
-              : 'Galotti Bandacht, wir kommen !'
+              ? 'Galotti Bandnacht, on arrive !'
+              : 'Galotti Bandnacht, wir kommen !'
           }
           date={language === 'fr' ? '01.09.2024' : '1.9.2024'}
           content={

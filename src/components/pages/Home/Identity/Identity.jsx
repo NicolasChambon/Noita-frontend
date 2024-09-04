@@ -13,12 +13,12 @@ const Identity = () => {
         <p className="Identity-text-item first">
           {language === 'fr'
             ? 'Noïta, ça veut dire Sorcière et ça veut dire Nuit.'
-            : 'Noïta bedeutet Hexe und bedeutet Nacht.'}
+            : 'Noïta bedeutet Hexe, bedeutet Nacht.'}
         </p>
         <p className="Identity-text-item">
           {language === 'fr'
             ? "Noïta, c'est la femme libre qui vit en harmonie avec le vivant."
-            : 'Noïta ist die freie Frau, die im Einklang mit allem Lebendigen steht.'}
+            : 'Noïta bedeutet die freie Frau, die im Einklang mit allem Lebendigen steht.'}
         </p>
         <p className="Identity-text-item">
           {language === 'fr'
@@ -28,7 +28,7 @@ const Identity = () => {
         <p className="Identity-text-item">
           {language === 'fr'
             ? 'Noïta, ce sont des chants issus de la tradition orale. Ce sont aussi des compositions plus récentes.'
-            : 'Noïta interpretiert Lieder aus der mündlichen Tradition sowie neueren Kompositionen.'}
+            : 'Noïta interpretiert Lieder aus der mündlichen Tradition sowie neue Kompositionen.'}
         </p>
         <p className="Identity-text-item">
           {language === 'fr'
@@ -38,7 +38,7 @@ const Identity = () => {
         <p className="Identity-text-item">
           {language === 'fr'
             ? "Noïta, ça s'écoute et ça se bouge."
-            : 'Noïta lässt sich hören, aber auch bewegen.'}
+            : 'Noïta lässt sich hören, aber auch tanzen.'}
         </p>
       </div>
       <IdentityBottomDivider />
