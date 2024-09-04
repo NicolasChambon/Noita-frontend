@@ -6,7 +6,7 @@ import { AiOutlineFacebook } from 'react-icons/ai';
 
 import { handleLogoClick } from '../../../../utils/scrollUtils';
 
-import noitaLogo from '../../../../assets/logos/noita-footer-logo-gradient.svg';
+import noitaLogo from '../../../../assets/logos/noita-logo-white.svg';
 
 import './FooterLogoSocials.scss';
 

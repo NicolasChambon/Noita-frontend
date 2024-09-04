@@ -11,7 +11,7 @@ const ContactLink = () => {
   return (
     <Link
       className="ContactLink"
-      to="mailto:noitachor@gmail.com"
+      to="mailto:info@noita.ch"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -21,7 +21,7 @@ const ContactLink = () => {
 
       <FaArrowRight className="ContactLink-icon" />
 
-      <p className="ContactLink-email">noitachor@gmail.com</p>
+      <p className="ContactLink-email">info@noita.ch</p>
     </Link>
   );
 };

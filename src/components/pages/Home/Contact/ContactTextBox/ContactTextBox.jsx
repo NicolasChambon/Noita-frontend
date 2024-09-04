@@ -9,7 +9,7 @@ const ContactTextBox = ({ question, text }) => {
     <div className="ContactTextBox">
       <Link
         className="ContactTextBox-link"
-        to="mailto:noitachor@gmail.com"
+        to="mailto:info@noita.ch"
         target="_blank"
         rel="noopener noreferrer"
       >
