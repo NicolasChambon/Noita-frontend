@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 import globalReducer from './globalReducer';
-import adminReducer from './adminReducer';
+import loginReducer from './loginReducer';
 
 const rootReducer = combineReducers({
   global: globalReducer,
-  admin: adminReducer,
+  login: loginReducer,
 });
 
 export default rootReducer;

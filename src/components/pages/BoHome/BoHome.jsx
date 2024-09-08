@@ -11,7 +11,7 @@ import LoginForm from '../../organisms/LoginForm/LoginForm';
 import './BoHome.scss';
 
 const BoHome = () => {
-  const isLogged = useSelector((state) => state.admin.isLogged);
+  const isLogged = useSelector((state) => state.login.isLogged);
 
   return (
     <>
