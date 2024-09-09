@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { changeLoginInput } from '../../../actions/loginActions';
+import { changeLoginInput, postLoginForm } from '../../../actions/loginActions';
 
 import './LoginForm.scss';
 
@@ -12,7 +12,13 @@ const LoginForm = () => {
     <div className="LoginForm">
       <div className="LoginForm-wrapper">
         <h2 className="LoginForm-wrapper-title">Login</h2>
-        <form className="LoginForm-wrapper-form">
+        <form
+          className="LoginForm-wrapper-form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            dispatch(postLoginForm());
+          }}
+        >
           <label htmlFor="username" className="LoginForm-wrapper-form-label">
             Username
           </label>
