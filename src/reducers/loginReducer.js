@@ -9,6 +9,7 @@ export const initialState = {
   usernameInput: '',
   passwordInput: '',
   isLogged: false,
+  loggedId: null,
   failureMessages: [],
 };
 
@@ -27,6 +28,7 @@ const loginReducer = (state = initialState, action = {}) => {
         usernameInput: '',
         passwordInput: '',
         failureMessages: [],
+        loggedId: action.loggedId,
       };
 
     case LOGIN_FAILURE:
@@ -39,6 +41,7 @@ const loginReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isLogged: false,
+        loggedId: null,
       };
 
     default:

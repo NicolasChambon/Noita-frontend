@@ -15,8 +15,9 @@ export const postLoginForm = (navigate) => ({
   navigate,
 });
 
-export const loginSuccess = () => ({
+export const loginSuccess = (loggedId) => ({
   type: 'LOGIN_SUCCESS',
+  loggedId,
 });
 
 export const loginFailure = (failureMessages) => ({

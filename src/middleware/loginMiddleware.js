@@ -29,7 +29,7 @@ const loginMiddleware = (store) => (next) => (action) => {
           }
           const data = await response.json();
           localStorage.setItem('token', data.token);
-          store.dispatch(loginSuccess());
+          store.dispatch(loginSuccess(data.admin.id));
         } catch (error) {
           console.error(error);
         }

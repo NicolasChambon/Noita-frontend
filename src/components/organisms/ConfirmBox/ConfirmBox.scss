@@ -1,0 +1,56 @@
+@use '../../../styles/variables' as v;
+
+.ConfirmBox {
+  background-color: v.$secondaryColorLight3;
+  border: 1px solid v.$secondaryColor;
+  border-radius: v.$borderRadius;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 2.25rem;
+  width: 12rem;
+  z-index: 1;
+
+  &-text {
+    color: red;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+
+    &-yes {
+      background-color: rgb(228, 74, 74);
+      border: none;
+      border-radius: v.$borderRadius;
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+
+      &:hover {
+        background-color: rgb(189, 49, 49);
+      }
+      transition: background-color 0.3s;
+    }
+
+    &-no {
+      background-color: rgb(93, 240, 137);
+      border: none;
+      border-radius: v.$borderRadius;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+
+      &:hover {
+        background-color: rgb(74, 189, 108);
+      }
+      transition: background-color 0.3s;
+    }
+  }
+}

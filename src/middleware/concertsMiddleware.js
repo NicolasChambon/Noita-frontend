@@ -6,8 +6,9 @@ const concertsMiddleware = (store) => (next) => (action) => {
     case FETCH_CONCERTS: {
       const getConcerts = async () => {
         try {
+          const user_id = store.getState().login.loggedId;
           const response = await fetch(
-            `${import.meta.env.VITE_API_URL}/concerts`,
+            `${import.meta.env.VITE_API_URL}/concerts?user_id=${user_id}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,

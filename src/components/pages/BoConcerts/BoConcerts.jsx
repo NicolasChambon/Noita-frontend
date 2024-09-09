@@ -5,10 +5,15 @@ import { Link } from 'react-router-dom';
 import { FaTrashAlt } from 'react-icons/fa';
 import { FaEdit } from 'react-icons/fa';
 
-import { fetchConcerts } from '../../../actions/concertsActions';
+import {
+  fetchConcerts,
+  displayRemoveBox,
+  hideRemoveBox,
+} from '../../../actions/concertsActions';
 
 import BoHeader from '../../organisms/BoHeader/BoHeader';
 import LoginForm from '../../organisms/LoginForm/LoginForm';
+import ConfirmBox from '../../organisms/ConfirmBox/ConfirmBox';
 
 import './BoConcerts.scss';
 
@@ -17,12 +22,32 @@ const BoConcerts = () => {
 
   const isLogged = useSelector((state) => state.login.isLogged);
   const concerts = useSelector((state) => state.concerts.concerts);
+  const isRemoveBoxDisplayed = useSelector(
+    (state) => state.concerts.isRemoveBoxDisplayed,
+  );
+  const removeBoxId = useSelector((state) => state.concerts.removeBoxId);
 
   useEffect(() => {
+    console.log('BoConcerts useEffect');
     if (isLogged) {
       dispatch(fetchConcerts());
     }
-  }, [dispatch, isLogged]);
+  }, [isLogged, dispatch]);
+
+  // Close confirm box when clicking elsewhere
+  useEffect(() => {
+    const handleClick = () => {
+      if (isRemoveBoxDisplayed) {
+        dispatch(hideRemoveBox());
+      }
+    };
+
+    window.addEventListener('click', handleClick);
+
+    return () => {
+      window.removeEventListener('click', handleClick);
+    };
+  }, [isRemoveBoxDisplayed, dispatch]);
 
   return (
     <>
@@ -63,9 +88,18 @@ const BoConcerts = () => {
                     <Link className="BoConcerts-table-body-row-cell actions-btn edit">
                       <FaEdit />
                     </Link>
-                    <button className="BoConcerts-table-body-row-cell actions-btn remove">
+                    <button
+                      className="BoConcerts-table-body-row-cell actions-btn remove"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        dispatch(displayRemoveBox(concert.id));
+                      }}
+                    >
                       <FaTrashAlt />
                     </button>
+                    {isRemoveBoxDisplayed && removeBoxId === concert.id && (
+                      <ConfirmBox />
+                    )}
                   </td>
                 </tr>
               ))}
