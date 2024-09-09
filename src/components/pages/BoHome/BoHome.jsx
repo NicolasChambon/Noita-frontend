@@ -26,14 +26,14 @@ const BoHome = () => {
         <BoHomeBtn
           className="BoHome-btn"
           title="Concerts"
-          icon={<BsPostcard />}
+          icon={<IoCalendarOutline />}
           link="/admin/concerts"
         />
         <BoHomeBtn
           className="BoHome-btn"
-          title="Events"
-          icon={<IoCalendarOutline />}
-          link="/admin/events"
+          title="News"
+          icon={<BsPostcard />}
+          link="/admin/news"
         />
       </main>
       {!isLogged && <LoginForm />}

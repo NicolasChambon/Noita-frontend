@@ -1,4 +1,8 @@
-import { CHANGE_LOGIN_INPUT, LOGIN_SUCCESS } from '../actions/loginActions';
+import {
+  CHANGE_LOGIN_INPUT,
+  LOGIN_SUCCESS,
+  LOGOUT,
+} from '../actions/loginActions';
 
 export const initialState = {
   usernameInput: '',
@@ -20,6 +24,12 @@ const loginReducer = (state = initialState, action = {}) => {
         isLogged: true,
         usernameInput: '',
         passwordInput: '',
+      };
+
+    case LOGOUT:
+      return {
+        ...state,
+        isLogged: false,
       };
 
     default:
