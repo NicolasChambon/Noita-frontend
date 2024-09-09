@@ -1,6 +1,7 @@
 import {
   CHANGE_LOGIN_INPUT,
   LOGIN_SUCCESS,
+  LOGIN_FAILURE,
   LOGOUT,
 } from '../actions/loginActions';
 
@@ -8,6 +9,7 @@ export const initialState = {
   usernameInput: '',
   passwordInput: '',
   isLogged: false,
+  failureMessages: [],
 };
 
 const loginReducer = (state = initialState, action = {}) => {
@@ -24,6 +26,13 @@ const loginReducer = (state = initialState, action = {}) => {
         isLogged: true,
         usernameInput: '',
         passwordInput: '',
+        failureMessages: [],
+      };
+
+    case LOGIN_FAILURE:
+      return {
+        ...state,
+        failureMessages: action.failureMessages,
       };
 
     case LOGOUT:

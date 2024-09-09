@@ -1,4 +1,8 @@
-import { POST_LOGIN_FORM, loginSuccess } from '../actions/loginActions';
+import {
+  POST_LOGIN_FORM,
+  loginSuccess,
+  loginFailure,
+} from '../actions/loginActions';
 
 const loginMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -20,6 +24,7 @@ const loginMiddleware = (store) => (next) => (action) => {
           );
           if (!response.ok) {
             const error = await response.json();
+            store.dispatch(loginFailure(error.errors));
             throw new Error(error.errors);
           }
           const data = await response.json();

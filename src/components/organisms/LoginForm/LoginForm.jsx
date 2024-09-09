@@ -2,11 +2,15 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { changeLoginInput, postLoginForm } from '../../../actions/loginActions';
 
+import LoginFailureMessages from './LoginFailureMessages/LoginFailureMessages';
+
 import './LoginForm.scss';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+
   const login = useSelector((state) => state.login);
+  const failureMessages = useSelector((state) => state.login.failureMessages);
 
   return (
     <div className="LoginForm">
@@ -46,6 +50,9 @@ const LoginForm = () => {
           <button type="submit" className="LoginForm-wrapper-form-submit">
             Submit
           </button>
+          {failureMessages.length > 0 && (
+            <LoginFailureMessages failureMessages={failureMessages} />
+          )}
         </form>
       </div>
     </div>
