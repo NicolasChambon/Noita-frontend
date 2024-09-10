@@ -28,8 +28,7 @@ const loginMiddleware = (store) => (next) => (action) => {
             throw new Error(error.errors);
           }
           const data = await response.json();
-          localStorage.setItem('token', data.token);
-          store.dispatch(loginSuccess(data.admin.id));
+          store.dispatch(loginSuccess(data.admin.id, data.token));
         } catch (error) {
           console.error(error);
         }

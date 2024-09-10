@@ -13,7 +13,6 @@ const BoHeaderSign = () => {
     <button
       className="BoHeaderSign"
       onClick={() => {
-        localStorage.removeItem('token');
         dispatch(logout());
       }}
     >

@@ -1,4 +1,4 @@
-import store from '../store';
+import { store } from '../store';
 import { setTargetSection } from '../actions/globalActions';
 
 export const scrollIfOnSamePage = (path) => {

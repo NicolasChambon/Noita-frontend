@@ -7,11 +7,13 @@ const concertsMiddleware = (store) => (next) => (action) => {
       const getConcerts = async () => {
         try {
           const user_id = store.getState().login.loggedId;
+          const token = store.getState().login.token;
+
           const response = await fetch(
             `${import.meta.env.VITE_API_URL}/concerts?user_id=${user_id}`,
             {
               headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                Authorization: `Bearer ${token}`,
               },
             },
           );
@@ -19,7 +21,6 @@ const concertsMiddleware = (store) => (next) => (action) => {
           if (!response.ok) {
             const error = await response.json();
             if (error.status === 401) {
-              localStorage.removeItem('token');
               store.dispatch(logout());
               store.dispatch(storeConcerts([]));
               store.dispatch(

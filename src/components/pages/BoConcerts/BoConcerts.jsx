@@ -21,8 +21,6 @@ const BoConcerts = () => {
   const dispatch = useDispatch();
 
   const isLogged = useSelector((state) => state.login.isLogged);
-  console.log('isLogged', isLogged);
-
   const concerts = useSelector((state) => state.concerts.concerts);
   const isRemoveBoxDisplayed = useSelector(
     (state) => state.concerts.isRemoveBoxDisplayed,

@@ -15,9 +15,10 @@ export const postLoginForm = (navigate) => ({
   navigate,
 });
 
-export const loginSuccess = (loggedId) => ({
+export const loginSuccess = (loggedId, token) => ({
   type: 'LOGIN_SUCCESS',
   loggedId,
+  token,
 });
 
 export const loginFailure = (failureMessages) => ({
