@@ -1,9 +1,0 @@
-@use '../../../../styles/variables' as v;
-
-.LoginFailureMessages {
-  color: red;
-
-  &-message {
-    margin-bottom: 0.5rem;
-  }
-}

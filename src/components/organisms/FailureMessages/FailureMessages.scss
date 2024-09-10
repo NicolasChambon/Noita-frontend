@@ -1,0 +1,13 @@
+@use '../../../styles/variables' as v;
+
+.FailureMessages {
+  background-color: rgb(253, 212, 212);
+  border: 1px solid red;
+  border-radius: v.$borderRadius;
+  color: red;
+  padding: 0.75rem 0.5rem 0.35rem 1rem;
+
+  &-message {
+    margin-bottom: 0.5rem;
+  }
+}

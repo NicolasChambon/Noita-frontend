@@ -7,7 +7,7 @@ import {
 const loginMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case POST_LOGIN_FORM: {
-      const logUser = async () => {
+      (async () => {
         try {
           const response = await fetch(
             `${import.meta.env.VITE_API_URL}/admin/login`,
@@ -32,8 +32,7 @@ const loginMiddleware = (store) => (next) => (action) => {
         } catch (error) {
           console.error(error);
         }
-      };
-      logUser();
+      })();
       break;
     }
     default:

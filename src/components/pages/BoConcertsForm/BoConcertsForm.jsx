@@ -1,25 +1,55 @@
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
 import BoHeader from '../../organisms/BoHeader/BoHeader';
 import LoginForm from '../../organisms/LoginForm/LoginForm';
+import FailureMessages from '../../organisms/FailureMessages/FailureMessages';
 
-import { changeConcertInput } from '../../../actions/concertsActions';
+import {
+  changeConcertInput,
+  postAddConcertForm,
+  postEditConcertForm,
+  concertFailure,
+} from '../../../actions/concertsActions';
 
 import './BoConcertsForm.scss';
 
 const BoConcertsForm = ({ type, title }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // we reset the form when we navigate to the form
+  useEffect(() => {
+    dispatch(changeConcertInput('', 'city'));
+    dispatch(changeConcertInput('', 'eventDate'));
+    dispatch(changeConcertInput('', 'venue'));
+    dispatch(changeConcertInput('', 'eventName'));
+    dispatch(changeConcertInput('', 'link'));
+    dispatch(concertFailure([]));
+  }, [dispatch]);
 
   const isLogged = useSelector((state) => state.login.isLogged);
   const formInputs = useSelector((state) => state.concerts.form);
+  const failureMessages = useSelector(
+    (state) => state.concerts.failureMessages,
+  );
 
   return (
     <>
       <BoHeader />
       <main className="BoConcertsForm">
         <h2 className="BoConcertsForm-title">{title}</h2>
-        <form className="BoConcertsForm-form">
+        <form
+          className="BoConcertsForm-form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            type === 'add'
+              ? dispatch(postAddConcertForm(navigate))
+              : dispatch(postEditConcertForm(navigate));
+          }}
+        >
           <label htmlFor="city" className="BoConcertsForm-form-label">
             City
           </label>
@@ -55,7 +85,10 @@ const BoConcertsForm = ({ type, title }) => {
             id="venue"
             className="BoConcertsForm-form-input"
             placeholder="ex. Papiersaal"
-            required
+            value={formInputs.venue}
+            onChange={(e) => {
+              dispatch(changeConcertInput(e.target.value, 'venue'));
+            }}
           />
           <label htmlFor="eventName" className="BoConcertsForm-form-label">
             Event name
@@ -77,15 +110,27 @@ const BoConcertsForm = ({ type, title }) => {
             type="text"
             id="link"
             className="BoConcertsForm-form-input"
+            required
             placeholder="ex. https://www.vertanzt.ch/"
             value={formInputs.link}
             onChange={(e) => {
               dispatch(changeConcertInput(e.target.value, 'link'));
             }}
           />
-          <button type="submit" className="BoConcertsForm-form-submit">
-            Submit
-          </button>
+          <div className="BoConcertsForm-form-btns">
+            <Link
+              to="/admin/concerts"
+              className="BoConcertsForm-form-btns-return"
+            >
+              Concert list
+            </Link>
+            <button type="submit" className="BoConcertsForm-form-btns-submit">
+              Submit
+            </button>
+          </div>
+          {failureMessages.length > 0 && (
+            <FailureMessages failureMessages={failureMessages} />
+          )}
         </form>
       </main>
       {!isLogged && <LoginForm />}

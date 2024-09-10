@@ -38,20 +38,38 @@
       }
     }
 
-    &-submit {
-      background-color: v.$primaryColorLight1;
-      border: none;
-      border-radius: v.$borderRadius;
-      color: v.$primaryColorLight3;
-      font-size: v.$textSize;
-      margin: 0 auto 1rem auto;
-      padding: 1rem;
-      width: 50%;
+    &-btns {
+      display: flex;
+      justify-content: space-between;
 
-      &:hover {
-        background-color: v.$primaryColor;
+      &-submit {
+        background-color: v.$primaryColorLight1;
+        border: none;
+        border-radius: v.$borderRadius;
+        color: v.$primaryColorLight3;
+        font-size: v.$textSize;
+        margin: 0 auto 1rem auto;
+        padding: 1rem;
+
+        &:hover {
+          background-color: v.$primaryColor;
+        }
+        transition: background-color 0.3s;
       }
-      transition: background-color 0.3s;
+      &-return {
+        background-color: v.$secondaryColorLight1;
+        border: none;
+        border-radius: v.$borderRadius;
+        color: v.$primaryColorLight3;
+        font-size: v.$textSize;
+        margin: 0 auto 1rem auto;
+        padding: 1rem;
+
+        &:hover {
+          background-color: v.$secondaryColor;
+        }
+        transition: background-color 0.3s;
+      }
     }
   }
 }

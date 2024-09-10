@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { changeLoginInput, postLoginForm } from '../../../actions/loginActions';
 
-import LoginFailureMessages from './LoginFailureMessages/LoginFailureMessages';
+import FailureMessages from '../FailureMessages/FailureMessages';
 
 import './LoginForm.scss';
 
@@ -51,7 +51,7 @@ const LoginForm = () => {
             Submit
           </button>
           {failureMessages.length > 0 && (
-            <LoginFailureMessages failureMessages={failureMessages} />
+            <FailureMessages failureMessages={failureMessages} />
           )}
         </form>
       </div>

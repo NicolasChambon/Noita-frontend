@@ -3,6 +3,7 @@ import {
   DISPLAY_REMOVE_BOX,
   HIDE_REMOVE_BOX,
   CHANGE_CONCERT_INPUT,
+  CONCERT_FAILURE,
 } from '../actions/concertsActions';
 
 export const initialState = {
@@ -16,6 +17,7 @@ export const initialState = {
     eventName: '',
     link: '',
   },
+  failureMessages: [],
 };
 
 const concertsReducer = (state = initialState, action) => {
@@ -47,6 +49,12 @@ const concertsReducer = (state = initialState, action) => {
           ...state.form,
           [action.identifier]: action.value,
         },
+      };
+
+    case CONCERT_FAILURE:
+      return {
+        ...state,
+        failureMessages: action.failureMessages,
       };
 
     default:
