@@ -2,6 +2,7 @@ export const FETCH_CONCERTS = 'FETCH_CONCERTS';
 export const STORE_CONCERTS = 'STORE_CONCERTS';
 export const DISPLAY_REMOVE_BOX = 'DISPLAY_REMOVE_BOX';
 export const HIDE_REMOVE_BOX = 'HIDE_REMOVE_BOX';
+export const CHANGE_CONCERT_INPUT = 'CHANGE_CONCERT_INPUT';
 
 export const fetchConcerts = () => {
   return {
@@ -26,5 +27,13 @@ export const displayRemoveBox = (concertId) => {
 export const hideRemoveBox = () => {
   return {
     type: HIDE_REMOVE_BOX,
+  };
+};
+
+export const changeConcertInput = (value, identifier) => {
+  return {
+    type: CHANGE_CONCERT_INPUT,
+    value,
+    identifier,
   };
 };

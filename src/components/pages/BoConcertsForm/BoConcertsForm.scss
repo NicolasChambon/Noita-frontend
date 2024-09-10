@@ -1,0 +1,57 @@
+@use '../../../styles/variables' as v;
+
+.BoConcertsForm {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 3rem;
+
+  &-title {
+    color: v.$primaryColor;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 40rem;
+
+    &-label {
+      color: v.$primaryColor;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    &-input {
+      background-color: v.$secondaryColorLight3;
+      border: 2px solid v.$secondaryColorLight1;
+      border-radius: v.$borderRadius;
+      color: v.$primaryColor;
+      font-family: v.$mainFont;
+      font-size: v.$textSize;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+
+      &:focus {
+        border-color: v.$primaryColor;
+      }
+    }
+
+    &-submit {
+      background-color: v.$primaryColorLight1;
+      border: none;
+      border-radius: v.$borderRadius;
+      color: v.$primaryColorLight3;
+      font-size: v.$textSize;
+      margin: 0 auto 1rem auto;
+      padding: 1rem;
+      width: 50%;
+
+      &:hover {
+        background-color: v.$primaryColor;
+      }
+      transition: background-color 0.3s;
+    }
+  }
+}
