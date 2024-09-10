@@ -24,7 +24,7 @@ const FooterLogoSocials = () => {
       <div className="FooterLogoSocials-socials">
         <Link
           className="FooterLogoSocials-socials-link"
-          to="https://www.instagram.com/noitachor/"
+          to="https://www.instagram.com/noitavox/"
           target="_blank"
           rel="noopener noreferrer"
         >

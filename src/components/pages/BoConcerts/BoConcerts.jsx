@@ -1,26 +1,33 @@
+// Dependencies
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+// React-icons
 import { FaTrashAlt } from 'react-icons/fa';
 import { FaEdit } from 'react-icons/fa';
 import { FiPlusCircle } from 'react-icons/fi';
 
+// Redux actions
 import {
   fetchConcertList,
   displayRemoveBox,
   hideRemoveBox,
 } from '../../../actions/concertsActions';
 
+// Subcomponents
 import BoHeader from '../../organisms/BoHeader/BoHeader';
 import LoginForm from '../../organisms/LoginForm/LoginForm';
 import ConfirmBox from '../../organisms/ConfirmBox/ConfirmBox';
 
+// Styles
 import './BoConcerts.scss';
 
 const BoConcerts = () => {
+  // Hooks
   const dispatch = useDispatch();
 
+  // Redux state
   const isLogged = useSelector((state) => state.login.isLogged);
   const concerts = useSelector((state) => state.concerts.concertList);
   const isRemoveBoxDisplayed = useSelector(
@@ -28,11 +35,10 @@ const BoConcerts = () => {
   );
   const removeBoxId = useSelector((state) => state.concerts.removeBoxId);
 
+  // Fetch concert list
   useEffect(() => {
-    if (isLogged) {
-      dispatch(fetchConcertList());
-    }
-  }, [isLogged, dispatch]);
+    dispatch(fetchConcertList());
+  }, [dispatch]);
 
   // Close confirm box when clicking elsewhere
   useEffect(() => {
