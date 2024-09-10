@@ -12,6 +12,7 @@ import {
   postAddConcertForm,
   postEditConcertForm,
   concertFailure,
+  fetchConcertDetails,
 } from '../../../actions/concertsActions';
 
 import './BoConcertsForm.scss';
@@ -35,12 +36,37 @@ const BoConcertsForm = ({ type, title }) => {
   const failureMessages = useSelector(
     (state) => state.concerts.failureMessages,
   );
+  const concertDetails = useSelector((state) => state.concerts.concertDetails);
+
+  // we search url params to fetch concert details
+  useEffect(() => {
+    if (isLogged && type === 'edit') {
+      const url = window.location.href;
+      const concertId = url.split('/').pop();
+      dispatch(fetchConcertDetails(concertId));
+    }
+  }, [isLogged, type, dispatch]);
+
+  // we fill the form with concert details
+  useEffect(() => {
+    if (type === 'edit' && concertDetails.city) {
+      dispatch(changeConcertInput(concertDetails.city, 'city'));
+      dispatch(changeConcertInput(concertDetails.event_date, 'eventDate'));
+      dispatch(changeConcertInput(concertDetails.venue, 'venue'));
+      dispatch(changeConcertInput(concertDetails.event_name, 'eventName'));
+      dispatch(changeConcertInput(concertDetails.event_url, 'link'));
+    }
+  }, [type, concertDetails, dispatch]);
 
   return (
     <>
       <BoHeader />
       <main className="BoConcertsForm">
-        <h2 className="BoConcertsForm-title">{title}</h2>
+        {type === 'edit' ? (
+          <h2 className="BoConcertsForm-title">{`${title} : id ${concertDetails.id}`}</h2>
+        ) : (
+          <h2 className="BoConcertsForm-title">{title}</h2>
+        )}
         <form
           className="BoConcertsForm-form"
           onSubmit={(e) => {
@@ -73,6 +99,7 @@ const BoConcertsForm = ({ type, title }) => {
             className="BoConcertsForm-form-input"
             required
             value={formInputs.eventDate}
+            // value="1972-10-21"
             onChange={(e) => {
               dispatch(changeConcertInput(e.target.value, 'eventDate'));
             }}

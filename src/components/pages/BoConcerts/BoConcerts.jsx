@@ -6,7 +6,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 import { FaEdit } from 'react-icons/fa';
 
 import {
-  fetchConcerts,
+  fetchConcertList,
   displayRemoveBox,
   hideRemoveBox,
 } from '../../../actions/concertsActions';
@@ -21,7 +21,7 @@ const BoConcerts = () => {
   const dispatch = useDispatch();
 
   const isLogged = useSelector((state) => state.login.isLogged);
-  const concerts = useSelector((state) => state.concerts.concerts);
+  const concerts = useSelector((state) => state.concerts.concertList);
   const isRemoveBoxDisplayed = useSelector(
     (state) => state.concerts.isRemoveBoxDisplayed,
   );
@@ -29,7 +29,7 @@ const BoConcerts = () => {
 
   useEffect(() => {
     if (isLogged) {
-      dispatch(fetchConcerts());
+      dispatch(fetchConcertList());
     }
   }, [isLogged, dispatch]);
 

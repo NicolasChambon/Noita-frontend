@@ -1,22 +1,24 @@
-export const FETCH_CONCERTS = 'FETCH_CONCERTS';
-export const STORE_CONCERTS = 'STORE_CONCERTS';
+export const FETCH_CONCERT_LIST = 'FETCH_CONCERT_LIST';
+export const STORE_CONCERT_LIST = 'STORE_CONCERT_LIST';
 export const DISPLAY_REMOVE_BOX = 'DISPLAY_REMOVE_BOX';
 export const HIDE_REMOVE_BOX = 'HIDE_REMOVE_BOX';
 export const CHANGE_CONCERT_INPUT = 'CHANGE_CONCERT_INPUT';
 export const POST_ADD_CONCERT_FORM = 'POST_ADD_CONCERT_FORM';
 export const POST_EDIT_CONCERT_FORM = 'POST_EDIT_CONCERT_FORM';
 export const CONCERT_FAILURE = 'CONCERT_FAILURE';
+export const FETCH_CONCERT_DETAILS = 'FETCH_CONCERT_DETAILS';
+export const STORE_CONCERT_DETAILS = 'STORE_CONCERT_DETAILS';
 
-export const fetchConcerts = () => {
+export const fetchConcertList = () => {
   return {
-    type: FETCH_CONCERTS,
+    type: FETCH_CONCERT_LIST,
   };
 };
 
-export const storeConcerts = (concerts) => {
+export const storeConcertList = (concertList) => {
   return {
-    type: STORE_CONCERTS,
-    concerts,
+    type: STORE_CONCERT_LIST,
+    concertList,
   };
 };
 
@@ -59,5 +61,19 @@ export const concertFailure = (failureMessages) => {
   return {
     type: 'CONCERT_FAILURE',
     failureMessages,
+  };
+};
+
+export const fetchConcertDetails = (concertId) => {
+  return {
+    type: FETCH_CONCERT_DETAILS,
+    concertId,
+  };
+};
+
+export const storeConcertDetails = (concertDetails) => {
+  return {
+    type: STORE_CONCERT_DETAILS,
+    concertDetails,
   };
 };

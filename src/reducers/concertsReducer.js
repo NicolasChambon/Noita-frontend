@@ -1,13 +1,15 @@
 import {
-  STORE_CONCERTS,
+  STORE_CONCERT_LIST,
   DISPLAY_REMOVE_BOX,
   HIDE_REMOVE_BOX,
   CHANGE_CONCERT_INPUT,
   CONCERT_FAILURE,
+  STORE_CONCERT_DETAILS,
 } from '../actions/concertsActions';
 
 export const initialState = {
-  concerts: [],
+  concertList: [],
+  concertDetails: {},
   removeBoxId: null,
   isRemoveBoxDisplayed: false,
   form: {
@@ -22,10 +24,10 @@ export const initialState = {
 
 const concertsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case STORE_CONCERTS:
+    case STORE_CONCERT_LIST:
       return {
         ...state,
-        concerts: action.concerts,
+        concertList: action.concertList,
       };
 
     case DISPLAY_REMOVE_BOX:
@@ -55,6 +57,12 @@ const concertsReducer = (state = initialState, action) => {
       return {
         ...state,
         failureMessages: action.failureMessages,
+      };
+
+    case STORE_CONCERT_DETAILS:
+      return {
+        ...state,
+        concertDetails: action.concertDetails,
       };
 
     default:
