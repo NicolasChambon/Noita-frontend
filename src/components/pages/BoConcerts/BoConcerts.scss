@@ -6,20 +6,21 @@
   padding: 3rem;
 
   &-add {
-    background-color: rgb(93, 240, 137);
-    border: 1px solid rgb(74, 189, 108);
+    align-items: center;
+    background-color: v.$primaryColorLight1;
     border-radius: v.$borderRadius;
-    color: v.$primaryColor;
+    color: v.$primaryColorLight3;
     display: flex;
     font-size: 1.3rem;
     font-weight: 600;
+    gap: 0.5rem;
     margin-bottom: 1rem;
     justify-content: center;
     padding: 0.5rem;
-    width: 10rem;
+    width: 12rem;
 
     &:hover {
-      background-color: rgb(74, 189, 108);
+      background-color: v.$primaryColor;
     }
     transition: background-color 0.3s;
   }

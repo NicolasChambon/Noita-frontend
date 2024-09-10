@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { FaTrashAlt } from 'react-icons/fa';
 import { FaEdit } from 'react-icons/fa';
+import { FiPlusCircle } from 'react-icons/fi';
 
 import {
   fetchConcertList,
@@ -53,7 +54,8 @@ const BoConcerts = () => {
       <BoHeader />
       <main className="BoConcerts">
         <Link className="BoConcerts-add" to="/admin/concerts/add">
-          Add concert
+          <p className="BoConcerts-add-p"> Add concert</p>
+          <FiPlusCircle className="BoConcerts-add-icon" />
         </Link>
         <table className="BoConcerts-table">
           <thead className="BoConcerts-table-head">

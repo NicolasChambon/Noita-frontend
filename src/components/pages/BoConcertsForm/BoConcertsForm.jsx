@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
 import BoHeader from '../../organisms/BoHeader/BoHeader';
 import LoginForm from '../../organisms/LoginForm/LoginForm';
 import FailureMessages from '../../organisms/FailureMessages/FailureMessages';
+import BoConcertsFormBtns from './BoConcertsFormBtns/BoConcertsFormBtns';
 
 import {
   changeConcertInput,
@@ -144,17 +145,9 @@ const BoConcertsForm = ({ type, title }) => {
               dispatch(changeConcertInput(e.target.value, 'link'));
             }}
           />
-          <div className="BoConcertsForm-form-btns">
-            <Link
-              to="/admin/concerts"
-              className="BoConcertsForm-form-btns-return"
-            >
-              Concert list
-            </Link>
-            <button type="submit" className="BoConcertsForm-form-btns-submit">
-              Submit
-            </button>
-          </div>
+
+          <BoConcertsFormBtns />
+
           {failureMessages.length > 0 && (
             <FailureMessages failureMessages={failureMessages} />
           )}

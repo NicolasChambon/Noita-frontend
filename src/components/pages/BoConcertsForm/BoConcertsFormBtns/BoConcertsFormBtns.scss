@@ -1,0 +1,45 @@
+@use '../../../../styles/variables' as v;
+
+.BoConcertsFormBtns {
+  display: flex;
+  justify-content: space-between;
+
+  &-submit,
+  &-return {
+    align-items: center;
+    border: none;
+    border-radius: v.$borderRadius;
+    display: flex;
+    font-size: v.$textSize;
+    font-weight: 600;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    padding: 1rem;
+    width: 10rem;
+  }
+
+  &-submit {
+    background-color: v.$primaryColorLight1;
+    color: v.$primaryColorLight3;
+
+    &:hover {
+      background-color: v.$primaryColor;
+    }
+    transition: background-color 0.3s;
+  }
+
+  &-return {
+    background-color: v.$secondaryColorLight1;
+    color: v.$secondaryColorLight3;
+
+    &:hover {
+      background-color: v.$secondaryColor;
+    }
+    transition: background-color 0.3s;
+
+    &-icon {
+      font-size: 1.5rem;
+    }
+  }
+}
