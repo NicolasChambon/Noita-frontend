@@ -102,7 +102,7 @@ const BoConcerts = () => {
                       <FaTrashAlt />
                     </button>
                     {isRemoveBoxDisplayed && removeBoxId === concert.id && (
-                      <ConfirmBox />
+                      <ConfirmBox concertId={concert.id} />
                     )}
                   </td>
                 </tr>

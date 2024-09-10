@@ -6,6 +6,8 @@ import {
   concertFailure,
   FETCH_CONCERT_DETAILS,
   storeConcertDetails,
+  DELETE_CONCERT,
+  fetchConcertList,
 } from '../actions/concertsActions';
 import { logout } from '../actions/loginActions';
 
@@ -159,6 +161,44 @@ const concertsMiddleware = (store) => (next) => (action) => {
             throw new Error(error.errors);
           }
           action.navigate('/admin/concerts');
+        } catch (error) {
+          console.error(error);
+        }
+      })();
+      break;
+    }
+
+    case DELETE_CONCERT: {
+      (async () => {
+        try {
+          const user_id = store.getState().login.loggedId;
+          const token = store.getState().login.token;
+          const concert_id = action.concertId;
+
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/concerts/${concert_id}?user_id=${user_id}`,
+            {
+              method: 'DELETE',
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            },
+          );
+          if (!response.ok) {
+            const error = await response.json();
+            if (error.status === 401) {
+              store.dispatch(logout());
+              store.dispatch(
+                concertFailure([
+                  'The session has expired, please log in again.',
+                ]),
+              );
+              throw new Error(error.errors);
+            }
+            store.dispatch(concertFailure(error.errors));
+            throw new Error(error.errors);
+          }
+          store.dispatch(fetchConcertList());
         } catch (error) {
           console.error(error);
         }

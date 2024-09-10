@@ -8,6 +8,7 @@ export const POST_EDIT_CONCERT_FORM = 'POST_EDIT_CONCERT_FORM';
 export const CONCERT_FAILURE = 'CONCERT_FAILURE';
 export const FETCH_CONCERT_DETAILS = 'FETCH_CONCERT_DETAILS';
 export const STORE_CONCERT_DETAILS = 'STORE_CONCERT_DETAILS';
+export const DELETE_CONCERT = 'DELETE_CONCERT';
 
 export const fetchConcertList = () => {
   return {
@@ -75,5 +76,12 @@ export const storeConcertDetails = (concertDetails) => {
   return {
     type: STORE_CONCERT_DETAILS,
     concertDetails,
+  };
+};
+
+export const deleteConcert = (concertId) => {
+  return {
+    type: DELETE_CONCERT,
+    concertId,
   };
 };
