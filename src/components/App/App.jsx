@@ -5,6 +5,7 @@ import News from '../pages/News/News';
 import BoHome from '../pages/BoHome/BoHome';
 import BoConcerts from '../pages/BoConcerts/BoConcerts';
 import BoConcertsForm from '../pages/BoConcertsForm/BoConcertsForm';
+import BoNews from '../pages/BoNews/BoNews';
 
 import './App.scss';
 
@@ -24,6 +25,7 @@ function App() {
           path="/admin/concerts/edit/:id"
           element={<BoConcertsForm type="edit" title="Edit concert" />}
         />
+        <Route path="/admin/news" element={<BoNews />} />
       </Routes>
     </div>
   );

@@ -68,6 +68,7 @@ const Dates = () => {
         </h2>
         {pastConcerts.map((concert) => (
           <ConcertDate
+            className="Dates-list-item"
             key={concert.id}
             date={concert.event_date}
             place={concert.venue}

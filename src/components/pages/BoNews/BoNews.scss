@@ -1,0 +1,98 @@
+@use '../../../styles/variables' as v;
+
+.BoNews {
+  margin: 0 auto;
+  max-width: 1350px;
+  padding: 3rem;
+
+  &-add {
+    align-items: center;
+    background-color: v.$primaryColorLight1;
+    border-radius: v.$borderRadius;
+    color: v.$primaryColorLight3;
+    display: flex;
+    font-size: 1.3rem;
+    font-weight: 600;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    padding: 0.5rem;
+    width: 12rem;
+
+    &:hover {
+      background-color: v.$primaryColor;
+    }
+    transition: background-color 0.3s;
+  }
+
+  &-table {
+    color: v.$primaryColor;
+    display: flex;
+    flex-direction: column;
+
+    &-head {
+      border-bottom: 2px solid v.$primaryColor;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-align: left;
+
+      &-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 1rem 2rem;
+      }
+    }
+
+    &-body {
+      &-row {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 0.5rem 2rem;
+        border-bottom: 1px solid v.$secondaryColor;
+
+        &:hover {
+          background-color: v.$secondaryColorLight3;
+        }
+        transition: background-color 0.3s;
+
+        &-cell {
+          &.actions {
+            display: flex;
+            gap: 0.25rem;
+            position: relative;
+
+            &-btn {
+              align-items: center;
+              border-radius: v.$borderRadius;
+              color: v.$primaryColor;
+              display: flex;
+              font-size: 1.2rem;
+              justify-content: center;
+              padding: 0.5rem;
+
+              &.edit {
+                background-color: rgb(228, 199, 74);
+
+                &:hover {
+                  background-color: rgb(189, 163, 49);
+                }
+                transition: background-color 0.3s;
+              }
+
+              &.remove {
+                border: none;
+                background-color: rgb(228, 74, 74);
+
+                &:hover {
+                  background-color: rgb(189, 49, 49);
+                }
+                transition: background-color 0.3s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import storage from 'redux-persist/lib/storage';
 import reducer from '../reducers/indexReducer';
 import loginMiddleware from '../middleware/loginMiddleware';
 import concertsMiddleware from '../middleware/concertsMiddleware';
+import newsMiddleware from '../middleware/newsMiddleware';
 
 const persistConfig = {
   key: 'root',
@@ -16,7 +17,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, reducer);
 
 const enhancer = composeWithDevTools(
-  applyMiddleware(loginMiddleware, concertsMiddleware),
+  applyMiddleware(loginMiddleware, concertsMiddleware, newsMiddleware),
 );
 
 const store = createStore(persistedReducer, enhancer);

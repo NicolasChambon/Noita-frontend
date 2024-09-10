@@ -19,7 +19,7 @@ const ConcertDate = ({ date, place, city, event, link }) => {
   return (
     <li className="ConcertDate">
       <Link
-        className="ConcertDate-link first"
+        className="ConcertDate-link"
         to={link}
         target="_blank"
         rel="noopener noreferrer"
