@@ -21,6 +21,8 @@ const BoConcerts = () => {
   const dispatch = useDispatch();
 
   const isLogged = useSelector((state) => state.login.isLogged);
+  console.log('isLogged', isLogged);
+
   const concerts = useSelector((state) => state.concerts.concerts);
   const isRemoveBoxDisplayed = useSelector(
     (state) => state.concerts.isRemoveBoxDisplayed,
@@ -28,7 +30,6 @@ const BoConcerts = () => {
   const removeBoxId = useSelector((state) => state.concerts.removeBoxId);
 
   useEffect(() => {
-    console.log('BoConcerts useEffect');
     if (isLogged) {
       dispatch(fetchConcerts());
     }
@@ -53,7 +54,9 @@ const BoConcerts = () => {
     <>
       <BoHeader />
       <main className="BoConcerts">
-        <Link className="BoConcerts-add">Add concert</Link>
+        <Link className="BoConcerts-add" to="/admin/concerts/add">
+          Add concert
+        </Link>
         <table className="BoConcerts-table">
           <thead className="BoConcerts-table-head">
             <tr className="BoConcerts-table-head-row">
@@ -85,7 +88,10 @@ const BoConcerts = () => {
                     {concert.event_name}
                   </td>
                   <td className="BoConcerts-table-body-row-cell actions">
-                    <Link className="BoConcerts-table-body-row-cell actions-btn edit">
+                    <Link
+                      className="BoConcerts-table-body-row-cell actions-btn edit"
+                      to={`/admin/concerts/edit/${concert.id}`}
+                    >
                       <FaEdit />
                     </Link>
                     <button

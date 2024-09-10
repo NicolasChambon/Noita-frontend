@@ -1,0 +1,16 @@
+@use '../../../styles/variables' as v;
+
+.BoConcertsAdd {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 3rem;
+
+  &-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &-form {
+    display: flex;
+  }
+}
