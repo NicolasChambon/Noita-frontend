@@ -101,7 +101,7 @@ const BoNews = () => {
                       <FaTrashAlt />
                     </button>
                     {isRemoveBoxDisplayed && removeBoxId === oneNews.id && (
-                      <ConfirmBox newsId={oneNews.id} />
+                      <ConfirmBox id={oneNews.id} type="news" />
                     )}
                   </td>
                 </tr>

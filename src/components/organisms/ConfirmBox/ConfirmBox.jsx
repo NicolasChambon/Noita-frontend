@@ -2,10 +2,11 @@ import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
 import { deleteConcert } from '../../../actions/concertsActions';
+import { deleteNews } from '../../../actions/newsActions';
 
 import './ConfirmBox.scss';
 
-const ConfirmBox = ({ concertId }) => {
+const ConfirmBox = ({ id, type }) => {
   const dispatch = useDispatch();
 
   return (
@@ -17,7 +18,8 @@ const ConfirmBox = ({ concertId }) => {
         <button
           className="ConfirmBox-buttons-yes"
           onClick={() => {
-            dispatch(deleteConcert(concertId));
+            type === 'news' && dispatch(deleteNews(id));
+            type === 'concert' && dispatch(deleteConcert(id));
           }}
         >
           Yes
@@ -29,7 +31,8 @@ const ConfirmBox = ({ concertId }) => {
 };
 
 ConfirmBox.propTypes = {
-  concertId: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default ConfirmBox;
