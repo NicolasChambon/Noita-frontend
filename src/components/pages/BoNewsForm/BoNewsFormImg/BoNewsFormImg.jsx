@@ -1,8 +1,11 @@
 // Dependencies
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 // Actions
 import { changeNewsInput } from '../../../../actions/newsActions';
+
+// Utils
+import { handleImageChange } from '../../../../utils/imgUtils';
 
 // React-icons
 import { LuImagePlus } from 'react-icons/lu';
@@ -14,24 +17,8 @@ import placeholder from '../../../../assets/images/news-placeholder.svg';
 import './BoNewsFormImg.scss';
 
 const BoNewsFormImg = () => {
-  // Hooks
-  const dispatch = useDispatch();
-
   // Redux state
   const formInputs = useSelector((state) => state.news.form);
-
-  // Handle image change
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        dispatch(changeNewsInput(reader.result, 'img64'));
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
   // Image to display
   const imgToDisplay = formInputs.img64 ? formInputs.img64 : placeholder;
@@ -47,7 +34,7 @@ const BoNewsFormImg = () => {
         id="image64"
         className="BoNewsFormImg-input"
         required
-        onChange={handleImageChange}
+        onChange={(e) => handleImageChange(e, changeNewsInput)}
       />
       <div className="BoNewsFormImg-imgContainer">
         <img
