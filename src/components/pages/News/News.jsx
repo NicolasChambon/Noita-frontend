@@ -1,22 +1,40 @@
+// Dependencies
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
+// Redux actions
+import { fetchNewsList } from '../../../actions/newsActions';
+
+// Utils
 import { scrollUpInstantly } from '../../../utils/scrollUtils';
 
+// Subcomponents
 import Header from '../../organisms/Header/Header';
 import Post from './Post/Post';
 import Footer from '../../organisms/Footer/Footer';
 
+// Assets
 import picturePost2 from '../../../assets/images/Post-01-09-24.jpg';
 
+// Styles
 import './News.scss';
 
 const News = () => {
+  // Hooks
+  const dispatch = useDispatch();
+
+  // Redux state
   const language = useSelector((state) => state.global.language);
+  const news = useSelector((state) => state.news.newsList);
 
   useEffect(() => {
     scrollUpInstantly();
   }, []);
+
+  // Fetch News list
+  useEffect(() => {
+    dispatch(fetchNewsList());
+  }, [dispatch]);
 
   return (
     <>
@@ -25,30 +43,27 @@ const News = () => {
         <h2 className="News-title">
           {language === 'fr' ? 'Actualités' : 'News'}
         </h2>
-        <Post
-          title={
-            language === 'fr'
-              ? 'Galotti Bandnacht, on arrive !'
-              : 'Galotti Bandnacht, wir kommen !'
-          }
-          date={language === 'fr' ? '01.09.2024' : '1.9.2024'}
-          content={
-            language === 'fr'
-              ? "Répétition générale aujourd'hui, il fait chaud sous le Hardbrücke ! On vous prépare un set aux petits oignons et même un featuring surprise 🙂!\nVenetz !"
-              : 'Generalprobe heute. Es wird heisst unter der Hardbrücke ! Wir basteln euch ein mega cooles Set zusammen, sogar mit einem Überraschungs Featuring 🙂!\nVenetz !'
-          }
-          urlImage={picturePost2}
-        />
-        <Post
-          title={language === 'fr' ? 'Merci Vertantzt !' : 'Danke, Vertantzt !'}
-          date={language === 'fr' ? '22.07.2024' : '22.7.2024'}
-          content={
-            language === 'fr'
-              ? "C'était incroyable ! Merci pour votre formidable écoute ! On était ravies de vous présenter Noïta 👏\nÀ l'année prochaine !?!"
-              : "Es war unglaublich! Danke für's enthusiastische Zuhören! Wir haben uns mega gefreut, euch Noïta zu zeigen 👏\nBis nächstes Jahr !?"
-          }
-          urlImage="https://www.vertanzt.ch/wp-content/uploads/Gelaende-in-der-Daemmerung-1-1024x683.jpg"
-        />
+
+        {news.map((post) => {
+          const dateObj = new Date(post.createdAt);
+          const dayDe = dateObj.getDate();
+          const dayFr = String(dayDe).padStart(2, '0');
+          const monthDe = dateObj.getMonth() + 1;
+          const monthFr = String(monthDe).padStart(2, '0');
+          const year = dateObj.getFullYear();
+          const dateDe = `${dayDe}.${monthDe}.${year}`;
+          const dateFr = `${dayFr}.${monthFr}.${year}`;
+
+          return (
+            <Post
+              key={post.id}
+              title={language === 'fr' ? post.title_fr : post.title_de}
+              date={language === 'fr' ? dateFr : dateDe}
+              content={language === 'fr' ? post.content_fr : post.content_de}
+              urlImage={`${import.meta.env.VITE_API_URL}/../${post.image_url}`}
+            />
+          );
+        })}
       </main>
       <Footer />
     </>
