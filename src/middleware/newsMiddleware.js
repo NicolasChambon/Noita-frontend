@@ -67,13 +67,12 @@ const newsMiddleware = (store) => (next) => (action) => {
     }
 
     case POST_ADD_NEWS_FORM: {
-      console.log('POST_ADD_NEWS_FORM');
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
           const token = store.getState().login.token;
           const form = store.getState().news.form;
-          console.log('form', form);
+
           const response = await fetch(
             `${import.meta.env.VITE_API_URL}/posts?user_id=${user_id}`,
             {

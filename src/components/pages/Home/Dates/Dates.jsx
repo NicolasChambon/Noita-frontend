@@ -34,9 +34,6 @@ const Dates = () => {
     return concertDate < new Date();
   });
 
-  console.log('upcomingConcerts', upcomingConcerts);
-  console.log('pastConcerts', pastConcerts);
-
   return (
     <section className="Dates" id="dates">
       <ul className="Dates-list">
