@@ -1,0 +1,47 @@
+@use '../../../../styles/variables' as v;
+
+.BoNewsFormImg {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+
+  &-label {
+    align-items: center;
+    background-color: v.$primaryColorLight1;
+    border-radius: v.$borderRadius;
+    color: v.$primaryColorLight3;
+    display: flex;
+    font-weight: 600;
+    gap: 0.5rem;
+    padding: 1rem;
+
+    &:hover {
+      background-color: v.$primaryColor;
+    }
+
+    &-icon {
+      font-size: 1.25rem;
+    }
+  }
+
+  &-input {
+    display: none;
+  }
+
+  &-imgContainer {
+    border: 1px solid v.$primaryColorLight3;
+    border-radius: v.$borderRadius;
+    height: 19.5rem;
+    overflow: hidden;
+    width: 26rem;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

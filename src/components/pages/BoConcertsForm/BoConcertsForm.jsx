@@ -100,7 +100,6 @@ const BoConcertsForm = ({ type, title }) => {
             className="BoConcertsForm-form-input"
             required
             value={formInputs.eventDate}
-            // value="1972-10-21"
             onChange={(e) => {
               dispatch(changeConcertInput(e.target.value, 'eventDate'));
             }}

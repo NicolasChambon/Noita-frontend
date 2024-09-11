@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { FaRegCalendarCheck } from 'react-icons/fa';
+import { FiPlusCircle } from 'react-icons/fi';
 import { IoIosReturnLeft } from 'react-icons/io';
 
 import './BoConcertsFormBtns.scss';
@@ -15,7 +15,7 @@ const BoConcertsFormBtns = () => {
 
       <button type="submit" className="BoConcertsFormBtns-submit">
         <p className="BoConcertsFormBtns-submit-p">Submit</p>
-        <FaRegCalendarCheck className="BoConcertsFormBtns-submit-icon" />
+        <FiPlusCircle className="BoConcertsFormBtns-submit-icon" />
       </button>
     </div>
   );

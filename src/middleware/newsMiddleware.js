@@ -9,7 +9,7 @@ import {
   DELETE_NEWS,
   fetchNewsList,
 } from '../actions/newsActions';
-import { logout } from '../actions/loginActions';
+import { logout, loginFailure } from '../actions/loginActions';
 
 const newsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -20,13 +20,6 @@ const newsMiddleware = (store) => (next) => (action) => {
 
           if (!response.ok) {
             const error = await response.json();
-            if (error.status === 401) {
-              store.dispatch(logout());
-              store.dispatch(storeNewsList([]));
-              store.dispatch(
-                newsFailure(['The session has expired, please log in again.']),
-              );
-            }
             throw new Error(error.errors);
           }
           const data = await response.json();
@@ -59,7 +52,7 @@ const newsMiddleware = (store) => (next) => (action) => {
             if (error.status === 401) {
               store.dispatch(logout());
               store.dispatch(
-                newsFailure(['The session has expired, please log in again.']),
+                loginFailure(['The session has expired, please log in again.']),
               );
             }
             throw new Error(error.errors);
@@ -96,7 +89,7 @@ const newsMiddleware = (store) => (next) => (action) => {
             if (error.status === 401) {
               store.dispatch(logout());
               store.dispatch(
-                newsFailure(['The session has expired, please log in again.']),
+                loginFailure(['The session has expired, please log in again.']),
               );
               throw new Error(error.errors);
             }
@@ -135,7 +128,7 @@ const newsMiddleware = (store) => (next) => (action) => {
             if (error.status === 401) {
               store.dispatch(logout());
               store.dispatch(
-                newsFailure(['The session has expired, please log in again.']),
+                loginFailure(['The session has expired, please log in again.']),
               );
               throw new Error(error.errors);
             }
@@ -171,14 +164,14 @@ const newsMiddleware = (store) => (next) => (action) => {
             if (error.status === 401) {
               store.dispatch(logout());
               store.dispatch(
-                newsFailure(['The session has expired, please log in again.']),
+                loginFailure(['The session has expired, please log in again.']),
               );
               throw new Error(error.errors);
             }
             store.dispatch(newsFailure(error.errors));
             throw new Error(error.errors);
           }
-          store.dispatch(fetchConcertList());
+          store.dispatch(fetchNewsList());
         } catch (error) {
           console.error(error);
         }

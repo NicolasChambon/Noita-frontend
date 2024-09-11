@@ -17,7 +17,7 @@ export const initialState = {
     titleDe: '',
     contentFr: '',
     contentDe: '',
-    imgUrl: '',
+    img64: '',
   },
   failureMessages: [],
 };
