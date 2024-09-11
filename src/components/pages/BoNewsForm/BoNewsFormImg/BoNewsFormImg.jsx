@@ -33,7 +33,6 @@ const BoNewsFormImg = () => {
         type="file"
         id="image64"
         className="BoNewsFormImg-input"
-        required
         onChange={(e) => handleImageChange(e, changeNewsInput)}
       />
       <div className="BoNewsFormImg-imgContainer">
