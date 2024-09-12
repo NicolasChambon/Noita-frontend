@@ -1,4 +1,14 @@
 @use '../../../styles/variables' as v;
 
 .BoCarousel {
+  margin: 0 auto;
+  max-width: 1350px;
+  padding: 3rem;
+
+  &-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
 }

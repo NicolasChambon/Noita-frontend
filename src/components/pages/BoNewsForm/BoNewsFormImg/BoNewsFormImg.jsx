@@ -2,7 +2,7 @@
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
-// Actions
+// Redux actions
 import { changeNewsInput } from '../../../../actions/newsActions';
 
 // Utils

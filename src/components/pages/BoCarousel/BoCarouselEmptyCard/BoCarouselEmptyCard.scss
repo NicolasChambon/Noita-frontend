@@ -1,0 +1,27 @@
+@use '../../../../styles/variables' as v;
+
+.BoCarouselEmptyCard {
+  &-label {
+    align-items: center;
+    border: 1px dashed v.$primaryColorLight1;
+    border-radius: v.$borderRadius;
+    color: v.$primaryColorLight1;
+    display: flex;
+    font-size: 4rem;
+    height: 9rem;
+    justify-content: center;
+    width: 12rem;
+
+    &:hover {
+      background-color: v.$primaryColorLight2;
+      color: v.$primaryColor;
+    }
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
+
+  &-input {
+    display: none;
+  }
+}

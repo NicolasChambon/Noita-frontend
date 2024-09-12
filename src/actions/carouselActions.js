@@ -36,13 +36,13 @@ export const storePictureList = (pictureList) => {
 //   };
 // };
 
-// export const changeNewsInput = (value, identifier) => {
-//   return {
-//     type: CHANGE_NEWS_INPUT,
-//     value,
-//     identifier,
-//   };
-// };
+export const changePictureInput = (value, identifier) => {
+  return {
+    type: CHANGE_NEWS_INPUT,
+    value,
+    identifier,
+  };
+};
 
 // export const postAddNewsForm = (navigate) => {
 //   return {
