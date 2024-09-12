@@ -13,9 +13,6 @@ import Header from '../../organisms/Header/Header';
 import Post from './Post/Post';
 import Footer from '../../organisms/Footer/Footer';
 
-// Assets
-import picturePost2 from '../../../assets/images/Post-01-09-24.jpg';
-
 // Styles
 import './News.scss';
 
@@ -45,6 +42,7 @@ const News = () => {
         </h2>
 
         {news.map((post) => {
+          // Adapt date format for French and German
           const dateObj = new Date(post.createdAt);
           const dayDe = dateObj.getDate();
           const dayFr = String(dayDe).padStart(2, '0');

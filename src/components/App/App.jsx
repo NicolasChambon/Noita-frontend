@@ -7,6 +7,7 @@ import BoConcerts from '../pages/BoConcerts/BoConcerts';
 import BoConcertsForm from '../pages/BoConcertsForm/BoConcertsForm';
 import BoNews from '../pages/BoNews/BoNews';
 import BoNewsForm from '../pages/BoNewsForm/BoNewsForm';
+import BoCarousel from '../pages/BoCarousel/BoCarousel';
 
 import './App.scss';
 
@@ -35,6 +36,7 @@ function App() {
           path="/admin/news/edit/:id"
           element={<BoNewsForm type="edit" title="Edit news" />}
         />
+        <Route path="/admin/carousel" element={<BoCarousel />} />
       </Routes>
     </div>
   );

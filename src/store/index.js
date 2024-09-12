@@ -7,6 +7,7 @@ import reducer from '../reducers/indexReducer';
 import loginMiddleware from '../middleware/loginMiddleware';
 import concertsMiddleware from '../middleware/concertsMiddleware';
 import newsMiddleware from '../middleware/newsMiddleware';
+import carouselMiddleware from '../middleware/carouselMiddleware';
 
 const persistConfig = {
   key: 'root',
@@ -17,7 +18,12 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, reducer);
 
 const enhancer = composeWithDevTools(
-  applyMiddleware(loginMiddleware, concertsMiddleware, newsMiddleware),
+  applyMiddleware(
+    loginMiddleware,
+    concertsMiddleware,
+    newsMiddleware,
+    carouselMiddleware,
+  ),
 );
 
 const store = createStore(persistedReducer, enhancer);
