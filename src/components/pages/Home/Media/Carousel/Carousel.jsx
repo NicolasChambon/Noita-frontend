@@ -1,18 +1,28 @@
+// Dependencies
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
 
+// Redux actions
+import { fetchCarouselPictures } from '../../../../../actions/carouselActions';
+
+// Styles
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
 import './Carousel.scss';
 
-import img1 from '../../../../../assets/carousel/noita_vertanzt_1.jpg';
-import img2 from '../../../../../assets/carousel/noita_vertanzt_2.jpg';
-import img3 from '../../../../../assets/carousel/noita_vertanzt_3.jpg';
-import img4 from '../../../../../assets/carousel/noita_vertanzt_4.jpg';
-import img5 from '../../../../../assets/carousel/noita_vertanzt_5.jpg';
-import img6 from '../../../../../assets/carousel/noita_vertanzt_6.jpg';
-
 const Carousel = () => {
+  // Hooks
+  const dispatch = useDispatch();
+
+  // Redux state
+  const pictures = useSelector((state) => state.carousel.pictureList);
+
+  // Fetch carousel pictures
+  useEffect(() => {
+    dispatch(fetchCarouselPictures());
+  }, [dispatch]);
+
   const settings = {
     autoplay: true,
     autoplaySpeed: 5000,
@@ -24,17 +34,24 @@ const Carousel = () => {
     speed: 1000,
   };
 
+  console.log(pictures);
+
   return (
     <div className="Carousel">
       <Slider {...settings}>
-        <div className="Carousel-slider-card">
-          <img
-            className="Carousel-slider-card-img"
-            src={img1}
-            alt="Noita Vertanzt 1"
-          />
-        </div>
-        <div className="Carousel-slider-card">
+        {pictures &&
+          pictures.map((picture) => {
+            console.log(`${import.meta.env.VITE_URL}${picture.url}`);
+            return (
+              <div className="Carousel-slider-card" key={picture.id}>
+                <img
+                  className="Carousel-slider-card-img"
+                  src={`${import.meta.env.VITE_URL}${picture.url}`}
+                />
+              </div>
+            );
+          })}
+        {/* <div className="Carousel-slider-card">
           <img
             className="Carousel-slider-card-img"
             src={img2}
@@ -68,7 +85,7 @@ const Carousel = () => {
             src={img6}
             alt="Noita Vertanzt 6"
           />
-        </div>
+        </div> */}
       </Slider>
     </div>
   );
