@@ -1,4 +1,5 @@
 import { store } from '../store';
+import { fetchCarouselPictures } from '../actions/carouselActions';
 import { addPicture } from '../actions/carouselActions';
 
 // Handle image change
@@ -42,10 +43,16 @@ export const handleImageChange = (e, changeInput, carousel = false) => {
           const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
 
           store.dispatch(changeInput(compressedDataUrl, 'img64'));
-          carousel && store.dispatch(addPicture());
+          if (carousel) {
+            store.dispatch(addPicture());
+            // store.dispatch(fetchCarouselPictures()); remove
+          }
         } else {
           store.dispatch(changeInput(reader.result, 'img64'));
-          carousel && store.dispatch(addPicture());
+          if (carousel) {
+            store.dispatch(addPicture());
+            // store.dispatch(fetchCarouselPictures()); remove
+          }
         }
       };
     };

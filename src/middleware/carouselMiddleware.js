@@ -3,11 +3,11 @@ import {
   storePictureList,
   ADD_PICTURE,
   carouselFailure,
+  fetchCarouselPictures,
   // POST_EDIT_NEWS_FORM,
   // FETCH_NEWS_DETAILS,
   // storeNewsDetails,
   // DELETE_NEWS,
-  // fetchNewsList,
 } from '../actions/carouselActions';
 import { logout, loginFailure } from '../actions/loginActions';
 
@@ -65,6 +65,7 @@ const carouselMiddleware = (store) => (next) => (action) => {
             store.dispatch(carouselFailure(error.errors));
             throw new Error(error.errors);
           }
+          store.dispatch(fetchCarouselPictures());
         } catch (error) {
           console.error(error);
         }
