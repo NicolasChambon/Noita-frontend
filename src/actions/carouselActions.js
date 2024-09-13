@@ -3,12 +3,12 @@ export const STORE_PICTURE_LIST = 'STORE_PICTURE_LIST';
 export const CHANGE_PICTURE_INPUT = 'CHANGE_PICTURE_INPUT';
 export const ADD_PICTURE = 'ADD_PICTURE';
 export const CAROUSEL_FAILURE = 'CAROUSEL_FAILURE';
-// export const DISPLAY_REMOVE_BOX = 'DISPLAY_REMOVE_BOX';
-// export const HIDE_REMOVE_BOX = 'HIDE_REMOVE_BOX';
+export const DISPLAY_REMOVE_BOX = 'DISPLAY_REMOVE_BOX';
+export const HIDE_REMOVE_BOX = 'HIDE_REMOVE_BOX';
+export const DELETE_PICTURE = 'DELETE_PICTURE';
 // export const POST_EDIT_NEWS_FORM = 'POST_EDIT_NEWS_FORM';
 // export const FETCH_NEWS_DETAILS = 'FETCH_NEWS_DETAILS';
 // export const STORE_NEWS_DETAILS = 'STORE_NEWS_DETAILS';
-// export const DELETE_NEWS = 'DELETE_NEWS';
 
 export const fetchCarouselPictures = () => {
   return {
@@ -44,18 +44,25 @@ export const carouselFailure = (failureMessages) => {
   };
 };
 
-// export const displayRemoveBox = (newsId) => {
-//   return {
-//     type: DISPLAY_REMOVE_BOX,
-//     newsId,
-//   };
-// };
+export const displayRemoveBox = (pictureId) => {
+  return {
+    type: DISPLAY_REMOVE_BOX,
+    pictureId,
+  };
+};
 
-// export const hideRemoveBox = () => {
-//   return {
-//     type: HIDE_REMOVE_BOX,
-//   };
-// };
+export const hideRemoveBox = () => {
+  return {
+    type: HIDE_REMOVE_BOX,
+  };
+};
+
+export const deletePicture = (pictureId) => {
+  return {
+    type: DELETE_PICTURE,
+    pictureId,
+  };
+};
 
 // export const postEditNewsForm = (navigate) => {
 //   return {
@@ -75,12 +82,5 @@ export const carouselFailure = (failureMessages) => {
 //   return {
 //     type: STORE_NEWS_DETAILS,
 //     newsDetails,
-//   };
-// };
-
-// export const deleteNews = (newsId) => {
-//   return {
-//     type: DELETE_NEWS,
-//     newsId,
 //   };
 // };

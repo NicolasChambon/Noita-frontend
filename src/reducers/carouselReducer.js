@@ -2,25 +2,16 @@ import {
   STORE_PICTURE_LIST,
   CHANGE_PICTURE_INPUT,
   CAROUSEL_FAILURE,
-  // DISPLAY_REMOVE_BOX,
-  // HIDE_REMOVE_BOX,
-  // STORE_NEWS_DETAILS,
+  DISPLAY_REMOVE_BOX,
+  HIDE_REMOVE_BOX,
 } from '../actions/carouselActions';
 
 export const initialState = {
   pictureList: [],
   failureMessages: [],
+  removeBoxId: null,
+  isRemoveBoxDisplayed: false,
   newPictureInput: '',
-  // pictureDetails: {},
-  // removeBoxId: null,
-  // isRemoveBoxDisplayed: false,
-  // form: {
-  //   titleFr: '',
-  //   titleDe: '',
-  //   contentFr: '',
-  //   contentDe: '',
-  //   img64: '',
-  // },
 };
 
 const pictureReducer = (state = initialState, action) => {
@@ -43,25 +34,19 @@ const pictureReducer = (state = initialState, action) => {
         failureMessages: action.failureMessages,
       };
 
-    // case DISPLAY_REMOVE_BOX:
-    //   return {
-    //     ...state,
-    //     removeBoxId: action.pictureId,
-    //     isRemoveBoxDisplayed: true,
-    //   };
+    case DISPLAY_REMOVE_BOX:
+      return {
+        ...state,
+        removeBoxId: action.pictureId,
+        isRemoveBoxDisplayed: true,
+      };
 
-    // case HIDE_REMOVE_BOX:
-    //   return {
-    //     ...state,
-    //     removeBoxId: null,
-    //     isRemoveBoxDisplayed: false,
-    //   };
-
-    // case STORE_NEWS_DETAILS:
-    //   return {
-    //     ...state,
-    //     pictureDetails: action.pictureDetails,
-    //   };
+    case HIDE_REMOVE_BOX:
+      return {
+        ...state,
+        removeBoxId: null,
+        isRemoveBoxDisplayed: false,
+      };
 
     default:
       return state;

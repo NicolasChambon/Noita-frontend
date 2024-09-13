@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 
 import { deleteConcert } from '../../../actions/concertsActions';
 import { deleteNews } from '../../../actions/newsActions';
+import { deletePicture } from '../../../actions/carouselActions';
 
 import './ConfirmBox.scss';
 
@@ -10,9 +11,9 @@ const ConfirmBox = ({ id, type }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="ConfirmBox">
+    <div className={`ConfirmBox ${type}`}>
       <p className="ConfirmBox-text">
-        Are you sure you want to delete this concert?
+        Are you sure you want to delete this {type}?
       </p>
       <div className="ConfirmBox-buttons">
         <button
@@ -20,6 +21,7 @@ const ConfirmBox = ({ id, type }) => {
           onClick={() => {
             type === 'news' && dispatch(deleteNews(id));
             type === 'concert' && dispatch(deleteConcert(id));
+            type === 'picture' && dispatch(deletePicture(id));
           }}
         >
           Yes

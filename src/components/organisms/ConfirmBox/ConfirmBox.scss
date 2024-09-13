@@ -6,10 +6,18 @@
   border-radius: v.$borderRadius;
   padding: 0.5rem 1rem;
   position: absolute;
-  right: 1.5rem;
-  top: 2.25rem;
   width: 12rem;
   z-index: 1;
+
+  &.picture {
+    left: 0rem;
+  }
+
+  &.news,
+  &.concert {
+    left: -2.5rem;
+    top: 2.25rem;
+  }
 
   &-text {
     color: red;

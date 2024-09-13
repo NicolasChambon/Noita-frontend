@@ -37,6 +37,7 @@ const BoCarousel = () => {
               <BoCarouselCard
                 className="BoCarousel-cards-card"
                 key={picture.id}
+                id={picture.id}
                 url={`${import.meta.env.VITE_API_URL}/..${picture.url}`}
               />
             ))}

@@ -4,10 +4,9 @@ import {
   ADD_PICTURE,
   carouselFailure,
   fetchCarouselPictures,
-  // POST_EDIT_NEWS_FORM,
-  // FETCH_NEWS_DETAILS,
-  // storeNewsDetails,
+  DELETE_PICTURE,
   // DELETE_NEWS,
+  // POST_EDIT_NEWS_FORM,
 } from '../actions/carouselActions';
 import { logout, loginFailure } from '../actions/loginActions';
 
@@ -73,40 +72,41 @@ const carouselMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    // case FETCH_NEWS_DETAILS: {
-    //   (async () => {
-    //     try {
-    //       const user_id = store.getState().login.loggedId;
-    //       const token = store.getState().login.token;
-    //       const news_id = action.newsId;
+    case DELETE_PICTURE: {
+      (async () => {
+        try {
+          const user_id = store.getState().login.loggedId;
+          const token = store.getState().login.token;
+          const picture_id = action.pictureId;
 
-    //       const response = await fetch(
-    //         `${import.meta.env.VITE_API_URL}/posts/${news_id}?user_id=${user_id}`,
-    //         {
-    //           headers: {
-    //             Authorization: `Bearer ${token}`,
-    //           },
-    //         },
-    //       );
-
-    //       if (!response.ok) {
-    //         const error = await response.json();
-    //         if (error.status === 401) {
-    //           store.dispatch(logout());
-    //           store.dispatch(
-    //             loginFailure(['The session has expired, please log in again.']),
-    //           );
-    //         }
-    //         throw new Error(error.errors);
-    //       }
-    //       const data = await response.json();
-    //       store.dispatch(storeNewsDetails(data));
-    //     } catch (error) {
-    //       console.error(error);
-    //     }
-    //   })();
-    //   break;
-    // }
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/carousel/${picture_id}?user_id=${user_id}`,
+            {
+              method: 'DELETE',
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            },
+          );
+          if (!response.ok) {
+            const error = await response.json();
+            if (error.status === 401) {
+              store.dispatch(logout());
+              store.dispatch(
+                loginFailure(['The session has expired, please log in again.']),
+              );
+              throw new Error(error.errors);
+            }
+            store.dispatch(carouselFailure(error.errors));
+            throw new Error(error.errors);
+          }
+          store.dispatch(fetchCarouselPictures());
+        } catch (error) {
+          console.error(error);
+        }
+      })();
+      break;
+    }
 
     // case POST_EDIT_NEWS_FORM: {
     //   (async () => {
@@ -140,42 +140,6 @@ const carouselMiddleware = (store) => (next) => (action) => {
     //         throw new Error(error.errors);
     //       }
     //       action.navigate('/admin/news');
-    //     } catch (error) {
-    //       console.error(error);
-    //     }
-    //   })();
-    //   break;
-    // }
-
-    // case DELETE_NEWS: {
-    //   (async () => {
-    //     try {
-    //       const user_id = store.getState().login.loggedId;
-    //       const token = store.getState().login.token;
-    //       const news_id = action.newsId;
-
-    //       const response = await fetch(
-    //         `${import.meta.env.VITE_API_URL}/posts/${news_id}?user_id=${user_id}`,
-    //         {
-    //           method: 'DELETE',
-    //           headers: {
-    //             Authorization: `Bearer ${token}`,
-    //           },
-    //         },
-    //       );
-    //       if (!response.ok) {
-    //         const error = await response.json();
-    //         if (error.status === 401) {
-    //           store.dispatch(logout());
-    //           store.dispatch(
-    //             loginFailure(['The session has expired, please log in again.']),
-    //           );
-    //           throw new Error(error.errors);
-    //         }
-    //         store.dispatch(newsFailure(error.errors));
-    //         throw new Error(error.errors);
-    //       }
-    //       store.dispatch(fetchNewsList());
     //     } catch (error) {
     //       console.error(error);
     //     }

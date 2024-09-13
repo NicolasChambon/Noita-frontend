@@ -30,10 +30,9 @@ const BoConcerts = () => {
   // Redux state
   const isLogged = useSelector((state) => state.login.isLogged);
   const concerts = useSelector((state) => state.concerts.concertList);
-  const isRemoveBoxDisplayed = useSelector(
-    (state) => state.concerts.isRemoveBoxDisplayed,
+  const { isRemoveBoxDisplayed, removeBoxId } = useSelector(
+    (state) => state.concerts,
   );
-  const removeBoxId = useSelector((state) => state.concerts.removeBoxId);
 
   // Fetch concert list
   useEffect(() => {
