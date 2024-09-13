@@ -2,8 +2,10 @@
 import { IoAddCircleOutline } from 'react-icons/io5';
 
 // Redux actions
-import { handleImageChange } from '../../../../utils/imgUtils';
 import { changePictureInput } from '../../../../actions/carouselActions';
+
+// Utils
+import { handleImageChange } from '../../../../utils/imgUtils';
 
 // Styles
 import './BoCarouselEmptyCard.scss';

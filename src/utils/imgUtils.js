@@ -1,9 +1,19 @@
 import { store } from '../store';
-import { fetchCarouselPictures } from '../actions/carouselActions';
-import { addPicture } from '../actions/carouselActions';
+import { addPicture, updatePicture } from '../actions/carouselActions';
 
-// Handle image change
-export const handleImageChange = (e, changeInput, carousel = false) => {
+/**
+ *  Handle the image change in the input
+ * @param {Event} e event
+ * @param {Function} changeInput redux action to change the input in the store
+ * @param {Boolean} carousel true if the input is a carousel picture
+ * @param {Number} id id of the carousel picture if it is an update
+ */
+export const handleImageChange = (
+  e,
+  changeInput,
+  carousel = false,
+  id = null,
+) => {
   const file = e.target.files[0];
 
   if (file) {
@@ -43,15 +53,19 @@ export const handleImageChange = (e, changeInput, carousel = false) => {
           const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
 
           store.dispatch(changeInput(compressedDataUrl, 'img64'));
-          if (carousel) {
+          if (carousel && id === null) {
             store.dispatch(addPicture());
-            // store.dispatch(fetchCarouselPictures()); remove
+          }
+          if (carousel && id !== null) {
+            store.dispatch(updatePicture(id));
           }
         } else {
           store.dispatch(changeInput(reader.result, 'img64'));
-          if (carousel) {
+          if (carousel && id === null) {
             store.dispatch(addPicture());
-            // store.dispatch(fetchCarouselPictures()); remove
+          }
+          if (carousel && id !== null) {
+            store.dispatch(updatePicture(id));
           }
         }
       };

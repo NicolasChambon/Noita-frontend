@@ -6,9 +6,8 @@ export const CAROUSEL_FAILURE = 'CAROUSEL_FAILURE';
 export const DISPLAY_REMOVE_BOX = 'DISPLAY_REMOVE_BOX';
 export const HIDE_REMOVE_BOX = 'HIDE_REMOVE_BOX';
 export const DELETE_PICTURE = 'DELETE_PICTURE';
-// export const POST_EDIT_NEWS_FORM = 'POST_EDIT_NEWS_FORM';
-// export const FETCH_NEWS_DETAILS = 'FETCH_NEWS_DETAILS';
-// export const STORE_NEWS_DETAILS = 'STORE_NEWS_DETAILS';
+export const UPDATE_PICTURE = 'UPDATE_PICTURE';
+export const CHANGE_POSITION = 'CHANGE_POSITION';
 
 export const fetchCarouselPictures = () => {
   return {
@@ -64,23 +63,17 @@ export const deletePicture = (pictureId) => {
   };
 };
 
-// export const postEditNewsForm = (navigate) => {
-//   return {
-//     type: POST_EDIT_NEWS_FORM,
-//     navigate,
-//   };
-// };
+export const updatePicture = (pictureId) => {
+  return {
+    type: 'UPDATE_PICTURE',
+    pictureId,
+  };
+};
 
-// export const fetchNewsDetails = (newsId) => {
-//   return {
-//     type: FETCH_NEWS_DETAILS,
-//     newsId,
-//   };
-// };
-
-// export const storeNewsDetails = (newsDetails) => {
-//   return {
-//     type: STORE_NEWS_DETAILS,
-//     newsDetails,
-//   };
-// };
+export const changePosition = (pictureId, direction) => {
+  return {
+    type: CHANGE_POSITION,
+    pictureId,
+    direction,
+  };
+};

@@ -11,7 +11,7 @@ export const initialState = {
   failureMessages: [],
   removeBoxId: null,
   isRemoveBoxDisplayed: false,
-  newPictureInput: '',
+  pictureInput: '',
 };
 
 const pictureReducer = (state = initialState, action) => {
@@ -25,7 +25,7 @@ const pictureReducer = (state = initialState, action) => {
     case CHANGE_PICTURE_INPUT:
       return {
         ...state,
-        newPictureInput: action.value,
+        pictureInput: action.value,
       };
 
     case CAROUSEL_FAILURE:

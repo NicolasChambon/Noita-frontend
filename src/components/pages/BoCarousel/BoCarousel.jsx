@@ -26,6 +26,8 @@ const BoCarousel = () => {
     (state) => state.carousel.failureMessages,
   );
 
+  const pictureNumber = pictures.length;
+
   // Fetch carousel pictures
   useEffect(() => {
     dispatch(fetchCarouselPictures());
@@ -40,14 +42,25 @@ const BoCarousel = () => {
         )}
         <div className="BoCarousel-cards">
           {pictures &&
-            pictures.map((picture) => (
-              <BoCarouselCard
-                className="BoCarousel-cards-card"
-                key={picture.id}
-                id={picture.id}
-                url={`${import.meta.env.VITE_API_URL}/..${picture.url}`}
-              />
-            ))}
+            pictures.map((picture) => {
+              let position;
+              if (picture.position === 1) {
+                position = 'first';
+              } else if (picture.position === pictureNumber) {
+                position = 'last';
+              } else {
+                position = 'middle';
+              }
+              return (
+                <BoCarouselCard
+                  className="BoCarousel-cards-card"
+                  key={picture.id}
+                  id={picture.id}
+                  url={`${import.meta.env.VITE_API_URL}/..${picture.url}`}
+                  position={position}
+                />
+              );
+            })}
           <BoCarouselEmptyCard />
         </div>
       </main>

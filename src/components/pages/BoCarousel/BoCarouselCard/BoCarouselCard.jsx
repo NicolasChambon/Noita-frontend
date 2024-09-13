@@ -13,7 +13,12 @@ import { RxUpdate } from 'react-icons/rx';
 import {
   displayRemoveBox,
   hideRemoveBox,
+  changePictureInput,
+  changePosition,
 } from '../../../../actions/carouselActions';
+
+// Utils
+import { handleImageChange } from '../../../../utils/imgUtils';
 
 // Subcomponents
 import ConfirmBox from '../../../organisms/ConfirmBox/ConfirmBox';
@@ -21,7 +26,7 @@ import ConfirmBox from '../../../organisms/ConfirmBox/ConfirmBox';
 // Styles
 import './BoCarouselCard.scss';
 
-const BoCarouselCard = ({ url, id }) => {
+const BoCarouselCard = ({ url, id, position }) => {
   // Hooks
   const dispatch = useDispatch();
 
@@ -62,12 +67,17 @@ const BoCarouselCard = ({ url, id }) => {
         id={`image${id}`}
         className="BoCarouselCard-input"
         accept="image/*"
-        // onChange={(e) => handleImageChange(e, changeNewsInput)}
+        onChange={(e) => handleImageChange(e, changePictureInput, true, id)}
       />
       <div className="BoCarouselCard-btns">
-        <button className="BoCarouselCard-btns-btn arrow">
-          <FaArrowCircleLeft />
-        </button>
+        {position !== 'first' && (
+          <button
+            className="BoCarouselCard-btns-btn arrow"
+            onClick={() => dispatch(changePosition(id, 'left'))}
+          >
+            <FaArrowCircleLeft />
+          </button>
+        )}
         <button
           className="BoCarouselCard-btns-btn trash"
           onClick={(e) => {
@@ -80,9 +90,14 @@ const BoCarouselCard = ({ url, id }) => {
         {isRemoveBoxDisplayed && removeBoxId === id && (
           <ConfirmBox id={id} type="picture" />
         )}
-        <button className="BoCarouselCard-btns-btn arrow">
-          <FaArrowCircleRight />
-        </button>
+        {position !== 'last' && (
+          <button
+            className="BoCarouselCard-btns-btn arrow"
+            onClick={() => dispatch(changePosition(id, 'right'))}
+          >
+            <FaArrowCircleRight />
+          </button>
+        )}
       </div>
     </div>
   );
@@ -91,6 +106,7 @@ const BoCarouselCard = ({ url, id }) => {
 BoCarouselCard.propTypes = {
   url: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
+  position: PropTypes.string.isRequired,
 };
 
 export default BoCarouselCard;

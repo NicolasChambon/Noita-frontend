@@ -5,8 +5,8 @@ import {
   carouselFailure,
   fetchCarouselPictures,
   DELETE_PICTURE,
-  // DELETE_NEWS,
-  // POST_EDIT_NEWS_FORM,
+  UPDATE_PICTURE,
+  CHANGE_POSITION,
 } from '../actions/carouselActions';
 import { logout, loginFailure } from '../actions/loginActions';
 
@@ -37,7 +37,7 @@ const carouselMiddleware = (store) => (next) => (action) => {
         try {
           const user_id = store.getState().login.loggedId;
           const token = store.getState().login.token;
-          const picture64 = store.getState().carousel.newPictureInput;
+          const picture64 = store.getState().carousel.pictureInput;
 
           const response = await fetch(
             `${import.meta.env.VITE_API_URL}/carousel?user_id=${user_id}`,
@@ -112,44 +112,88 @@ const carouselMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    // case POST_EDIT_NEWS_FORM: {
-    //   (async () => {
-    //     try {
-    //       const user_id = store.getState().login.loggedId;
-    //       const token = store.getState().login.token;
-    //       const form = store.getState().news.form;
-    //       const news_id = store.getState().news.newsDetails.id;
+    case UPDATE_PICTURE: {
+      (async () => {
+        try {
+          const user_id = store.getState().login.loggedId;
+          const token = store.getState().login.token;
+          const picture64 = store.getState().carousel.pictureInput;
+          const pictureId = action.pictureId;
 
-    //       const response = await fetch(
-    //         `${import.meta.env.VITE_API_URL}/posts/${news_id}?user_id=${user_id}`,
-    //         {
-    //           method: 'PUT',
-    //           headers: {
-    //             'Content-Type': 'application/json',
-    //             Authorization: `Bearer ${token}`,
-    //           },
-    //           body: JSON.stringify(form),
-    //         },
-    //       );
-    //       if (!response.ok) {
-    //         const error = await response.json();
-    //         if (error.status === 401) {
-    //           store.dispatch(logout());
-    //           store.dispatch(
-    //             loginFailure(['The session has expired, please log in again.']),
-    //           );
-    //           throw new Error(error.errors);
-    //         }
-    //         store.dispatch(newsFailure(error.errors));
-    //         throw new Error(error.errors);
-    //       }
-    //       action.navigate('/admin/news');
-    //     } catch (error) {
-    //       console.error(error);
-    //     }
-    //   })();
-    //   break;
-    // }
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/carousel/${pictureId}?user_id=${user_id}`,
+            {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+              },
+              body: JSON.stringify({
+                picture64,
+              }),
+            },
+          );
+          if (!response.ok) {
+            const error = await response.json();
+            if (error.status === 401) {
+              store.dispatch(logout());
+              store.dispatch(
+                loginFailure(['The session has expired, please log in again.']),
+              );
+              throw new Error(error.errors);
+            }
+            store.dispatch(carouselFailure(error.errors));
+            throw new Error(error.errors);
+          }
+          // We refresh the browser page
+          window.location.reload();
+        } catch (error) {
+          console.error(error);
+        }
+      })();
+      break;
+    }
+
+    case CHANGE_POSITION: {
+      (async () => {
+        try {
+          const user_id = store.getState().login.loggedId;
+          const token = store.getState().login.token;
+          const pictureId = action.pictureId;
+          const direction = action.direction;
+
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/carousel/position/${pictureId}?user_id=${user_id}`,
+            {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+              },
+              body: JSON.stringify({
+                direction,
+              }),
+            },
+          );
+          if (!response.ok) {
+            const error = await response.json();
+            if (error.status === 401) {
+              store.dispatch(logout());
+              store.dispatch(
+                loginFailure(['The session has expired, please log in again.']),
+              );
+              throw new Error(error.errors);
+            }
+            store.dispatch(carouselFailure(error.errors));
+            throw new Error(error.errors);
+          }
+          store.dispatch(fetchCarouselPictures());
+        } catch (error) {
+          console.error(error);
+        }
+      })();
+      break;
+    }
 
     default:
   }
