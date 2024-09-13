@@ -1,13 +1,16 @@
+// Dependencies
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
+// Subcomponents
 import BoHeader from '../../organisms/BoHeader/BoHeader';
 import LoginForm from '../../organisms/LoginForm/LoginForm';
 import FailureMessages from '../../organisms/FailureMessages/FailureMessages';
 import BoConcertsFormBtns from './BoConcertsFormBtns/BoConcertsFormBtns';
 
+// Redux actions
 import {
   changeConcertInput,
   postAddConcertForm,
@@ -16,9 +19,11 @@ import {
   fetchConcertDetails,
 } from '../../../actions/concertsActions';
 
+// Styles
 import './BoConcertsForm.scss';
 
 const BoConcertsForm = ({ type, title }) => {
+  // Hooks
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

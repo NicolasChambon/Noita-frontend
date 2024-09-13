@@ -98,6 +98,10 @@ const carouselMiddleware = (store) => (next) => (action) => {
               throw new Error(error.errors);
             }
             store.dispatch(carouselFailure(error.errors));
+            setTimeout(() => {
+              store.dispatch(carouselFailure([]));
+            }, 5000);
+
             throw new Error(error.errors);
           }
           store.dispatch(fetchCarouselPictures());

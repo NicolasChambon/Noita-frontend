@@ -10,6 +10,7 @@ import BoHeader from '../../organisms/BoHeader/BoHeader';
 import LoginForm from '../../organisms/LoginForm/LoginForm';
 import BoCarouselCard from './BoCarouselCard/BoCarouselCard';
 import BoCarouselEmptyCard from './BoCarouselEmptyCard/BoCarouselEmptyCard';
+import FailureMessages from '../../organisms/FailureMessages/FailureMessages';
 
 // Styles
 import './BoCarousel.scss';
@@ -21,6 +22,9 @@ const BoCarousel = () => {
   // Redux state
   const isLogged = useSelector((state) => state.login.isLogged);
   const pictures = useSelector((state) => state.carousel.pictureList);
+  const failureMessages = useSelector(
+    (state) => state.carousel.failureMessages,
+  );
 
   // Fetch carousel pictures
   useEffect(() => {
@@ -31,6 +35,9 @@ const BoCarousel = () => {
     <>
       <BoHeader />
       <main className="BoCarousel">
+        {failureMessages.length > 0 && (
+          <FailureMessages failureMessages={failureMessages} />
+        )}
         <div className="BoCarousel-cards">
           {pictures &&
             pictures.map((picture) => (
