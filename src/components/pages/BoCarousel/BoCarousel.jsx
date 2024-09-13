@@ -5,9 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 // Redux actions
 import { fetchCarouselPictures } from '../../../actions/carouselActions';
 
-// React-icons
-import { LuImagePlus } from 'react-icons/lu';
-
 // Subcomponents
 import BoHeader from '../../organisms/BoHeader/BoHeader';
 import LoginForm from '../../organisms/LoginForm/LoginForm';

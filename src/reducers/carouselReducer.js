@@ -1,14 +1,16 @@
 import {
   STORE_PICTURE_LIST,
+  CHANGE_PICTURE_INPUT,
+  CAROUSEL_FAILURE,
   // DISPLAY_REMOVE_BOX,
   // HIDE_REMOVE_BOX,
-  // CHANGE_NEWS_INPUT,
-  // NEWS_FAILURE,
   // STORE_NEWS_DETAILS,
 } from '../actions/carouselActions';
 
 export const initialState = {
   pictureList: [],
+  failureMessages: [],
+  newPictureInput: '',
   // pictureDetails: {},
   // removeBoxId: null,
   // isRemoveBoxDisplayed: false,
@@ -19,7 +21,6 @@ export const initialState = {
   //   contentDe: '',
   //   img64: '',
   // },
-  // failureMessages: [],
 };
 
 const pictureReducer = (state = initialState, action) => {
@@ -28,6 +29,18 @@ const pictureReducer = (state = initialState, action) => {
       return {
         ...state,
         pictureList: action.pictureList,
+      };
+
+    case CHANGE_PICTURE_INPUT:
+      return {
+        ...state,
+        newPictureInput: action.value,
+      };
+
+    case CAROUSEL_FAILURE:
+      return {
+        ...state,
+        failureMessages: action.failureMessages,
       };
 
     // case DISPLAY_REMOVE_BOX:
@@ -42,21 +55,6 @@ const pictureReducer = (state = initialState, action) => {
     //     ...state,
     //     removeBoxId: null,
     //     isRemoveBoxDisplayed: false,
-    //   };
-
-    // case CHANGE_NEWS_INPUT:
-    //   return {
-    //     ...state,
-    //     form: {
-    //       ...state.form,
-    //       [action.identifier]: action.value,
-    //     },
-    //   };
-
-    // case NEWS_FAILURE:
-    //   return {
-    //     ...state,
-    //     failureMessages: action.failureMessages,
     //   };
 
     // case STORE_NEWS_DETAILS:

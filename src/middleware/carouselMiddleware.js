@@ -1,15 +1,15 @@
 import {
   FETCH_CAROUSEL_PICTURES,
   storePictureList,
-  // POST_ADD_NEWS_FORM,
+  ADD_PICTURE,
+  carouselFailure,
   // POST_EDIT_NEWS_FORM,
-  // newsFailure,
   // FETCH_NEWS_DETAILS,
   // storeNewsDetails,
   // DELETE_NEWS,
   // fetchNewsList,
 } from '../actions/carouselActions';
-// import { logout, loginFailure } from '../actions/loginActions';
+import { logout, loginFailure } from '../actions/loginActions';
 
 const carouselMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -26,6 +26,45 @@ const carouselMiddleware = (store) => (next) => (action) => {
           }
           const data = await response.json();
           store.dispatch(storePictureList(data));
+        } catch (error) {
+          console.error(error);
+        }
+      })();
+      break;
+    }
+
+    case ADD_PICTURE: {
+      (async () => {
+        try {
+          const user_id = store.getState().login.loggedId;
+          const token = store.getState().login.token;
+          const picture64 = store.getState().carousel.newPictureInput;
+
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/carousel?user_id=${user_id}`,
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+              },
+              body: JSON.stringify({
+                picture64,
+              }),
+            },
+          );
+          if (!response.ok) {
+            const error = await response.json();
+            if (error.status === 401) {
+              store.dispatch(logout());
+              store.dispatch(
+                loginFailure(['The session has expired, please log in again.']),
+              );
+              throw new Error(error.errors);
+            }
+            store.dispatch(carouselFailure(error.errors));
+            throw new Error(error.errors);
+          }
         } catch (error) {
           console.error(error);
         }
@@ -61,44 +100,6 @@ const carouselMiddleware = (store) => (next) => (action) => {
     //       }
     //       const data = await response.json();
     //       store.dispatch(storeNewsDetails(data));
-    //     } catch (error) {
-    //       console.error(error);
-    //     }
-    //   })();
-    //   break;
-    // }
-
-    // case POST_ADD_NEWS_FORM: {
-    //   (async () => {
-    //     try {
-    //       const user_id = store.getState().login.loggedId;
-    //       const token = store.getState().login.token;
-    //       const form = store.getState().news.form;
-
-    //       const response = await fetch(
-    //         `${import.meta.env.VITE_API_URL}/posts?user_id=${user_id}`,
-    //         {
-    //           method: 'POST',
-    //           headers: {
-    //             'Content-Type': 'application/json',
-    //             Authorization: `Bearer ${token}`,
-    //           },
-    //           body: JSON.stringify(form),
-    //         },
-    //       );
-    //       if (!response.ok) {
-    //         const error = await response.json();
-    //         if (error.status === 401) {
-    //           store.dispatch(logout());
-    //           store.dispatch(
-    //             loginFailure(['The session has expired, please log in again.']),
-    //           );
-    //           throw new Error(error.errors);
-    //         }
-    //         store.dispatch(newsFailure(error.errors));
-    //         throw new Error(error.errors);
-    //       }
-    //       action.navigate('/admin/news');
     //     } catch (error) {
     //       console.error(error);
     //     }

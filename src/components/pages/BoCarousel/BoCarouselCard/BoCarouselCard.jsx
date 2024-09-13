@@ -14,7 +14,11 @@ const BoCarouselCard = ({ url }) => {
   return (
     <div className="BoCarouselCard">
       <label htmlFor="image64" className="BoCarouselCard-label">
-        <img src={url} alt="news" className="BoCarouselCard-label-img" />
+        <img
+          src={url}
+          alt="carousel-picture"
+          className="BoCarouselCard-label-img"
+        />
         <div className="BoCarouselCard-label-overlay">
           <RxUpdate className="BoCarouselCard-label-overlay-icon" />
         </div>

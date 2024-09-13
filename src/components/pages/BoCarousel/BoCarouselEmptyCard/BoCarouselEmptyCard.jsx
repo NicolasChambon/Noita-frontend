@@ -1,6 +1,9 @@
 // React-icons
-import { FaArrowCircleLeft } from 'react-icons/fa';
 import { IoAddCircleOutline } from 'react-icons/io5';
+
+// Redux actions
+import { handleImageChange } from '../../../../utils/imgUtils';
+import { changePictureInput } from '../../../../actions/carouselActions';
 
 // Styles
 import './BoCarouselEmptyCard.scss';
@@ -8,15 +11,15 @@ import './BoCarouselEmptyCard.scss';
 const BoCarouselEmptyCard = () => {
   return (
     <div className="BoCarouselEmptyCard">
-      <label htmlFor="image64" className="BoCarouselEmptyCard-label">
+      <label htmlFor="newPicture" className="BoCarouselEmptyCard-label">
         <IoAddCircleOutline className="BoCarouselEmptyCard-label-icon" />
       </label>
       <input
         type="file"
-        id="image64"
+        id="newPicture"
         className="BoCarouselEmptyCard-input"
         accept="image/*"
-        // onChange={(e) => handleImageChange(e, changeNewsInput)}
+        onChange={(e) => handleImageChange(e, changePictureInput, true)}
       />
     </div>
   );

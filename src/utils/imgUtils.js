@@ -1,7 +1,8 @@
 import { store } from '../store';
+import { addPicture } from '../actions/carouselActions';
 
 // Handle image change
-export const handleImageChange = (e, changeInput) => {
+export const handleImageChange = (e, changeInput, carousel = false) => {
   const file = e.target.files[0];
 
   if (file) {
@@ -41,8 +42,10 @@ export const handleImageChange = (e, changeInput) => {
           const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.7);
 
           store.dispatch(changeInput(compressedDataUrl, 'img64'));
+          carousel && store.dispatch(addPicture());
         } else {
           store.dispatch(changeInput(reader.result, 'img64'));
+          carousel && store.dispatch(addPicture());
         }
       };
     };

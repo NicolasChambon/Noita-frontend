@@ -12,9 +12,6 @@
   &:hover {
     text-shadow: 0 0 5px v.$primaryColorLight3;
     filter: drop-shadow(0 0 5px v.$primaryColorLight3);
-    transition:
-      text-shadow,
-      filter 0.3s;
   }
   transition:
     text-shadow,
