@@ -21,7 +21,7 @@ function App() {
 
   const metaInfo = {
     fr: {
-      title: 'Noïta - Groupe de femmes choristes à Zurich',
+      title: 'Noïta',
       description:
         'Noïta est un groupe de femmes choristes à Zurich. Découvrez nos concerts et nos actualités.',
       ogTitle: 'Noïta - Groupe de femmes choristes à Zurich',
@@ -29,7 +29,7 @@ function App() {
         'Noïta est un groupe de femmes choristes à Zurich. Découvrez nos concerts et nos actualités.',
     },
     de: {
-      title: 'Noïta - Frauenchor in Zürich',
+      title: 'Noïta',
       description:
         'Noïta ist ein Frauenchor in Zürich. Entdecken Sie unsere Konzerte und Neuigkeiten.',
       ogTitle: 'Noïta - Frauenchor in Zürich',
