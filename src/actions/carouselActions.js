@@ -8,6 +8,7 @@ export const HIDE_REMOVE_BOX = 'HIDE_REMOVE_BOX';
 export const DELETE_PICTURE = 'DELETE_PICTURE';
 export const UPDATE_PICTURE = 'UPDATE_PICTURE';
 export const CHANGE_POSITION = 'CHANGE_POSITION';
+export const ACTIVE_ONE_PICTURE = 'ACTIVE_ONE_PICTURE';
 
 export const fetchCarouselPictures = () => {
   return {
@@ -75,5 +76,12 @@ export const changePosition = (pictureId, direction) => {
     type: CHANGE_POSITION,
     pictureId,
     direction,
+  };
+};
+
+export const activeOnePicture = (pictureId) => {
+  return {
+    type: ACTIVE_ONE_PICTURE,
+    pictureId,
   };
 };

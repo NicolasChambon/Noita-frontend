@@ -1,0 +1,12 @@
+@use '../../../../../../styles/variables' as v;
+
+.ActivePicture {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: v.$borderRadius;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  height: 92%;
+  position: absolute;
+  left: 0.5%;
+  width: 99%;
+  z-index: 1;
+}

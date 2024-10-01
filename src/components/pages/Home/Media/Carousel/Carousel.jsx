@@ -1,10 +1,16 @@
 // Dependencies
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from 'react-slick';
 
 // Redux actions
-import { fetchCarouselPictures } from '../../../../../actions/carouselActions';
+import {
+  fetchCarouselPictures,
+  activeOnePicture,
+} from '../../../../../actions/carouselActions';
+
+// Components
+import ActivePicture from './ActivePicture/ActivePicture';
 
 // Styles
 import 'slick-carousel/slick/slick.css';
@@ -17,6 +23,12 @@ const Carousel = () => {
 
   // Redux state
   const pictures = useSelector((state) => state.carousel.pictureList);
+  const activePictureId = useSelector(
+    (state) => state.carousel.activePictureId,
+  );
+
+  // Local state
+  const [didItDrag, setDidItDrag] = useState(false);
 
   // Fetch carousel pictures
   useEffect(() => {
@@ -40,7 +52,17 @@ const Carousel = () => {
         {pictures &&
           pictures.map((picture) => {
             return (
-              <div className="Carousel-slider-card" key={picture.id}>
+              <div
+                className="Carousel-slider-card"
+                key={picture.id}
+                onMouseDown={() => setDidItDrag(false)}
+                onMouseMove={() => setDidItDrag(true)}
+                onMouseUp={() => {
+                  if (!didItDrag) {
+                    dispatch(activeOnePicture(picture.id));
+                  }
+                }}
+              >
                 <img
                   className="Carousel-slider-card-img"
                   src={`${import.meta.env.VITE_URL}${picture.url}`}
@@ -49,6 +71,7 @@ const Carousel = () => {
             );
           })}
       </Slider>
+      {activePictureId !== null && <ActivePicture />}
     </div>
   );
 };

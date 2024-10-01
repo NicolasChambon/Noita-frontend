@@ -4,6 +4,7 @@ import {
   CAROUSEL_FAILURE,
   DISPLAY_REMOVE_BOX,
   HIDE_REMOVE_BOX,
+  ACTIVE_ONE_PICTURE,
 } from '../actions/carouselActions';
 
 export const initialState = {
@@ -12,6 +13,7 @@ export const initialState = {
   removeBoxId: null,
   isRemoveBoxDisplayed: false,
   pictureInput: '',
+  activePictureId: null,
 };
 
 const pictureReducer = (state = initialState, action) => {
@@ -46,6 +48,12 @@ const pictureReducer = (state = initialState, action) => {
         ...state,
         removeBoxId: null,
         isRemoveBoxDisplayed: false,
+      };
+
+    case ACTIVE_ONE_PICTURE:
+      return {
+        ...state,
+        activePictureId: action.pictureId,
       };
 
     default:
