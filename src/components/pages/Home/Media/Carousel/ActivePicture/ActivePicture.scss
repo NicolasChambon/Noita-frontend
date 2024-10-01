@@ -5,8 +5,37 @@
   border-radius: v.$borderRadius;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   height: 92%;
-  position: absolute;
   left: 0.5%;
+  overflow: hidden;
+  position: absolute;
+  padding: 0.5rem;
   width: 99%;
   z-index: 1;
+
+  &-close {
+    align-items: center;
+    border: none;
+    border-radius: v.$borderRadius;
+    color: grey;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.5rem;
+    height: 2rem;
+    justify-content: center;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    width: 2rem;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    transition: background-color 0.3s;
+  }
+
+  &-image {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+  }
 }

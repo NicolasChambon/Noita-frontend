@@ -71,7 +71,11 @@ const Carousel = () => {
             );
           })}
       </Slider>
-      {activePictureId !== null && <ActivePicture />}
+      {activePictureId !== null && (
+        <ActivePicture
+          pictureUrl={`${import.meta.env.VITE_URL}/images/carousel-${activePictureId}.png`}
+        />
+      )}
     </div>
   );
 };
