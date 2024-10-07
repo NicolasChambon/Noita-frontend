@@ -1,16 +1,10 @@
 // Dependencies
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ImageGallery from 'react-image-gallery';
 
 // Redux actions
-import {
-  fetchCarouselPictures,
-  // activeOnePicture,
-} from '../../../../../actions/carouselActions';
-
-// Components
-// import ActivePicture from './ActivePicture/ActivePicture';
+import { fetchCarouselPictures } from '../../../../../actions/carouselActions';
 
 // Styles
 import 'react-image-gallery/styles/css/image-gallery.css';
@@ -22,12 +16,6 @@ const Carousel = () => {
 
   // Redux state
   const pictures = useSelector((state) => state.carousel.pictureList);
-  // const activePictureId = useSelector(
-  //   (state) => state.carousel.activePictureId,
-  // );
-
-  // Local state
-  // const [didItDrag, setDidItDrag] = useState(false);
 
   // Fetch carousel pictures
   useEffect(() => {
@@ -42,16 +30,7 @@ const Carousel = () => {
 
   return (
     <div className="Carousel">
-      <ImageGallery
-        additionalClass="Carousel-slider"
-        autoplay={false}
-        disableSwipe={true}
-        items={images}
-        // showPlayButton={false}
-        // slideDuration={500}
-        slideInterval={500}
-        useBrowserFullscreen={false}
-      />
+      <ImageGallery items={images} />
     </div>
   );
 };

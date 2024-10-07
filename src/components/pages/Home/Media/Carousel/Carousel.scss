@@ -27,15 +27,13 @@
   }
 
   & .image-gallery {
-    &-right-nav,
-    &-left-nav {
+    & button {
       opacity: 0;
       transition: opacity 0.3s ease;
     }
 
-    &:hover .image-gallery-right-nav,
-    &:hover .image-gallery-left-nav {
-      opacity: 0.6;
+    &:hover button {
+      opacity: 0.8;
     }
   }
 }
