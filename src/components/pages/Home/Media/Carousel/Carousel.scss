@@ -3,8 +3,8 @@
 .Carousel {
   align-items: center;
   border-radius: v.$borderRadius2;
+  border: 1px solid grey;
   display: flex;
-  // height: 25rem;
   height: 31.25rem;
   margin: 0 auto;
   overflow: hidden;
@@ -26,39 +26,16 @@
     width: 19rem;
   }
 
-  &-slider {
-    height: 100%;
-    width: 100%;
-
-    & .slick-prev {
-      left: 2.5%;
-      z-index: 1;
+  & .image-gallery {
+    &-right-nav,
+    &-left-nav {
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
-    & .slick-next {
-      right: 1.5%;
-      z-index: 1;
-    }
-
-    & .slick-arrow::before {
-      color: white;
-    }
-
-    & div {
-      padding: 0 0.2rem;
-      height: 100%;
-      width: 100%;
-
-      &:focus {
-        outline: none;
-      }
-
-      & img {
-        cursor: pointer;
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-      }
+    &:hover .image-gallery-right-nav,
+    &:hover .image-gallery-left-nav {
+      opacity: 0.6;
     }
   }
 }

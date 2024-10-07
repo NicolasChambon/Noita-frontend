@@ -1,20 +1,19 @@
 // Dependencies
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Slider from 'react-slick';
+import ImageGallery from 'react-image-gallery';
 
 // Redux actions
 import {
   fetchCarouselPictures,
-  activeOnePicture,
+  // activeOnePicture,
 } from '../../../../../actions/carouselActions';
 
 // Components
-import ActivePicture from './ActivePicture/ActivePicture';
+// import ActivePicture from './ActivePicture/ActivePicture';
 
 // Styles
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import 'react-image-gallery/styles/css/image-gallery.css';
 import './Carousel.scss';
 
 const Carousel = () => {
@@ -23,59 +22,36 @@ const Carousel = () => {
 
   // Redux state
   const pictures = useSelector((state) => state.carousel.pictureList);
-  const activePictureId = useSelector(
-    (state) => state.carousel.activePictureId,
-  );
+  // const activePictureId = useSelector(
+  //   (state) => state.carousel.activePictureId,
+  // );
 
   // Local state
-  const [didItDrag, setDidItDrag] = useState(false);
+  // const [didItDrag, setDidItDrag] = useState(false);
 
   // Fetch carousel pictures
   useEffect(() => {
     dispatch(fetchCarouselPictures());
   }, [dispatch]);
 
-  const settings = {
-    autoplay: true,
-    autoplaySpeed: 5000,
-    className: 'Carousel-slider',
-    centerMode: true,
-    infinite: true,
-    centerPadding: '50px',
-    slidesToShow: 1,
-    speed: 1000,
-  };
+  const images = pictures.map((picture) => {
+    return {
+      original: `${import.meta.env.VITE_URL}${picture.url}`,
+    };
+  });
 
   return (
     <div className="Carousel">
-      <Slider {...settings}>
-        {pictures &&
-          pictures.map((picture) => {
-            return (
-              <div
-                className="Carousel-slider-card"
-                key={picture.id}
-                onMouseDown={() => setDidItDrag(false)}
-                onMouseMove={() => setDidItDrag(true)}
-                onMouseUp={() => {
-                  if (!didItDrag) {
-                    dispatch(activeOnePicture(picture.id));
-                  }
-                }}
-              >
-                <img
-                  className="Carousel-slider-card-img"
-                  src={`${import.meta.env.VITE_URL}${picture.url}`}
-                />
-              </div>
-            );
-          })}
-      </Slider>
-      {activePictureId !== null && (
-        <ActivePicture
-          pictureUrl={`${import.meta.env.VITE_URL}/images/carousel-${activePictureId}.png`}
-        />
-      )}
+      <ImageGallery
+        additionalClass="Carousel-slider"
+        autoplay={false}
+        disableSwipe={true}
+        items={images}
+        // showPlayButton={false}
+        // slideDuration={500}
+        slideInterval={500}
+        useBrowserFullscreen={false}
+      />
     </div>
   );
 };
