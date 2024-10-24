@@ -59,10 +59,10 @@
         padding: 1rem;
         width: 50%;
 
+        transition: background-color 0.3s;
         &:hover {
           background-color: v.$primaryColor;
         }
-        transition: background-color 0.3s;
       }
     }
   }

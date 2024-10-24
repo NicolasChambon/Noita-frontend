@@ -15,10 +15,10 @@
         display: block;
         padding: 1rem 6rem;
 
+        transition: all 0.3s;
         &:hover {
           background-color: v.$primaryColorLight2;
         }
-        transition: all 0.3s;
 
         &.active {
           background-color: v.$primaryColor;

@@ -23,10 +23,10 @@
     background-color: v.$primaryColorLight1;
     color: v.$primaryColorLight3;
 
+    transition: background-color 0.3s;
     &:hover {
       background-color: v.$primaryColor;
     }
-    transition: background-color 0.3s;
 
     &-icon {
       font-size: 1.25rem;
@@ -37,10 +37,10 @@
     background-color: v.$secondaryColorLight1;
     color: v.$secondaryColorLight3;
 
+    transition: background-color 0.3s;
     &:hover {
       background-color: v.$secondaryColor;
     }
-    transition: background-color 0.3s;
 
     &-icon {
       font-size: 1.5rem;

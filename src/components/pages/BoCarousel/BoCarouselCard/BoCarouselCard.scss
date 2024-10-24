@@ -25,13 +25,13 @@
       position: absolute;
       width: 100%;
 
+      transition:
+        background-color 0.3s,
+        color 0.3s;
       &:hover {
         background-color: rgba(0, 0, 0, 0.7);
         color: rgba(255, 255, 255, 0.3);
       }
-      transition:
-        background-color 0.3s,
-        color 0.3s;
     }
   }
 
@@ -54,19 +54,19 @@
     &-btn.arrow {
       color: v.$primaryColorLight1;
 
+      transition: color 0.3s;
       &:hover {
         color: v.$primaryColor;
       }
-      transition: color 0.3s;
     }
 
     &-btn.trash {
       color: rgb(228, 74, 74);
 
+      transition: color 0.3s;
       &:hover {
         color: rgb(189, 49, 49);
       }
-      transition: color 0.3s;
     }
   }
 }

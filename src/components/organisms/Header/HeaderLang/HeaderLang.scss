@@ -16,10 +16,10 @@
     justify-content: center;
     width: 20%;
 
+    transition: text-shadow 0.3s;
     &:hover {
       text-shadow: 0 0 5px v.$secondaryColor;
     }
-    transition: text-shadow 0.3s;
 
     &.fr {
       border-top: 1px solid v.$primaryColor;

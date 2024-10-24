@@ -9,13 +9,13 @@
   flex-direction: column;
   gap: 0.25rem;
 
+  transition:
+    text-shadow,
+    filter 0.3s;
   &:hover {
     text-shadow: 0 0 5px v.$primaryColorLight3;
     filter: drop-shadow(0 0 5px v.$primaryColorLight3);
   }
-  transition:
-    text-shadow,
-    filter 0.3s;
 
   &-text {
     font-size: 0.85rem;

@@ -9,10 +9,10 @@
   padding: 1rem 2rem;
   width: 30rem;
 
+  transition: background-color 0.3s;
   &:hover {
     background-color: v.$primaryColor;
   }
-  transition: background-color 0.3s;
 
   &-title {
     color: v.$primaryColorLight3;

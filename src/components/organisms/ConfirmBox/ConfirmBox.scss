@@ -41,10 +41,10 @@
       font-weight: 500;
       padding: 0.25rem 0.5rem;
 
+      transition: background-color 0.3s;
       &:hover {
         background-color: rgb(189, 49, 49);
       }
-      transition: background-color 0.3s;
     }
 
     &-no {
@@ -55,10 +55,10 @@
       font-weight: 500;
       padding: 0.25rem 0.5rem;
 
+      transition: background-color 0.3s;
       &:hover {
         background-color: rgb(74, 189, 108);
       }
-      transition: background-color 0.3s;
     }
   }
 }

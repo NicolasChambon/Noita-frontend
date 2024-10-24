@@ -19,10 +19,10 @@
     padding: 0.5rem;
     width: 12rem;
 
+    transition: background-color 0.3s;
     &:hover {
       background-color: v.$primaryColor;
     }
-    transition: background-color 0.3s;
   }
 
   &-table {
@@ -51,10 +51,10 @@
         padding: 0.5rem 2rem;
         border-bottom: 1px solid v.$secondaryColor;
 
+        transition: background-color 0.3s;
         &:hover {
           background-color: v.$secondaryColorLight3;
         }
-        transition: background-color 0.3s;
 
         &-cell {
           &.actions {
@@ -74,20 +74,20 @@
               &.edit {
                 background-color: rgb(228, 199, 74);
 
+                transition: background-color 0.3s;
                 &:hover {
                   background-color: rgb(189, 163, 49);
                 }
-                transition: background-color 0.3s;
               }
 
               &.remove {
                 border: none;
                 background-color: rgb(228, 74, 74);
 
+                transition: background-color 0.3s;
                 &:hover {
                   background-color: rgb(189, 49, 49);
                 }
-                transition: background-color 0.3s;
               }
             }
           }

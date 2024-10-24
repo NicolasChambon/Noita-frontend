@@ -30,12 +30,12 @@
   button {
     opacity: 0;
 
-    &:hover {
-      color: v.$secondaryColor;
-    }
     transition:
       color 0.3s ease,
       opacity 0.3s ease;
+    &:hover {
+      color: v.$secondaryColor;
+    }
   }
 
   & .image-gallery-content {

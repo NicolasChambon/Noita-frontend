@@ -57,10 +57,10 @@
         margin: 0 auto 1rem auto;
         padding: 1rem;
 
+        transition: background-color 0.3s;
         &:hover {
           background-color: v.$primaryColor;
         }
-        transition: background-color 0.3s;
       }
       &-return {
         background-color: v.$secondaryColorLight1;
@@ -71,10 +71,10 @@
         margin: 0 auto 1rem auto;
         padding: 1rem;
 
+        transition: background-color 0.3s;
         &:hover {
           background-color: v.$secondaryColor;
         }
-        transition: background-color 0.3s;
       }
     }
   }
