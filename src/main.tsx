@@ -9,7 +9,9 @@ import { store, persistor } from './store';
 
 import './styles/index.scss';
 
-createRoot(document.getElementById('root')).render(
+const root = document.getElementById('root') as HTMLElement;
+
+createRoot(root).render(
   <BrowserRouter>
     <Provider store={store}>
       <StrictMode>
@@ -20,5 +22,3 @@ createRoot(document.getElementById('root')).render(
     </Provider>
   </BrowserRouter>,
 );
-
-//
