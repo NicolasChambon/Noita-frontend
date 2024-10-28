@@ -7,7 +7,7 @@ import {
   DELETE_PICTURE,
   UPDATE_PICTURE,
   CHANGE_POSITION,
-} from '../actions/carouselActions';
+} from '../actions/carousel/carouselActions';
 import { logout, loginFailure } from '../actions/loginActions';
 
 const carouselMiddleware = (store) => (next) => (action) => {

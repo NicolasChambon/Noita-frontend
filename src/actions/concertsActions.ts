@@ -60,7 +60,7 @@ export const postEditConcertForm = (navigate) => {
 
 export const concertFailure = (failureMessages) => {
   return {
-    type: 'CONCERT_FAILURE',
+    type: CONCERT_FAILURE,
     failureMessages,
   };
 };

@@ -4,7 +4,7 @@ import {
   CAROUSEL_FAILURE,
   DISPLAY_REMOVE_BOX,
   HIDE_REMOVE_BOX,
-} from '../actions/carouselActions';
+} from '../actions/carousel/carouselActions';
 
 export const initialState = {
   pictureList: [],

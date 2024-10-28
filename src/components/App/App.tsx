@@ -17,7 +17,7 @@ import BoCarousel from '../pages/BoCarousel/BoCarousel';
 import './App.scss';
 
 function App() {
-  const language = useSelector((state) => state.global.language);
+  const language: 'de' | 'fr' = useSelector((state) => state.global.language);
 
   const metaInfo = {
     fr: {

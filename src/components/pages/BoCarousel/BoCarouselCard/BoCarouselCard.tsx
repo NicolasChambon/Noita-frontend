@@ -15,7 +15,7 @@ import {
   hideRemoveBox,
   changePictureInput,
   changePosition,
-} from '../../../../actions/carouselActions';
+} from '../../../../actions/carousel/carouselActions';
 
 // Utils
 import { handleImageChange } from '../../../../utils/imgUtils';

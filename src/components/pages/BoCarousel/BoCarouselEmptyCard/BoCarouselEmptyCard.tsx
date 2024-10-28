@@ -2,7 +2,7 @@
 import { IoAddCircleOutline } from 'react-icons/io5';
 
 // Redux actions
-import { changePictureInput } from '../../../../actions/carouselActions';
+import { changePictureInput } from '../../../../actions/carousel/carouselActions';
 
 // Utils
 import { handleImageChange } from '../../../../utils/imgUtils';

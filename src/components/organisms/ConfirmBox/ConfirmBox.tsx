@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 
 import { deleteConcert } from '../../../actions/concertsActions';
 import { deleteNews } from '../../../actions/newsActions';
-import { deletePicture } from '../../../actions/carouselActions';
+import { deletePicture } from '../../../actions/carousel/carouselActions';
 
 import './ConfirmBox.scss';
 

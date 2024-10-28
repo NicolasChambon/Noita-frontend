@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ImageGallery from 'react-image-gallery';
 
 // Redux actions
-import { fetchCarouselPictures } from '../../../../../actions/carouselActions';
+import { fetchCarouselPictures } from '../../../../../actions/carousel/carouselActions';
 
 // Styles
 import 'react-image-gallery/styles/css/image-gallery.css';

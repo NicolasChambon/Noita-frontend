@@ -60,7 +60,7 @@ export const postEditNewsForm = (navigate) => {
 
 export const newsFailure = (failureMessages) => {
   return {
-    type: 'NEWS_FAILURE',
+    type: NEWS_FAILURE,
     failureMessages,
   };
 };

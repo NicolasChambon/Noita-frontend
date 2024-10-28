@@ -16,16 +16,16 @@ export const postLoginForm = (navigate) => ({
 });
 
 export const loginSuccess = (loggedId, token) => ({
-  type: 'LOGIN_SUCCESS',
+  type: LOGIN_SUCCESS,
   loggedId,
   token,
 });
 
 export const loginFailure = (failureMessages) => ({
-  type: 'LOGIN_FAILURE',
+  type: LOGIN_FAILURE,
   failureMessages,
 });
 
 export const logout = () => ({
-  type: 'LOGOUT',
+  type: LOGOUT,
 });

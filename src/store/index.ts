@@ -1,9 +1,12 @@
+// Dependencies
 import { legacy_createStore as createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from '@redux-devtools/extension';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import reducer from '../reducers/indexReducer';
+
+// Middleware
 import loginMiddleware from '../middleware/loginMiddleware';
 import concertsMiddleware from '../middleware/concertsMiddleware';
 import newsMiddleware from '../middleware/newsMiddleware';
@@ -30,4 +33,5 @@ const store = createStore(persistedReducer, enhancer);
 
 const persistor = persistStore(store);
 
+// Exports
 export { store, persistor };

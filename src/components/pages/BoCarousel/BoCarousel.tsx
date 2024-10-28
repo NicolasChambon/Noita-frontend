@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Redux actions
-import { fetchCarouselPictures } from '../../../actions/carouselActions';
+import { fetchCarouselPictures } from '../../../actions/carousel/carouselActions';
 
 // Subcomponents
 import BoHeader from '../../organisms/BoHeader/BoHeader';

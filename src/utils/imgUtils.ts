@@ -1,19 +1,19 @@
 import { store } from '../store';
-import { addPicture, updatePicture } from '../actions/carouselActions';
+import { addPicture, updatePicture } from '../actions/carousel/carouselActions';
 
 /**
  *  Handle the image change in the input
  * @param {Event} e event
- * @param {Function} changeInput redux action to change the input in the store
- * @param {Boolean} carousel true if the input is a carousel picture
- * @param {Number} id id of the carousel picture if it is an update
+ * @param {Function} changeInput redux action to change the input in the store (it can be from newsActions or carouselActions)
+ * @param {boolean} carousel true if the input is a carousel picture
+ * @param {number | null} id id of the carousel picture if it is an update
  */
 export const handleImageChange = (
-  e,
-  changeInput,
-  carousel = false,
-  id = null,
-) => {
+  e: Event,
+  changeInput: Function,
+  carousel: boolean = false,
+  id: number | null = null,
+): void => {
   const file = e.target.files[0];
 
   if (file) {
