@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Redux actions
-import { fetchNewsList } from '../../../actions/newsActions';
+import { fetchNewsList } from '../../../actions/news/newsActions';
 
 // Utils
 import { scrollUpInstantly } from '../../../utils/scrollUtils';

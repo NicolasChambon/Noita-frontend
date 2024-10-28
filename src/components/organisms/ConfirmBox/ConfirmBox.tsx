@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
-import { deleteConcert } from '../../../actions/concertsActions';
-import { deleteNews } from '../../../actions/newsActions';
+import { deleteConcert } from '../../../actions/concert/concertsActions';
+import { deleteNews } from '../../../actions/news/newsActions';
 import { deletePicture } from '../../../actions/carousel/carouselActions';
 
 import './ConfirmBox.scss';

@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { logout } from '../../../../actions/loginActions';
+import { logout } from '../../../../actions/login/loginActions';
 
 import { IoMdLogOut } from 'react-icons/io';
 

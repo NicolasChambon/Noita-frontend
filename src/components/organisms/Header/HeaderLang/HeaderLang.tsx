@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 
-import { toogleLanguage } from '../../../../actions/globalActions';
+import { toogleLanguage } from '../../../../actions/global/globalActions';
 
 import './HeaderLang.scss';
 

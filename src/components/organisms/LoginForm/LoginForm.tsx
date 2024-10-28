@@ -1,6 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { changeLoginInput, postLoginForm } from '../../../actions/loginActions';
+import {
+  changeLoginInput,
+  postLoginForm,
+} from '../../../actions/login/loginActions';
 
 import FailureMessages from '../FailureMessages/FailureMessages';
 

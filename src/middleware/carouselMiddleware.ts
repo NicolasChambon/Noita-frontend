@@ -8,7 +8,7 @@ import {
   UPDATE_PICTURE,
   CHANGE_POSITION,
 } from '../actions/carousel/carouselActions';
-import { logout, loginFailure } from '../actions/loginActions';
+import { logout, loginFailure } from '../actions/login/loginActions';
 
 const carouselMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

@@ -17,7 +17,7 @@ import {
   postEditConcertForm,
   concertFailure,
   fetchConcertDetails,
-} from '../../../actions/concertsActions';
+} from '../../../actions/concert/concertsActions';
 
 // Styles
 import './BoConcertsForm.scss';

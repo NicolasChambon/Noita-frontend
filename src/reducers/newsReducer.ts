@@ -5,7 +5,7 @@ import {
   CHANGE_NEWS_INPUT,
   NEWS_FAILURE,
   STORE_NEWS_DETAILS,
-} from '../actions/newsActions';
+} from '../actions/news/newsActions';
 
 export const initialState = {
   newsList: [],

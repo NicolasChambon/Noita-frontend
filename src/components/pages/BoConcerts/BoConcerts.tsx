@@ -13,7 +13,7 @@ import {
   fetchConcertList,
   displayRemoveBox,
   hideRemoveBox,
-} from '../../../actions/concertsActions';
+} from '../../../actions/concert/concertsActions';
 
 // Subcomponents
 import BoHeader from '../../organisms/BoHeader/BoHeader';

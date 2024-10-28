@@ -8,8 +8,8 @@ import {
   storeConcertDetails,
   DELETE_CONCERT,
   fetchConcertList,
-} from '../actions/concertsActions';
-import { logout, loginFailure } from '../actions/loginActions';
+} from '../actions/concert/concertsActions';
+import { logout, loginFailure } from '../actions/login/loginActions';
 
 const concertsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

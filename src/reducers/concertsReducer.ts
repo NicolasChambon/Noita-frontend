@@ -5,7 +5,7 @@ import {
   CHANGE_CONCERT_INPUT,
   CONCERT_FAILURE,
   STORE_CONCERT_DETAILS,
-} from '../actions/concertsActions';
+} from '../actions/concert/concertsActions';
 
 export const initialState = {
   concertList: [],

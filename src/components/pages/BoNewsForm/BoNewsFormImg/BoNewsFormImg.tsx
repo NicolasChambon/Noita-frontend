@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 // Redux actions
-import { changeNewsInput } from '../../../../actions/newsActions';
+import { changeNewsInput } from '../../../../actions/news/newsActions';
 
 // Utils
 import { handleImageChange } from '../../../../utils/imgUtils';

@@ -2,7 +2,7 @@ import {
   POST_LOGIN_FORM,
   loginSuccess,
   loginFailure,
-} from '../actions/loginActions';
+} from '../actions/login/loginActions';
 
 const loginMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

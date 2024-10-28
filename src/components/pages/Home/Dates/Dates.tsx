@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Redux actions
-import { fetchConcertList } from '../../../../actions/concertsActions';
+import { fetchConcertList } from '../../../../actions/concert/concertsActions';
 
 // Subcomponents
 import ConcertDate from './ConcertDate/ConcertDate';

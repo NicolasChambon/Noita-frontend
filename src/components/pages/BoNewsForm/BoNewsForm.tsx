@@ -18,7 +18,7 @@ import {
   postEditNewsForm,
   newsFailure,
   fetchNewsDetails,
-} from '../../../actions/newsActions';
+} from '../../../actions/news/newsActions';
 
 // Styles
 import './BoNewsForm.scss';

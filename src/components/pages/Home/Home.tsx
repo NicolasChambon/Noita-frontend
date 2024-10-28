@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { useEffect } from 'react';
 
-import { setTargetSection } from '../../../actions/globalActions';
+import { setTargetSection } from '../../../actions/global/globalActions';
 import { scrollUpInstantly, scrollToSection } from '../../../utils/scrollUtils';
 
 import Header from '../../organisms/Header/Header';

@@ -1,5 +1,5 @@
 import { store } from '../store';
-import { setTargetSection } from '../actions/globalActions';
+import { setTargetSection } from '../actions/global/globalActions';
 
 export const scrollIfOnSamePage = (path) => {
   if (window.location.pathname === path) {

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { toogleHeaderMenu } from '../../../../actions/globalActions';
+import { toogleHeaderMenu } from '../../../../actions/global/globalActions';
 
 import { IoMenu } from 'react-icons/io5';
 import { RxCross2 } from 'react-icons/rx';

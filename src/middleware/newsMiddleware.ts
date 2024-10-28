@@ -8,8 +8,8 @@ import {
   storeNewsDetails,
   DELETE_NEWS,
   fetchNewsList,
-} from '../actions/newsActions';
-import { logout, loginFailure } from '../actions/loginActions';
+} from '../actions/news/newsActions';
+import { logout, loginFailure } from '../actions/login/loginActions';
 
 const newsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

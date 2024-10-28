@@ -3,7 +3,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
   LOGOUT,
-} from '../actions/loginActions';
+} from '../actions/login/loginActions';
 
 export const initialState = {
   usernameInput: '',

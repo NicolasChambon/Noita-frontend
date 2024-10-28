@@ -2,7 +2,7 @@ import {
   TOOGLE_LANGUAGE,
   TOOGLE_HEADER_MENU,
   SET_TARGET_SECTION,
-} from '../actions/globalActions';
+} from '../actions/global/globalActions';
 
 export const initialState = {
   language: 'de',
