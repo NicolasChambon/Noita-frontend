@@ -9,7 +9,7 @@ import { store, persistor } from './store';
 
 import './styles/index.scss';
 
-const root = document.getElementById('root')!;
+const root = document.getElementById('root')! as HTMLElement;
 
 createRoot(root).render(
   <BrowserRouter>

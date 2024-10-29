@@ -4,7 +4,7 @@ import { composeWithDevTools } from '@redux-devtools/extension';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import reducer from '../reducers/indexReducer';
+import reducer from '../reducers/indexReducer'; // TODO s'assurer que le reducer est typé
 
 // Middleware
 import loginMiddleware from '../middleware/loginMiddleware';

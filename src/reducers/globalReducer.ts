@@ -1,12 +1,22 @@
 import { GlobalActionsType } from '../actions/actionsIndex';
+import { GlobalActionTypes } from '../actions/global/globalActionTypes';
 
-export const initialState = {
+export interface GlobalState {
+  language: 'de' | 'fr';
+  headerMenu: boolean;
+  targetSection: 'identity' | 'media' | 'dates' | 'contact' | ''; // TODO réfléchir créer un type SectionType (car utilisé dans plusieurs fichiers)
+}
+
+export const initialState: GlobalState = {
   language: 'de',
   headerMenu: false,
   targetSection: '',
 };
 
-const globalReducer = (state = initialState, action = {}) => {
+const globalReducer = (
+  state: GlobalState = initialState,
+  action: GlobalActionTypes,
+): GlobalState => {
   switch (action.type) {
     case GlobalActionsType.TOOGLE_LANGUAGE:
       return {
