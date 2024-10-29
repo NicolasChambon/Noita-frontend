@@ -1,5 +1,7 @@
+// Dependencies
 import { combineReducers } from 'redux';
 
+// Reducers
 import globalReducer from './globalReducer';
 import loginReducer from './loginReducer';
 import concertsReducer from './concertsReducer';
@@ -13,5 +15,7 @@ const rootReducer = combineReducers({
   news: newsReducer,
   carousel: carouselReducer,
 });
+
+export type RootState = ReturnType<typeof rootReducer>;
 
 export default rootReducer;
