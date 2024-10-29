@@ -1,19 +1,15 @@
+import { NewsActionsType } from '../actions/actionsIndex';
 import {
-  FETCH_NEWS_LIST,
   storeNewsList,
-  POST_ADD_NEWS_FORM,
-  POST_EDIT_NEWS_FORM,
   newsFailure,
-  FETCH_NEWS_DETAILS,
   storeNewsDetails,
-  DELETE_NEWS,
   fetchNewsList,
 } from '../actions/news/newsActions';
 import { logout, loginFailure } from '../actions/login/loginActions';
 
 const newsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
-    case FETCH_NEWS_LIST: {
+    case NewsActionsType.FETCH_NEWS_LIST: {
       (async () => {
         try {
           const response = await fetch(`${import.meta.env.VITE_API_URL}/posts`);
@@ -31,7 +27,7 @@ const newsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case FETCH_NEWS_DETAILS: {
+    case NewsActionsType.FETCH_NEWS_DETAILS: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -66,7 +62,7 @@ const newsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case POST_ADD_NEWS_FORM: {
+    case NewsActionsType.POST_ADD_NEWS_FORM: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -104,7 +100,7 @@ const newsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case POST_EDIT_NEWS_FORM: {
+    case NewsActionsType.POST_EDIT_NEWS_FORM: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -143,7 +139,7 @@ const newsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case DELETE_NEWS: {
+    case NewsActionsType.DELETE_NEWS: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;

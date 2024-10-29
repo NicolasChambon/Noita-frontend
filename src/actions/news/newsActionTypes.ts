@@ -1,19 +1,7 @@
-import {
-  FETCH_NEWS_LIST,
-  STORE_NEWS_LIST,
-  DISPLAY_REMOVE_BOX,
-  HIDE_REMOVE_BOX,
-  CHANGE_NEWS_INPUT,
-  POST_ADD_NEWS_FORM,
-  POST_EDIT_NEWS_FORM,
-  NEWS_FAILURE,
-  FETCH_NEWS_DETAILS,
-  STORE_NEWS_DETAILS,
-  DELETE_NEWS,
-} from './newsActions';
+import { NewsActionsType } from '../actionsIndex';
 
 export interface FetchNewsListReturn {
-  type: typeof FETCH_NEWS_LIST;
+  type: typeof NewsActionsType.FETCH_NEWS_LIST;
 }
 
 export interface News {
@@ -28,52 +16,52 @@ export interface News {
 }
 
 export interface StoreNewsListReturn {
-  type: typeof STORE_NEWS_LIST;
+  type: typeof NewsActionsType.STORE_NEWS_LIST;
   newsList: News[];
 }
 
 export interface DisplayRemoveBoxReturn {
-  type: typeof DISPLAY_REMOVE_BOX;
+  type: typeof NewsActionsType.DISPLAY_REMOVE_BOX;
   newsId: number;
 }
 
 export interface HideRemoveBoxReturn {
-  type: typeof HIDE_REMOVE_BOX;
+  type: typeof NewsActionsType.HIDE_REMOVE_BOX;
 }
 
 export interface ChangeNewsInputReturn {
-  type: typeof CHANGE_NEWS_INPUT;
+  type: typeof NewsActionsType.CHANGE_NEWS_INPUT;
   value: string;
   identifier: 'titleFr' | 'titleDe' | 'contentFr' | 'contentDe' | 'img64';
 }
 
 export interface PostAddNewsFormReturn {
-  type: typeof POST_ADD_NEWS_FORM;
+  type: typeof NewsActionsType.POST_ADD_NEWS_FORM;
   navigate: () => void;
 }
 
 export interface PostEditNewsFormReturn {
-  type: typeof POST_EDIT_NEWS_FORM;
+  type: typeof NewsActionsType.POST_EDIT_NEWS_FORM;
   navigate: () => void;
 }
 
 export interface NewsFailureReturn {
-  type: typeof NEWS_FAILURE;
+  type: typeof NewsActionsType.NEWS_FAILURE;
   failureMessages: string[];
 }
 
 export interface FetchNewsDetailsReturn {
-  type: typeof FETCH_NEWS_DETAILS;
+  type: typeof NewsActionsType.FETCH_NEWS_DETAILS;
   newsId: number;
 }
 
 export interface StoreNewsDetailsReturn {
-  type: typeof STORE_NEWS_DETAILS;
-  news: News;
+  type: typeof NewsActionsType.STORE_NEWS_DETAILS;
+  newsDetails: News;
 }
 
 export interface DeleteNewsReturn {
-  type: typeof DELETE_NEWS;
+  type: typeof NewsActionsType.DELETE_NEWS;
   newsId: number;
 }
 

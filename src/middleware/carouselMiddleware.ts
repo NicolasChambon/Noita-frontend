@@ -1,18 +1,14 @@
+import { CarouselActionsType } from '../actions/actionsIndex';
 import {
-  FETCH_CAROUSEL_PICTURES,
   storePictureList,
-  ADD_PICTURE,
   carouselFailure,
   fetchCarouselPictures,
-  DELETE_PICTURE,
-  UPDATE_PICTURE,
-  CHANGE_POSITION,
 } from '../actions/carousel/carouselActions';
 import { logout, loginFailure } from '../actions/login/loginActions';
 
 const carouselMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
-    case FETCH_CAROUSEL_PICTURES: {
+    case CarouselActionsType.FETCH_CAROUSEL_PICTURES: {
       (async () => {
         try {
           const response = await fetch(
@@ -32,7 +28,7 @@ const carouselMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case ADD_PICTURE: {
+    case CarouselActionsType.ADD_PICTURE: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -72,7 +68,7 @@ const carouselMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case DELETE_PICTURE: {
+    case CarouselActionsType.DELETE_PICTURE: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -112,7 +108,7 @@ const carouselMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case UPDATE_PICTURE: {
+    case CarouselActionsType.UPDATE_PICTURE: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -154,7 +150,7 @@ const carouselMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case CHANGE_POSITION: {
+    case CarouselActionsType.CHANGE_POSITION: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;

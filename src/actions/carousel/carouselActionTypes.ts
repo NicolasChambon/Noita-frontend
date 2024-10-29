@@ -1,18 +1,7 @@
-import {
-  FETCH_CAROUSEL_PICTURES,
-  STORE_PICTURE_LIST,
-  CHANGE_PICTURE_INPUT,
-  ADD_PICTURE,
-  CAROUSEL_FAILURE,
-  DISPLAY_REMOVE_BOX,
-  HIDE_REMOVE_BOX,
-  DELETE_PICTURE,
-  UPDATE_PICTURE,
-  CHANGE_POSITION,
-} from './carouselActions';
+import { CarouselActionsType } from '../actionsIndex';
 
 export interface FetchCarouselPicturesReturn {
-  type: typeof FETCH_CAROUSEL_PICTURES;
+  type: typeof CarouselActionsType.FETCH_CAROUSEL_PICTURES;
 }
 
 export interface Picture {
@@ -24,51 +13,51 @@ export interface Picture {
 }
 
 export interface StorePictureListReturn {
-  type: typeof STORE_PICTURE_LIST;
+  type: typeof CarouselActionsType.STORE_PICTURE_LIST;
   pictureList: Picture[];
 }
 
 export interface ChangePictureInputReturn {
-  type: typeof CHANGE_PICTURE_INPUT;
+  type: typeof CarouselActionsType.CHANGE_PICTURE_INPUT;
   value: string;
   identifier: 'img64'; // 'img64' is the only possible value for identifier in the case of carousel
 }
 
 export interface AddPictureReturn {
-  type: typeof ADD_PICTURE;
+  type: typeof CarouselActionsType.ADD_PICTURE;
 }
 
 export interface CarouselFailureReturn {
-  type: typeof CAROUSEL_FAILURE;
+  type: typeof CarouselActionsType.CAROUSEL_FAILURE;
   failureMessages: string[];
 }
 
 export interface DisplayRemoveBoxReturn {
-  type: typeof DISPLAY_REMOVE_BOX;
+  type: typeof CarouselActionsType.DISPLAY_REMOVE_BOX;
   pictureId: number;
 }
 
 export interface HideRemoveBoxReturn {
-  type: typeof HIDE_REMOVE_BOX;
+  type: typeof CarouselActionsType.HIDE_REMOVE_BOX;
 }
 
 export interface DeletePictureReturn {
-  type: typeof DELETE_PICTURE;
+  type: typeof CarouselActionsType.DELETE_PICTURE;
   pictureId: number;
 }
 
 export interface UpdatePictureReturn {
-  type: typeof UPDATE_PICTURE;
+  type: typeof CarouselActionsType.UPDATE_PICTURE;
   pictureId: number;
 }
 
 export interface ChangePositionReturn {
-  type: typeof CHANGE_POSITION;
+  type: typeof CarouselActionsType.CHANGE_POSITION;
   pictureId: number;
   direction: 'left' | 'right';
 }
 
-export type CarouselAction =
+export type CarouselActionTypes =
   | FetchCarouselPicturesReturn
   | StorePictureListReturn
   | ChangePictureInputReturn

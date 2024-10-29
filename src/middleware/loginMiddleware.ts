@@ -1,12 +1,9 @@
-import {
-  POST_LOGIN_FORM,
-  loginSuccess,
-  loginFailure,
-} from '../actions/login/loginActions';
+import { loginSuccess, loginFailure } from '../actions/login/loginActions';
+import { LoginActionsType } from '../actions/actionsIndex';
 
 const loginMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
-    case POST_LOGIN_FORM: {
+    case LoginActionsType.POST_LOGIN_FORM: {
       (async () => {
         try {
           const response = await fetch(

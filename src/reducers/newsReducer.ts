@@ -1,11 +1,4 @@
-import {
-  STORE_NEWS_LIST,
-  DISPLAY_REMOVE_BOX,
-  HIDE_REMOVE_BOX,
-  CHANGE_NEWS_INPUT,
-  NEWS_FAILURE,
-  STORE_NEWS_DETAILS,
-} from '../actions/news/newsActions';
+import { NewsActionsType } from '../actions/actionsIndex';
 
 export const initialState = {
   newsList: [],
@@ -24,27 +17,27 @@ export const initialState = {
 
 const newsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case STORE_NEWS_LIST:
+    case NewsActionsType.STORE_NEWS_LIST:
       return {
         ...state,
         newsList: action.newsList,
       };
 
-    case DISPLAY_REMOVE_BOX:
+    case NewsActionsType.DISPLAY_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: action.newsId,
         isRemoveBoxDisplayed: true,
       };
 
-    case HIDE_REMOVE_BOX:
+    case NewsActionsType.HIDE_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: null,
         isRemoveBoxDisplayed: false,
       };
 
-    case CHANGE_NEWS_INPUT:
+    case NewsActionsType.CHANGE_NEWS_INPUT:
       return {
         ...state,
         form: {
@@ -53,13 +46,13 @@ const newsReducer = (state = initialState, action) => {
         },
       };
 
-    case NEWS_FAILURE:
+    case NewsActionsType.NEWS_FAILURE:
       return {
         ...state,
         failureMessages: action.failureMessages,
       };
 
-    case STORE_NEWS_DETAILS:
+    case NewsActionsType.STORE_NEWS_DETAILS:
       return {
         ...state,
         newsDetails: action.newsDetails,

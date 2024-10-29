@@ -1,8 +1,4 @@
-import {
-  TOOGLE_LANGUAGE,
-  TOOGLE_HEADER_MENU,
-  SET_TARGET_SECTION,
-} from '../actions/global/globalActions';
+import { GlobalActionsType } from '../actions/actionsIndex';
 
 export const initialState = {
   language: 'de',
@@ -12,17 +8,17 @@ export const initialState = {
 
 const globalReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case TOOGLE_LANGUAGE:
+    case GlobalActionsType.TOOGLE_LANGUAGE:
       return {
         ...state,
         language: action.language,
       };
-    case TOOGLE_HEADER_MENU:
+    case GlobalActionsType.TOOGLE_HEADER_MENU:
       return {
         ...state,
         headerMenu: !state.headerMenu,
       };
-    case SET_TARGET_SECTION:
+    case GlobalActionsType.SET_TARGET_SECTION:
       return {
         ...state,
         targetSection: action.targetSection,

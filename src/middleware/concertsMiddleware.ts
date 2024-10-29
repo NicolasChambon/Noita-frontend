@@ -1,19 +1,15 @@
+import { ConcertActionsType } from '../actions/actionsIndex';
 import {
-  FETCH_CONCERT_LIST,
   storeConcertList,
-  POST_ADD_CONCERT_FORM,
-  POST_EDIT_CONCERT_FORM,
   concertFailure,
-  FETCH_CONCERT_DETAILS,
   storeConcertDetails,
-  DELETE_CONCERT,
   fetchConcertList,
 } from '../actions/concert/concertsActions';
 import { logout, loginFailure } from '../actions/login/loginActions';
 
 const concertsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
-    case FETCH_CONCERT_LIST: {
+    case ConcertActionsType.FETCH_CONCERT_LIST: {
       (async () => {
         try {
           const response = await fetch(
@@ -33,7 +29,7 @@ const concertsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case FETCH_CONCERT_DETAILS: {
+    case ConcertActionsType.FETCH_CONCERT_DETAILS: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -68,7 +64,7 @@ const concertsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case POST_ADD_CONCERT_FORM: {
+    case ConcertActionsType.POST_ADD_CONCERT_FORM: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -106,7 +102,7 @@ const concertsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case POST_EDIT_CONCERT_FORM: {
+    case ConcertActionsType.POST_EDIT_CONCERT_FORM: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -145,7 +141,7 @@ const concertsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case DELETE_CONCERT: {
+    case ConcertActionsType.DELETE_CONCERT: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;

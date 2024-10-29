@@ -1,9 +1,4 @@
-import {
-  CHANGE_LOGIN_INPUT,
-  LOGIN_SUCCESS,
-  LOGIN_FAILURE,
-  LOGOUT,
-} from '../actions/login/loginActions';
+import { LoginActionsType } from '../actions/actionsIndex';
 
 export const initialState = {
   usernameInput: '',
@@ -16,13 +11,13 @@ export const initialState = {
 
 const loginReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case CHANGE_LOGIN_INPUT:
+    case LoginActionsType.CHANGE_LOGIN_INPUT:
       return {
         ...state,
         [action.identifier]: action.value,
       };
 
-    case LOGIN_SUCCESS:
+    case LoginActionsType.LOGIN_SUCCESS:
       return {
         ...state,
         isLogged: true,
@@ -33,13 +28,13 @@ const loginReducer = (state = initialState, action = {}) => {
         token: action.token,
       };
 
-    case LOGIN_FAILURE:
+    case LoginActionsType.LOGIN_FAILURE:
       return {
         ...state,
         failureMessages: action.failureMessages,
       };
 
-    case LOGOUT:
+    case LoginActionsType.LOGOUT:
       return {
         ...state,
         isLogged: false,

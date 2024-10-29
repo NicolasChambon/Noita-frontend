@@ -1,24 +1,20 @@
-import {
-  TOOGLE_LANGUAGE,
-  TOOGLE_HEADER_MENU,
-  SET_TARGET_SECTION,
-} from './globalActions';
+import { GlobalActionsType } from '../actionsIndex';
 
 export interface ToogleLanguageReturn {
-  type: typeof TOOGLE_LANGUAGE;
+  type: typeof GlobalActionsType.TOOGLE_LANGUAGE;
   language: 'de' | 'fr';
 }
 
 export interface ToogleHeaderMenuReturn {
-  type: typeof TOOGLE_HEADER_MENU;
+  type: typeof GlobalActionsType.TOOGLE_HEADER_MENU;
 }
 
 export interface SetTargetSectionReturn {
-  type: typeof SET_TARGET_SECTION;
+  type: typeof GlobalActionsType.SET_TARGET_SECTION;
   targetSection: 'identity' | 'media' | 'dates' | 'contact';
 }
 
-export type GlobalAction =
+export type GlobalActionTypes =
   | ToogleLanguageReturn
   | ToogleHeaderMenuReturn
   | SetTargetSectionReturn;

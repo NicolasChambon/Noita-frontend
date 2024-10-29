@@ -1,10 +1,4 @@
-import {
-  STORE_PICTURE_LIST,
-  CHANGE_PICTURE_INPUT,
-  CAROUSEL_FAILURE,
-  DISPLAY_REMOVE_BOX,
-  HIDE_REMOVE_BOX,
-} from '../actions/carousel/carouselActions';
+import { CarouselActionsType } from '../actions/actionsIndex';
 
 export const initialState = {
   pictureList: [],
@@ -16,32 +10,32 @@ export const initialState = {
 
 const pictureReducer = (state = initialState, action) => {
   switch (action.type) {
-    case STORE_PICTURE_LIST:
+    case CarouselActionsType.STORE_PICTURE_LIST:
       return {
         ...state,
         pictureList: action.pictureList,
       };
 
-    case CHANGE_PICTURE_INPUT:
+    case CarouselActionsType.CHANGE_PICTURE_INPUT:
       return {
         ...state,
         pictureInput: action.value,
       };
 
-    case CAROUSEL_FAILURE:
+    case CarouselActionsType.CAROUSEL_FAILURE:
       return {
         ...state,
         failureMessages: action.failureMessages,
       };
 
-    case DISPLAY_REMOVE_BOX:
+    case CarouselActionsType.DISPLAY_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: action.pictureId,
         isRemoveBoxDisplayed: true,
       };
 
-    case HIDE_REMOVE_BOX:
+    case CarouselActionsType.HIDE_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: null,

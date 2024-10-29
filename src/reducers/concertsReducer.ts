@@ -1,11 +1,4 @@
-import {
-  STORE_CONCERT_LIST,
-  DISPLAY_REMOVE_BOX,
-  HIDE_REMOVE_BOX,
-  CHANGE_CONCERT_INPUT,
-  CONCERT_FAILURE,
-  STORE_CONCERT_DETAILS,
-} from '../actions/concert/concertsActions';
+import { ConcertActionsType } from '../actions/actionsIndex';
 
 export const initialState = {
   concertList: [],
@@ -24,27 +17,27 @@ export const initialState = {
 
 const concertsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case STORE_CONCERT_LIST:
+    case ConcertActionsType.STORE_CONCERT_LIST:
       return {
         ...state,
         concertList: action.concertList,
       };
 
-    case DISPLAY_REMOVE_BOX:
+    case ConcertActionsType.DISPLAY_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: action.concertId,
         isRemoveBoxDisplayed: true,
       };
 
-    case HIDE_REMOVE_BOX:
+    case ConcertActionsType.HIDE_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: null,
         isRemoveBoxDisplayed: false,
       };
 
-    case CHANGE_CONCERT_INPUT:
+    case ConcertActionsType.CHANGE_CONCERT_INPUT:
       return {
         ...state,
         form: {
@@ -53,13 +46,13 @@ const concertsReducer = (state = initialState, action) => {
         },
       };
 
-    case CONCERT_FAILURE:
+    case ConcertActionsType.CONCERT_FAILURE:
       return {
         ...state,
         failureMessages: action.failureMessages,
       };
 
-    case STORE_CONCERT_DETAILS:
+    case ConcertActionsType.STORE_CONCERT_DETAILS:
       return {
         ...state,
         concertDetails: action.concertDetails,
