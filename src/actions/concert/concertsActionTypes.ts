@@ -4,6 +4,7 @@ export interface FetchConcertListReturn {
   type: typeof ConcertActionsType.FETCH_CONCERT_LIST;
 }
 
+// TODO: penser à déplacer ce type dans un fichier dédié
 export interface Concert {
   id: number;
   city: string;

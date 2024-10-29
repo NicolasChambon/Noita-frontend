@@ -1,8 +1,30 @@
 import { ConcertActionsType } from '../actions/actionsIndex';
+import {
+  Concert,
+  ConcertsActionTypes,
+} from '../actions/concert/concertsActionTypes';
 
-export const initialState = {
+// TODO à déplacer ?
+export interface ConcertForm {
+  city: string;
+  eventDate: string;
+  venue: string;
+  eventName: string;
+  link: string;
+}
+
+export interface ConcertState {
+  concertList: Concert[];
+  concertDetails: Concert | null;
+  removeBoxId: number | null;
+  isRemoveBoxDisplayed: boolean;
+  form: ConcertForm;
+  failureMessages: string[];
+}
+
+export const initialState: ConcertState = {
   concertList: [],
-  concertDetails: {},
+  concertDetails: null,
   removeBoxId: null,
   isRemoveBoxDisplayed: false,
   form: {
@@ -15,7 +37,10 @@ export const initialState = {
   failureMessages: [],
 };
 
-const concertsReducer = (state = initialState, action) => {
+const concertsReducer = (
+  state: ConcertState = initialState,
+  action: ConcertsActionTypes,
+): ConcertState => {
   switch (action.type) {
     case ConcertActionsType.STORE_CONCERT_LIST:
       return {

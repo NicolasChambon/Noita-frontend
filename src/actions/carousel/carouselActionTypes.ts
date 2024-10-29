@@ -4,6 +4,7 @@ export interface FetchCarouselPicturesReturn {
   type: typeof CarouselActionsType.FETCH_CAROUSEL_PICTURES;
 }
 
+// TODO Voir si on peut mettre ça dans un fichier types.ts
 export interface Picture {
   id: number;
   url: string;

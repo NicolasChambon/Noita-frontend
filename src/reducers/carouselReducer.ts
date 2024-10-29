@@ -1,14 +1,29 @@
 import { CarouselActionsType } from '../actions/actionsIndex';
+import {
+  CarouselActionTypes,
+  Picture,
+} from '../actions/carousel/carouselActionTypes';
 
-export const initialState = {
+export interface CarouselState {
+  pictureList: Picture[];
+  failureMessages: string[];
+  removeBoxId: number | null;
+  isRemoveBoxDisplayed: boolean;
+  pictureInput: string;
+}
+
+export const initialState: CarouselState = {
   pictureList: [],
   failureMessages: [],
   removeBoxId: null,
   isRemoveBoxDisplayed: false,
-  pictureInput: '',
+  pictureInput: '', // base64 string
 };
 
-const pictureReducer = (state = initialState, action) => {
+const carouselReducer = (
+  state: CarouselState = initialState,
+  action: CarouselActionTypes,
+): CarouselState => {
   switch (action.type) {
     case CarouselActionsType.STORE_PICTURE_LIST:
       return {
@@ -47,4 +62,4 @@ const pictureReducer = (state = initialState, action) => {
   }
 };
 
-export default pictureReducer;
+export default carouselReducer;
