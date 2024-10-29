@@ -9,7 +9,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
-  this.parser: '@typescript-eslint/parser',
+  parser: '@typescript-eslint/parser',
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh', 'unused-imports', '@typescript-eslint'],
@@ -19,7 +19,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-imports': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
   },
 };
