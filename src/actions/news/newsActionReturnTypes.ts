@@ -65,7 +65,7 @@ export interface DeleteNewsReturn {
   newsId: number;
 }
 
-export type NewsActionTypes =
+export type NewsActionReturnTypes =
   | FetchNewsListReturn
   | StoreNewsListReturn
   | DisplayRemoveBoxReturn

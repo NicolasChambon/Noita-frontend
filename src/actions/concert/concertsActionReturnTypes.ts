@@ -66,7 +66,7 @@ export interface DeleteConcertReturn {
   concertId: number;
 }
 
-export type ConcertsActionTypes =
+export type ConcertsActionReturnTypes =
   | FetchConcertListReturn
   | StoreConcertListReturn
   | DisplayRemoveBoxReturn

@@ -58,7 +58,7 @@ export interface ChangePositionReturn {
   direction: 'left' | 'right';
 }
 
-export type CarouselActionTypes =
+export type CarouselActionReturnTypes =
   | FetchCarouselPicturesReturn
   | StorePictureListReturn
   | ChangePictureInputReturn

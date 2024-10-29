@@ -12,7 +12,7 @@ import {
   FetchNewsDetailsReturn,
   StoreNewsDetailsReturn,
   DeleteNewsReturn,
-} from './newsActionTypes';
+} from './newsActionReturnTypes';
 
 export const fetchNewsList = (): FetchNewsListReturn => {
   return {

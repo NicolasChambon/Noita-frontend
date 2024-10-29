@@ -3,7 +3,7 @@ import {
   ToogleLanguageReturn,
   ToogleHeaderMenuReturn,
   SetTargetSectionReturn,
-} from './globalActionTypes';
+} from './globalActionReturnTypes';
 
 export const toogleLanguage = (
   language: 'de' | 'fr',

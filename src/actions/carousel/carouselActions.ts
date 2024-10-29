@@ -11,7 +11,7 @@ import {
   DeletePictureReturn,
   UpdatePictureReturn,
   ChangePositionReturn,
-} from './carouselActionTypes';
+} from './carouselActionReturnTypes';
 
 export const fetchCarouselPictures = (): FetchCarouselPicturesReturn => {
   return {

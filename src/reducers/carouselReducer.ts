@@ -1,8 +1,8 @@
 import { CarouselActionsType } from '../actions/actionsIndex';
 import {
-  CarouselActionTypes,
+  CarouselActionReturnTypes,
   Picture,
-} from '../actions/carousel/carouselActionTypes';
+} from '../actions/carousel/carouselActionReturnTypes';
 
 export interface CarouselState {
   pictureList: Picture[];
@@ -22,7 +22,7 @@ export const initialState: CarouselState = {
 
 const carouselReducer = (
   state: CarouselState = initialState,
-  action: CarouselActionTypes,
+  action: CarouselActionReturnTypes,
 ): CarouselState => {
   switch (action.type) {
     case CarouselActionsType.STORE_PICTURE_LIST:

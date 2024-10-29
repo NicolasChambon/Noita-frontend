@@ -5,7 +5,7 @@ import {
   LoginSuccessReturn,
   LoginFailureReturn,
   LogoutReturn,
-} from './loginActionTypes';
+} from './loginActionReturnTypes';
 
 export const changeLoginInput = (
   value: string,

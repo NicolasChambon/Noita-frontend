@@ -12,7 +12,7 @@ import {
   FetchConcertDetailsReturn,
   StoreConcertDetailsReturn,
   DeleteConcertReturn,
-} from './concertsActionTypes';
+} from './concertsActionReturnTypes';
 
 export const fetchConcertList = (): FetchConcertListReturn => {
   return {

@@ -1,5 +1,5 @@
 import { GlobalActionsType } from '../actions/actionsIndex';
-import { GlobalActionTypes } from '../actions/global/globalActionTypes';
+import { GlobalActionReturnTypes } from '../actions/global/globalActionReturnTypes';
 
 export interface GlobalState {
   language: 'de' | 'fr';
@@ -15,7 +15,7 @@ export const initialState: GlobalState = {
 
 const globalReducer = (
   state: GlobalState = initialState,
-  action: GlobalActionTypes,
+  action: GlobalActionReturnTypes,
 ): GlobalState => {
   switch (action.type) {
     case GlobalActionsType.TOOGLE_LANGUAGE:

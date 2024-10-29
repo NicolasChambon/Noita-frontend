@@ -14,7 +14,7 @@ export interface SetTargetSectionReturn {
   targetSection: 'identity' | 'media' | 'dates' | 'contact';
 }
 
-export type GlobalActionTypes =
+export type GlobalActionReturnTypes =
   | ToogleLanguageReturn
   | ToogleHeaderMenuReturn
   | SetTargetSectionReturn;

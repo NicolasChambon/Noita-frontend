@@ -1,6 +1,16 @@
 import { LoginActionsType } from '../actions/actionsIndex';
+import { LoginActionReturnTypes } from '../actions/login/loginActionReturnTypes';
 
-export const initialState = {
+export interface LoginState {
+  usernameInput: string;
+  passwordInput: string;
+  isLogged: boolean;
+  loggedId: number | null;
+  token: string;
+  failureMessages: string[];
+}
+
+export const initialState: LoginState = {
   usernameInput: '',
   passwordInput: '',
   isLogged: false,
@@ -9,7 +19,10 @@ export const initialState = {
   failureMessages: [],
 };
 
-const loginReducer = (state = initialState, action = {}) => {
+const loginReducer = (
+  state: LoginState = initialState,
+  action: LoginActionReturnTypes,
+): LoginState => {
   switch (action.type) {
     case LoginActionsType.CHANGE_LOGIN_INPUT:
       return {

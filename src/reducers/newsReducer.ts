@@ -1,8 +1,30 @@
 import { NewsActionsType } from '../actions/actionsIndex';
+import {
+  News,
+  NewsActionReturnTypes,
+} from '../actions/news/newsActionReturnTypes';
 
-export const initialState = {
+// TODO à déplacer ?
+export interface NewsForm {
+  titleFr: string;
+  titleDe: string;
+  contentFr: string;
+  contentDe: string;
+  img64: string;
+}
+
+export interface NewsState {
+  newsList: News[];
+  newsDetails: News | null;
+  removeBoxId: number | null;
+  isRemoveBoxDisplayed: boolean;
+  form: NewsForm;
+  failureMessages: string[];
+}
+
+export const initialState: NewsState = {
   newsList: [],
-  newsDetails: {},
+  newsDetails: null,
   removeBoxId: null,
   isRemoveBoxDisplayed: false,
   form: {
@@ -15,7 +37,10 @@ export const initialState = {
   failureMessages: [],
 };
 
-const newsReducer = (state = initialState, action) => {
+const newsReducer = (
+  state: NewsState = initialState,
+  action: NewsActionReturnTypes,
+): NewsState => {
   switch (action.type) {
     case NewsActionsType.STORE_NEWS_LIST:
       return {

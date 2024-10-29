@@ -26,7 +26,7 @@ export interface LogoutReturn {
   type: typeof LoginActionsType.LOGOUT;
 }
 
-export type LoginAction =
+export type LoginActionReturnTypes =
   | ChangeLoginInputReturn
   | PostLoginFormReturn
   | LoginSuccessReturn
