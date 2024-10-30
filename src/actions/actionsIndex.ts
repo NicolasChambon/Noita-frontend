@@ -1,4 +1,4 @@
-export enum CarouselActionsType {
+export enum CarouselActionsEnum {
   FETCH_CAROUSEL_PICTURES = 'FETCH_CAROUSEL_PICTURES',
   STORE_PICTURE_LIST = 'STORE_PICTURE_LIST',
   CHANGE_PICTURE_INPUT = 'CHANGE_PICTURE_INPUT',
@@ -11,7 +11,7 @@ export enum CarouselActionsType {
   CHANGE_POSITION = 'CHANGE_POSITION',
 }
 
-export enum ConcertActionsType {
+export enum ConcertActionsEnum {
   FETCH_CONCERT_LIST = 'FETCH_CONCERT_LIST',
   STORE_CONCERT_LIST = 'STORE_CONCERT_LIST',
   DISPLAY_REMOVE_BOX = 'DISPLAY_REMOVE_BOX',
@@ -25,13 +25,13 @@ export enum ConcertActionsType {
   DELETE_CONCERT = 'DELETE_CONCERT',
 }
 
-export enum GlobalActionsType {
+export enum GlobalActionsEnum {
   TOOGLE_LANGUAGE = 'TOOGLE_LANGUAGE',
   TOOGLE_HEADER_MENU = 'TOOGLE_HEADER_MENU',
   SET_TARGET_SECTION = 'SET_TARGET_SECTION',
 }
 
-export enum LoginActionsType {
+export enum LoginActionsEnum {
   CHANGE_LOGIN_INPUT = 'CHANGE_LOGIN_INPUT',
   POST_LOGIN_FORM = 'POST_LOGIN_FORM',
   LOGIN_SUCCESS = 'LOGIN_SUCCESS',
@@ -39,7 +39,7 @@ export enum LoginActionsType {
   LOGOUT = 'LOGOUT',
 }
 
-export enum NewsActionsType {
+export enum NewsActionsEnum {
   FETCH_NEWS_LIST = 'FETCH_NEWS_LIST',
   STORE_NEWS_LIST = 'STORE_NEWS_LIST',
   DISPLAY_REMOVE_BOX = 'DISPLAY_REMOVE_BOX',

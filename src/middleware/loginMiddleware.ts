@@ -1,9 +1,9 @@
+import { LoginActionsEnum } from '../actions/actionsIndex';
 import { loginSuccess, loginFailure } from '../actions/login/loginActions';
-import { LoginActionsType } from '../actions/actionsIndex';
 
 const loginMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
-    case LoginActionsType.POST_LOGIN_FORM: {
+    case LoginActionsEnum.POST_LOGIN_FORM: {
       (async () => {
         try {
           const response = await fetch(

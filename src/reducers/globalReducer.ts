@@ -1,5 +1,5 @@
-import { GlobalActionsType } from '../actions/actionsIndex';
-import { GlobalActionReturnTypes } from '../actions/global/globalActionReturnTypes';
+import { GlobalActionsEnum } from '../actions/actionsIndex';
+import { GlobalAction } from '../actions/global/globalActionTypes';
 
 export interface GlobalState {
   language: 'de' | 'fr';
@@ -15,20 +15,20 @@ export const initialState: GlobalState = {
 
 const globalReducer = (
   state: GlobalState = initialState,
-  action: GlobalActionReturnTypes,
+  action: GlobalAction,
 ): GlobalState => {
   switch (action.type) {
-    case GlobalActionsType.TOOGLE_LANGUAGE:
+    case GlobalActionsEnum.TOOGLE_LANGUAGE:
       return {
         ...state,
         language: action.language,
       };
-    case GlobalActionsType.TOOGLE_HEADER_MENU:
+    case GlobalActionsEnum.TOOGLE_HEADER_MENU:
       return {
         ...state,
         headerMenu: !state.headerMenu,
       };
-    case GlobalActionsType.SET_TARGET_SECTION:
+    case GlobalActionsEnum.SET_TARGET_SECTION:
       return {
         ...state,
         targetSection: action.targetSection,

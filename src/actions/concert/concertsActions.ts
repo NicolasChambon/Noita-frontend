@@ -1,53 +1,51 @@
-import { ConcertActionsType } from '../actionsIndex';
+import { ConcertActionsEnum } from '../actionsIndex';
 import {
-  FetchConcertListReturn,
+  FetchConcertList,
   Concert,
-  StoreConcertListReturn,
-  DisplayRemoveBoxReturn,
-  HideRemoveBoxReturn,
-  ChangeConcertInputReturn,
-  PostAddConcertFormReturn,
-  PostEditConcertFormReturn,
-  ConcertFailureReturn,
-  FetchConcertDetailsReturn,
-  StoreConcertDetailsReturn,
-  DeleteConcertReturn,
-} from './concertsActionReturnTypes';
+  StoreConcertList,
+  DisplayRemoveBox,
+  HideRemoveBox,
+  ChangeConcertInput,
+  PostAddConcertForm,
+  PostEditConcertForm,
+  ConcertFailure,
+  FetchConcertDetails,
+  StoreConcertDetails,
+  DeleteConcert,
+} from './concertsActionTypes';
 
-export const fetchConcertList = (): FetchConcertListReturn => {
+export const fetchConcertList = (): FetchConcertList => {
   return {
-    type: ConcertActionsType.FETCH_CONCERT_LIST,
+    type: ConcertActionsEnum.FETCH_CONCERT_LIST,
   };
 };
 
-export const storeConcertList = (
-  concertList: Concert[],
-): StoreConcertListReturn => {
+export const storeConcertList = (concertList: Concert[]): StoreConcertList => {
   return {
-    type: ConcertActionsType.STORE_CONCERT_LIST,
+    type: ConcertActionsEnum.STORE_CONCERT_LIST,
     concertList,
   };
 };
 
-export const displayRemoveBox = (concertId: number): DisplayRemoveBoxReturn => {
+export const displayRemoveBox = (concertId: number): DisplayRemoveBox => {
   return {
-    type: ConcertActionsType.DISPLAY_REMOVE_BOX,
+    type: ConcertActionsEnum.DISPLAY_REMOVE_BOX,
     concertId,
   };
 };
 
-export const hideRemoveBox = (): HideRemoveBoxReturn => {
+export const hideRemoveBox = (): HideRemoveBox => {
   return {
-    type: ConcertActionsType.HIDE_REMOVE_BOX,
+    type: ConcertActionsEnum.HIDE_REMOVE_BOX,
   };
 };
 
 export const changeConcertInput = (
   value: string,
   identifier: 'city' | 'eventDate' | 'venue' | 'eventName' | 'link',
-): ChangeConcertInputReturn => {
+): ChangeConcertInput => {
   return {
-    type: ConcertActionsType.CHANGE_CONCERT_INPUT,
+    type: ConcertActionsEnum.CHANGE_CONCERT_INPUT,
     value,
     identifier,
   };
@@ -55,52 +53,48 @@ export const changeConcertInput = (
 
 export const postAddConcertForm = (
   navigate: () => void,
-): PostAddConcertFormReturn => {
+): PostAddConcertForm => {
   return {
-    type: ConcertActionsType.POST_ADD_CONCERT_FORM,
+    type: ConcertActionsEnum.POST_ADD_CONCERT_FORM,
     navigate,
   };
 };
 
 export const postEditConcertForm = (
   navigate: () => void,
-): PostEditConcertFormReturn => {
+): PostEditConcertForm => {
   return {
-    type: ConcertActionsType.POST_EDIT_CONCERT_FORM,
+    type: ConcertActionsEnum.POST_EDIT_CONCERT_FORM,
     navigate,
   };
 };
 
-export const concertFailure = (
-  failureMessages: string[],
-): ConcertFailureReturn => {
+export const concertFailure = (failureMessages: string[]): ConcertFailure => {
   return {
-    type: ConcertActionsType.CONCERT_FAILURE,
+    type: ConcertActionsEnum.CONCERT_FAILURE,
     failureMessages,
   };
 };
 
-export const fetchConcertDetails = (
-  concertId: number,
-): FetchConcertDetailsReturn => {
+export const fetchConcertDetails = (concertId: number): FetchConcertDetails => {
   return {
-    type: ConcertActionsType.FETCH_CONCERT_DETAILS,
+    type: ConcertActionsEnum.FETCH_CONCERT_DETAILS,
     concertId,
   };
 };
 
 export const storeConcertDetails = (
   concertDetails: Concert,
-): StoreConcertDetailsReturn => {
+): StoreConcertDetails => {
   return {
-    type: ConcertActionsType.STORE_CONCERT_DETAILS,
+    type: ConcertActionsEnum.STORE_CONCERT_DETAILS,
     concertDetails,
   };
 };
 
-export const deleteConcert = (concertId: number): DeleteConcertReturn => {
+export const deleteConcert = (concertId: number): DeleteConcert => {
   return {
-    type: ConcertActionsType.DELETE_CONCERT,
+    type: ConcertActionsEnum.DELETE_CONCERT,
     concertId,
   };
 };

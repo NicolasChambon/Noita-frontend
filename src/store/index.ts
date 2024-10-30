@@ -1,10 +1,16 @@
 // Dependencies
-import { legacy_createStore as createStore, applyMiddleware } from 'redux';
+import {
+  legacy_createStore as createStore,
+  applyMiddleware,
+  Store,
+  Action,
+} from 'redux';
 import { composeWithDevTools } from '@redux-devtools/extension';
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistStore, persistReducer, PersistConfig } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import reducer from '../reducers/indexReducer'; // TODO s'assurer que le reducer est typé
+// Reducer
+import rootReducer, { RootState } from '../reducers/indexReducer';
 
 // Middleware
 import loginMiddleware from '../middleware/loginMiddleware';
@@ -12,13 +18,16 @@ import concertsMiddleware from '../middleware/concertsMiddleware';
 import newsMiddleware from '../middleware/newsMiddleware';
 import carouselMiddleware from '../middleware/carouselMiddleware';
 
-const persistConfig = {
+const persistConfig: PersistConfig<RootState> = {
   key: 'root',
   storage,
   whitelist: ['login'],
 };
 
-const persistedReducer = persistReducer(persistConfig, reducer);
+const persistedReducer = persistReducer<RootState, Action>(
+  persistConfig,
+  rootReducer as never, // TODO: fix this "never"
+);
 
 const enhancer = composeWithDevTools(
   applyMiddleware(
@@ -29,7 +38,7 @@ const enhancer = composeWithDevTools(
   ),
 );
 
-const store = createStore(persistedReducer, enhancer);
+const store: Store<RootState, Action> = createStore(persistedReducer, enhancer);
 
 const persistor = persistStore(store);
 

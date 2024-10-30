@@ -1,5 +1,5 @@
-import { LoginActionsType } from '../actions/actionsIndex';
-import { LoginActionReturnTypes } from '../actions/login/loginActionReturnTypes';
+import { LoginActionsEnum } from '../actions/actionsIndex';
+import { LoginAction } from '../actions/login/loginActionTypes';
 
 export interface LoginState {
   usernameInput: string;
@@ -21,16 +21,16 @@ export const initialState: LoginState = {
 
 const loginReducer = (
   state: LoginState = initialState,
-  action: LoginActionReturnTypes,
+  action: LoginAction,
 ): LoginState => {
   switch (action.type) {
-    case LoginActionsType.CHANGE_LOGIN_INPUT:
+    case LoginActionsEnum.CHANGE_LOGIN_INPUT:
       return {
         ...state,
         [action.identifier]: action.value,
       };
 
-    case LoginActionsType.LOGIN_SUCCESS:
+    case LoginActionsEnum.LOGIN_SUCCESS:
       return {
         ...state,
         isLogged: true,
@@ -41,13 +41,13 @@ const loginReducer = (
         token: action.token,
       };
 
-    case LoginActionsType.LOGIN_FAILURE:
+    case LoginActionsEnum.LOGIN_FAILURE:
       return {
         ...state,
         failureMessages: action.failureMessages,
       };
 
-    case LoginActionsType.LOGOUT:
+    case LoginActionsEnum.LOGOUT:
       return {
         ...state,
         isLogged: false,

@@ -1,4 +1,4 @@
-import { CarouselActionsType } from '../actions/actionsIndex';
+import { CarouselActionsEnum } from '../actions/actionsIndex';
 import {
   storePictureList,
   carouselFailure,
@@ -8,7 +8,7 @@ import { logout, loginFailure } from '../actions/login/loginActions';
 
 const carouselMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
-    case CarouselActionsType.FETCH_CAROUSEL_PICTURES: {
+    case CarouselActionsEnum.FETCH_CAROUSEL_PICTURES: {
       (async () => {
         try {
           const response = await fetch(
@@ -28,7 +28,7 @@ const carouselMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case CarouselActionsType.ADD_PICTURE: {
+    case CarouselActionsEnum.ADD_PICTURE: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -68,7 +68,7 @@ const carouselMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case CarouselActionsType.DELETE_PICTURE: {
+    case CarouselActionsEnum.DELETE_PICTURE: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -108,7 +108,7 @@ const carouselMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case CarouselActionsType.UPDATE_PICTURE: {
+    case CarouselActionsEnum.UPDATE_PICTURE: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -150,7 +150,7 @@ const carouselMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case CarouselActionsType.CHANGE_POSITION: {
+    case CarouselActionsEnum.CHANGE_POSITION: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;

@@ -1,42 +1,40 @@
-import { LoginActionsType } from '../actionsIndex';
+import { LoginActionsEnum } from '../actionsIndex';
 import {
-  ChangeLoginInputReturn,
-  PostLoginFormReturn,
-  LoginSuccessReturn,
-  LoginFailureReturn,
-  LogoutReturn,
-} from './loginActionReturnTypes';
+  ChangeLoginInput,
+  PostLoginForm,
+  LoginSuccess,
+  LoginFailure,
+  Logout,
+} from './loginActionTypes';
 
 export const changeLoginInput = (
   value: string,
   identifier: 'usernameInput' | 'passwordInput',
-): ChangeLoginInputReturn => ({
-  type: LoginActionsType.CHANGE_LOGIN_INPUT,
+): ChangeLoginInput => ({
+  type: LoginActionsEnum.CHANGE_LOGIN_INPUT,
   value,
   identifier,
 });
 
-export const postLoginForm = (navigate: () => void): PostLoginFormReturn => ({
-  type: LoginActionsType.POST_LOGIN_FORM,
+export const postLoginForm = (navigate: () => void): PostLoginForm => ({
+  type: LoginActionsEnum.POST_LOGIN_FORM,
   navigate,
 });
 
 export const loginSuccess = (
   loggedId: number,
   token: string,
-): LoginSuccessReturn => ({
-  type: LoginActionsType.LOGIN_SUCCESS,
+): LoginSuccess => ({
+  type: LoginActionsEnum.LOGIN_SUCCESS,
   loggedId,
   token,
 });
 
-export const loginFailure = (
-  failureMessages: string[],
-): LoginFailureReturn => ({
-  type: LoginActionsType.LOGIN_FAILURE,
+export const loginFailure = (failureMessages: string[]): LoginFailure => ({
+  type: LoginActionsEnum.LOGIN_FAILURE,
   failureMessages,
 });
 
-export const logout = (): LogoutReturn => ({
-  type: LoginActionsType.LOGOUT,
+export const logout = (): Logout => ({
+  type: LoginActionsEnum.LOGOUT,
 });

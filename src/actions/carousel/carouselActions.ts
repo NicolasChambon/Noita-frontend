@@ -1,29 +1,27 @@
-import { CarouselActionsType } from '../actionsIndex';
+import { CarouselActionsEnum } from '../actionsIndex';
 import {
-  FetchCarouselPicturesReturn,
+  FetchCarouselPictures,
   Picture,
-  StorePictureListReturn,
-  ChangePictureInputReturn,
-  AddPictureReturn,
-  CarouselFailureReturn,
-  DisplayRemoveBoxReturn,
-  HideRemoveBoxReturn,
-  DeletePictureReturn,
-  UpdatePictureReturn,
-  ChangePositionReturn,
-} from './carouselActionReturnTypes';
+  StorePictureList,
+  ChangePictureInput,
+  AddPicture,
+  CarouselFailure,
+  DisplayRemoveBox,
+  HideRemoveBox,
+  DeletePicture,
+  UpdatePicture,
+  ChangePosition,
+} from './carouselActionTypes';
 
-export const fetchCarouselPictures = (): FetchCarouselPicturesReturn => {
+export const fetchCarouselPictures = (): FetchCarouselPictures => {
   return {
-    type: CarouselActionsType.FETCH_CAROUSEL_PICTURES,
+    type: CarouselActionsEnum.FETCH_CAROUSEL_PICTURES,
   };
 };
 
-export const storePictureList = (
-  pictureList: Picture[],
-): StorePictureListReturn => {
+export const storePictureList = (pictureList: Picture[]): StorePictureList => {
   return {
-    type: CarouselActionsType.STORE_PICTURE_LIST,
+    type: CarouselActionsEnum.STORE_PICTURE_LIST,
     pictureList,
   };
 };
@@ -31,52 +29,50 @@ export const storePictureList = (
 export const changePictureInput = (
   value: string,
   identifier: 'img64',
-): ChangePictureInputReturn => {
+): ChangePictureInput => {
   return {
-    type: CarouselActionsType.CHANGE_PICTURE_INPUT,
+    type: CarouselActionsEnum.CHANGE_PICTURE_INPUT,
     value,
     identifier,
   };
 };
 
-export const addPicture = (): AddPictureReturn => {
+export const addPicture = (): AddPicture => {
   return {
-    type: CarouselActionsType.ADD_PICTURE,
+    type: CarouselActionsEnum.ADD_PICTURE,
   };
 };
 
-export const carouselFailure = (
-  failureMessages: string[],
-): CarouselFailureReturn => {
+export const carouselFailure = (failureMessages: string[]): CarouselFailure => {
   return {
-    type: CarouselActionsType.CAROUSEL_FAILURE,
+    type: CarouselActionsEnum.CAROUSEL_FAILURE,
     failureMessages,
   };
 };
 
-export const displayRemoveBox = (pictureId: number): DisplayRemoveBoxReturn => {
+export const displayRemoveBox = (pictureId: number): DisplayRemoveBox => {
   return {
-    type: CarouselActionsType.DISPLAY_REMOVE_BOX,
+    type: CarouselActionsEnum.DISPLAY_REMOVE_BOX,
     pictureId,
   };
 };
 
-export const hideRemoveBox = (): HideRemoveBoxReturn => {
+export const hideRemoveBox = (): HideRemoveBox => {
   return {
-    type: CarouselActionsType.HIDE_REMOVE_BOX,
+    type: CarouselActionsEnum.HIDE_REMOVE_BOX,
   };
 };
 
-export const deletePicture = (pictureId: number): DeletePictureReturn => {
+export const deletePicture = (pictureId: number): DeletePicture => {
   return {
-    type: CarouselActionsType.DELETE_PICTURE,
+    type: CarouselActionsEnum.DELETE_PICTURE,
     pictureId,
   };
 };
 
-export const updatePicture = (pictureId: number): UpdatePictureReturn => {
+export const updatePicture = (pictureId: number): UpdatePicture => {
   return {
-    type: CarouselActionsType.UPDATE_PICTURE,
+    type: CarouselActionsEnum.UPDATE_PICTURE,
     pictureId,
   };
 };
@@ -84,9 +80,9 @@ export const updatePicture = (pictureId: number): UpdatePictureReturn => {
 export const changePosition = (
   pictureId: number,
   direction: 'left' | 'right',
-): ChangePositionReturn => {
+): ChangePosition => {
   return {
-    type: CarouselActionsType.CHANGE_POSITION,
+    type: CarouselActionsEnum.CHANGE_POSITION,
     pictureId,
     direction,
   };

@@ -1,8 +1,5 @@
-import { NewsActionsType } from '../actions/actionsIndex';
-import {
-  News,
-  NewsActionReturnTypes,
-} from '../actions/news/newsActionReturnTypes';
+import { NewsActionsEnum } from '../actions/actionsIndex';
+import { News, NewsAction } from '../actions/news/newsActionTypes';
 
 // TODO à déplacer ?
 export interface NewsForm {
@@ -39,30 +36,30 @@ export const initialState: NewsState = {
 
 const newsReducer = (
   state: NewsState = initialState,
-  action: NewsActionReturnTypes,
+  action: NewsAction,
 ): NewsState => {
   switch (action.type) {
-    case NewsActionsType.STORE_NEWS_LIST:
+    case NewsActionsEnum.STORE_NEWS_LIST:
       return {
         ...state,
         newsList: action.newsList,
       };
 
-    case NewsActionsType.DISPLAY_REMOVE_BOX:
+    case NewsActionsEnum.DISPLAY_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: action.newsId,
         isRemoveBoxDisplayed: true,
       };
 
-    case NewsActionsType.HIDE_REMOVE_BOX:
+    case NewsActionsEnum.HIDE_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: null,
         isRemoveBoxDisplayed: false,
       };
 
-    case NewsActionsType.CHANGE_NEWS_INPUT:
+    case NewsActionsEnum.CHANGE_NEWS_INPUT:
       return {
         ...state,
         form: {
@@ -71,13 +68,13 @@ const newsReducer = (
         },
       };
 
-    case NewsActionsType.NEWS_FAILURE:
+    case NewsActionsEnum.NEWS_FAILURE:
       return {
         ...state,
         failureMessages: action.failureMessages,
       };
 
-    case NewsActionsType.STORE_NEWS_DETAILS:
+    case NewsActionsEnum.STORE_NEWS_DETAILS:
       return {
         ...state,
         newsDetails: action.newsDetails,

@@ -1,24 +1,22 @@
-import { GlobalActionsType } from '../actionsIndex';
+import { GlobalActionsEnum } from '../actionsIndex';
 import {
-  ToogleLanguageReturn,
-  ToogleHeaderMenuReturn,
-  SetTargetSectionReturn,
-} from './globalActionReturnTypes';
+  ToogleLanguage,
+  ToogleHeaderMenu,
+  SetTargetSection,
+} from './globalActionTypes';
 
-export const toogleLanguage = (
-  language: 'de' | 'fr',
-): ToogleLanguageReturn => ({
-  type: GlobalActionsType.TOOGLE_LANGUAGE,
+export const toogleLanguage = (language: 'de' | 'fr'): ToogleLanguage => ({
+  type: GlobalActionsEnum.TOOGLE_LANGUAGE,
   language,
 });
 
-export const toogleHeaderMenu = (): ToogleHeaderMenuReturn => ({
-  type: GlobalActionsType.TOOGLE_HEADER_MENU,
+export const toogleHeaderMenu = (): ToogleHeaderMenu => ({
+  type: GlobalActionsEnum.TOOGLE_HEADER_MENU,
 });
 
 export const setTargetSection = (
   targetSection: 'identity' | 'media' | 'dates' | 'contact',
-): SetTargetSectionReturn => ({
-  type: GlobalActionsType.SET_TARGET_SECTION,
+): SetTargetSection => ({
+  type: GlobalActionsEnum.SET_TARGET_SECTION,
   targetSection,
 });

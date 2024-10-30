@@ -1,8 +1,8 @@
-import { ConcertActionsType } from '../actions/actionsIndex';
+import { ConcertActionsEnum } from '../actions/actionsIndex';
 import {
   Concert,
-  ConcertsActionReturnTypes,
-} from '../actions/concert/concertsActionReturnTypes';
+  ConcertsAction,
+} from '../actions/concert/concertsActionTypes';
 
 // TODO à déplacer ?
 export interface ConcertForm {
@@ -39,30 +39,30 @@ export const initialState: ConcertState = {
 
 const concertsReducer = (
   state: ConcertState = initialState,
-  action: ConcertsActionReturnTypes,
+  action: ConcertsAction,
 ): ConcertState => {
   switch (action.type) {
-    case ConcertActionsType.STORE_CONCERT_LIST:
+    case ConcertActionsEnum.STORE_CONCERT_LIST:
       return {
         ...state,
         concertList: action.concertList,
       };
 
-    case ConcertActionsType.DISPLAY_REMOVE_BOX:
+    case ConcertActionsEnum.DISPLAY_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: action.concertId,
         isRemoveBoxDisplayed: true,
       };
 
-    case ConcertActionsType.HIDE_REMOVE_BOX:
+    case ConcertActionsEnum.HIDE_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: null,
         isRemoveBoxDisplayed: false,
       };
 
-    case ConcertActionsType.CHANGE_CONCERT_INPUT:
+    case ConcertActionsEnum.CHANGE_CONCERT_INPUT:
       return {
         ...state,
         form: {
@@ -71,13 +71,13 @@ const concertsReducer = (
         },
       };
 
-    case ConcertActionsType.CONCERT_FAILURE:
+    case ConcertActionsEnum.CONCERT_FAILURE:
       return {
         ...state,
         failureMessages: action.failureMessages,
       };
 
-    case ConcertActionsType.STORE_CONCERT_DETAILS:
+    case ConcertActionsEnum.STORE_CONCERT_DETAILS:
       return {
         ...state,
         concertDetails: action.concertDetails,

@@ -1,8 +1,8 @@
-import { CarouselActionsType } from '../actions/actionsIndex';
+import { CarouselActionsEnum } from '../actions/actionsIndex';
 import {
-  CarouselActionReturnTypes,
+  CarouselAction,
   Picture,
-} from '../actions/carousel/carouselActionReturnTypes';
+} from '../actions/carousel/carouselActionTypes';
 
 export interface CarouselState {
   pictureList: Picture[];
@@ -22,35 +22,35 @@ export const initialState: CarouselState = {
 
 const carouselReducer = (
   state: CarouselState = initialState,
-  action: CarouselActionReturnTypes,
+  action: CarouselAction,
 ): CarouselState => {
   switch (action.type) {
-    case CarouselActionsType.STORE_PICTURE_LIST:
+    case CarouselActionsEnum.STORE_PICTURE_LIST:
       return {
         ...state,
         pictureList: action.pictureList,
       };
 
-    case CarouselActionsType.CHANGE_PICTURE_INPUT:
+    case CarouselActionsEnum.CHANGE_PICTURE_INPUT:
       return {
         ...state,
         pictureInput: action.value,
       };
 
-    case CarouselActionsType.CAROUSEL_FAILURE:
+    case CarouselActionsEnum.CAROUSEL_FAILURE:
       return {
         ...state,
         failureMessages: action.failureMessages,
       };
 
-    case CarouselActionsType.DISPLAY_REMOVE_BOX:
+    case CarouselActionsEnum.DISPLAY_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: action.pictureId,
         isRemoveBoxDisplayed: true,
       };
 
-    case CarouselActionsType.HIDE_REMOVE_BOX:
+    case CarouselActionsEnum.HIDE_REMOVE_BOX:
       return {
         ...state,
         removeBoxId: null,

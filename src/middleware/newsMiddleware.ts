@@ -1,4 +1,4 @@
-import { NewsActionsType } from '../actions/actionsIndex';
+import { NewsActionsEnum } from '../actions/actionsIndex';
 import {
   storeNewsList,
   newsFailure,
@@ -9,7 +9,7 @@ import { logout, loginFailure } from '../actions/login/loginActions';
 
 const newsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
-    case NewsActionsType.FETCH_NEWS_LIST: {
+    case NewsActionsEnum.FETCH_NEWS_LIST: {
       (async () => {
         try {
           const response = await fetch(`${import.meta.env.VITE_API_URL}/posts`);
@@ -27,7 +27,7 @@ const newsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case NewsActionsType.FETCH_NEWS_DETAILS: {
+    case NewsActionsEnum.FETCH_NEWS_DETAILS: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -62,7 +62,7 @@ const newsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case NewsActionsType.POST_ADD_NEWS_FORM: {
+    case NewsActionsEnum.POST_ADD_NEWS_FORM: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -100,7 +100,7 @@ const newsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case NewsActionsType.POST_EDIT_NEWS_FORM: {
+    case NewsActionsEnum.POST_EDIT_NEWS_FORM: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
@@ -139,7 +139,7 @@ const newsMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case NewsActionsType.DELETE_NEWS: {
+    case NewsActionsEnum.DELETE_NEWS: {
       (async () => {
         try {
           const user_id = store.getState().login.loggedId;
