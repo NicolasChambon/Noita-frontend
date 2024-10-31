@@ -15,7 +15,7 @@ const newsMiddleware = (store) => (next) => async (action) => {
 
         if (!response.ok) {
           const error = await response.json();
-          throw new Error(error.errors);
+          throw new Error(error.errors.join(', '));
         }
         const data = await response.json();
         store.dispatch(storeNewsList(data));
@@ -48,7 +48,7 @@ const newsMiddleware = (store) => (next) => async (action) => {
               loginFailure(['The session has expired, please log in again.']),
             );
           }
-          throw new Error(error.errors);
+          throw new Error(error.errors.join(', '));
         }
         const data = await response.json();
         store.dispatch(storeNewsDetails(data));
@@ -82,10 +82,10 @@ const newsMiddleware = (store) => (next) => async (action) => {
             store.dispatch(
               loginFailure(['The session has expired, please log in again.']),
             );
-            throw new Error(error.errors);
+            throw new Error(error.errors.join(', '));
           }
           store.dispatch(newsFailure(error.errors));
-          throw new Error(error.errors);
+          throw new Error(error.errors.join(', '));
         }
         action.navigate('/admin/news');
       } catch (error) {
@@ -119,10 +119,10 @@ const newsMiddleware = (store) => (next) => async (action) => {
             store.dispatch(
               loginFailure(['The session has expired, please log in again.']),
             );
-            throw new Error(error.errors);
+            throw new Error(error.errors.join(', '));
           }
           store.dispatch(newsFailure(error.errors));
-          throw new Error(error.errors);
+          throw new Error(error.errors.join(', '));
         }
         action.navigate('/admin/news');
       } catch (error) {
@@ -153,10 +153,10 @@ const newsMiddleware = (store) => (next) => async (action) => {
             store.dispatch(
               loginFailure(['The session has expired, please log in again.']),
             );
-            throw new Error(error.errors);
+            throw new Error(error.errors.join(', '));
           }
           store.dispatch(newsFailure(error.errors));
-          throw new Error(error.errors);
+          throw new Error(error.errors.join(', '));
         }
         store.dispatch(fetchNewsList());
       } catch (error) {

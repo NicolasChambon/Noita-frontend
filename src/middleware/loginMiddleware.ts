@@ -1,13 +1,12 @@
-// Dependencies
-import { Dispatch } from 'redux';
-
 // Actions
-import { LoginActionsEnum } from '../actions/actionsIndex';
 import { loginSuccess, loginFailure } from '../actions/login/loginActions';
-import { LoginAction } from '../actions/login/loginActionTypes';
 
-// Store and reducers
+// Types
+import { Dispatch } from 'redux';
 import { AppStore } from '../store';
+import { LoginActionsEnum } from '../actions/actionsIndex';
+import { LoginAction } from '../actions/login/loginActionTypes';
+import { ErrorResponse } from './middlewareTypes';
 
 // Local types
 interface LoginResponse {
@@ -17,11 +16,6 @@ interface LoginResponse {
     username: string;
   };
   token: string;
-}
-
-// TODO: déplacer pour centraliser ?
-interface ErrorResponse {
-  errors: string[];
 }
 
 const loginMiddleware =

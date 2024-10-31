@@ -17,7 +17,7 @@ const concertsMiddleware = (store) => (next) => async (action) => {
 
         if (!response.ok) {
           const error = await response.json();
-          throw new Error(error.errors);
+          throw new Error(error.errors.join(', '));
         }
         const data = await response.json();
         store.dispatch(storeConcertList(data));
@@ -50,7 +50,7 @@ const concertsMiddleware = (store) => (next) => async (action) => {
               loginFailure(['The session has expired, please log in again.']),
             );
           }
-          throw new Error(error.errors);
+          throw new Error(error.errors.join(', '));
         }
         const data = await response.json();
         store.dispatch(storeConcertDetails(data));
@@ -84,10 +84,10 @@ const concertsMiddleware = (store) => (next) => async (action) => {
             store.dispatch(
               loginFailure(['The session has expired, please log in again.']),
             );
-            throw new Error(error.errors);
+            throw new Error(error.errors.join(', '));
           }
           store.dispatch(concertFailure(error.errors));
-          throw new Error(error.errors);
+          throw new Error(error.errors.join(', '));
         }
         action.navigate('/admin/concerts');
       } catch (error) {
@@ -121,10 +121,10 @@ const concertsMiddleware = (store) => (next) => async (action) => {
             store.dispatch(
               loginFailure(['The session has expired, please log in again.']),
             );
-            throw new Error(error.errors);
+            throw new Error(error.errors.join(', '));
           }
           store.dispatch(concertFailure(error.errors));
-          throw new Error(error.errors);
+          throw new Error(error.errors.join(', '));
         }
         action.navigate('/admin/concerts');
       } catch (error) {
@@ -155,10 +155,10 @@ const concertsMiddleware = (store) => (next) => async (action) => {
             store.dispatch(
               loginFailure(['The session has expired, please log in again.']),
             );
-            throw new Error(error.errors);
+            throw new Error(error.errors.join(', '));
           }
           store.dispatch(concertFailure(error.errors));
-          throw new Error(error.errors);
+          throw new Error(error.errors.join(', '));
         }
         store.dispatch(fetchConcertList());
       } catch (error) {
