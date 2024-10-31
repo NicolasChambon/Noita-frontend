@@ -1,10 +1,3 @@
-// Action types
-import { CarouselAction } from '../actions/carousel/carouselActionTypes';
-import { ConcertsAction } from '../actions/concert/concertsActionTypes';
-import { GlobalAction } from '../actions/global/globalActionTypes';
-import { LoginAction } from '../actions/login/loginActionTypes';
-import { NewsAction } from '../actions/news/newsActionTypes';
-
 // Dependencies
 import { combineReducers } from 'redux';
 

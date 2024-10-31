@@ -34,6 +34,7 @@ const LoginForm = () => {
             id="username"
             className="LoginForm-wrapper-form-input"
             value={login.usernameInput}
+            // required
             onChange={(e) =>
               dispatch(changeLoginInput(e.target.value, 'usernameInput'))
             }
@@ -46,6 +47,7 @@ const LoginForm = () => {
             id="password"
             className="LoginForm-wrapper-form-input"
             value={login.passwordInput}
+            // required
             onChange={(e) =>
               dispatch(changeLoginInput(e.target.value, 'passwordInput'))
             }

@@ -44,3 +44,5 @@ const persistor = persistStore(store);
 
 // Exports
 export { store, persistor };
+export type AppDispatch = typeof store.dispatch;
+export type AppStore = typeof store;
