@@ -13,6 +13,7 @@ import {
   StoreConcertDetails,
   DeleteConcert,
 } from './concertsActionTypes';
+import { NavigateFunction } from 'react-router';
 
 export const fetchConcertList = (): FetchConcertList => {
   return {
@@ -52,7 +53,7 @@ export const changeConcertInput = (
 };
 
 export const postAddConcertForm = (
-  navigate: () => void,
+  navigate: NavigateFunction,
 ): PostAddConcertForm => {
   return {
     type: ConcertActionsEnum.POST_ADD_CONCERT_FORM,
@@ -61,7 +62,7 @@ export const postAddConcertForm = (
 };
 
 export const postEditConcertForm = (
-  navigate: () => void,
+  navigate: NavigateFunction,
 ): PostEditConcertForm => {
   return {
     type: ConcertActionsEnum.POST_EDIT_CONCERT_FORM,
