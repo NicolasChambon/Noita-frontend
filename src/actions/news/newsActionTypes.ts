@@ -37,12 +37,12 @@ export interface ChangeNewsInput {
 
 export interface PostAddNewsForm {
   type: typeof NewsActionsEnum.POST_ADD_NEWS_FORM;
-  navigate: () => void;
+  navigate: (path: '/admin/news') => void;
 }
 
 export interface PostEditNewsForm {
   type: typeof NewsActionsEnum.POST_EDIT_NEWS_FORM;
-  navigate: () => void;
+  navigate: (path: '/admin/news') => void;
 }
 
 export interface NewsFailure {

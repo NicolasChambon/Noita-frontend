@@ -16,6 +16,7 @@ import {
   Concert,
 } from '../actions/concert/concertsActionTypes';
 import { ErrorResponse } from './middlewareTypes';
+import { ConcertForm } from '../reducers/concertsReducer';
 
 const concertsMiddleware =
   (store: AppStore) =>
@@ -77,7 +78,7 @@ const concertsMiddleware =
         try {
           const user_id: number | null = store.getState().login.loggedId;
           const token: string = store.getState().login.token;
-          const form = store.getState().concerts.form;
+          const form: ConcertForm = store.getState().concerts.form;
 
           const response: Response = await fetch(
             `${import.meta.env.VITE_API_URL}/concerts?user_id=${user_id}`,
@@ -113,7 +114,7 @@ const concertsMiddleware =
         try {
           const user_id: number | null = store.getState().login.loggedId;
           const token: string = store.getState().login.token;
-          const form = store.getState().concerts.form;
+          const form: ConcertForm = store.getState().concerts.form;
           const concert_id: number | undefined =
             store.getState().concerts.concertDetails?.id;
 
