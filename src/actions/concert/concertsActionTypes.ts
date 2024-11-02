@@ -38,12 +38,12 @@ export interface ChangeConcertInput {
 
 export interface PostAddConcertForm {
   type: typeof ConcertActionsEnum.POST_ADD_CONCERT_FORM;
-  navigate: () => void;
+  navigate: (path: '/admin/concerts') => void;
 }
 
 export interface PostEditConcertForm {
   type: typeof ConcertActionsEnum.POST_EDIT_CONCERT_FORM;
-  navigate: () => void;
+  navigate: (path: '/admin/concerts') => void;
 }
 
 export interface ConcertFailure {
