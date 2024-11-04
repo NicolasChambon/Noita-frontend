@@ -3,6 +3,9 @@ import { Route, Routes } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { useSelector } from 'react-redux';
 
+// Types
+import { RootState } from '../../reducers/indexReducer';
+
 // Components
 import Home from '../pages/Home/Home';
 import News from '../pages/News/News';
@@ -17,7 +20,9 @@ import BoCarousel from '../pages/BoCarousel/BoCarousel';
 import './App.scss';
 
 function App() {
-  const language: 'de' | 'fr' = useSelector((state) => state.global.language);
+  const language: 'de' | 'fr' = useSelector(
+    (state: RootState) => state.global.language,
+  );
 
   const metaInfo = {
     fr: {
