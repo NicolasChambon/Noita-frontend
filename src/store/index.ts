@@ -31,10 +31,10 @@ const persistedReducer = persistReducer<RootState, Action>(
 
 const enhancer = composeWithDevTools(
   applyMiddleware(
-    loginMiddleware,
-    concertsMiddleware,
-    newsMiddleware,
-    carouselMiddleware,
+    loginMiddleware as never,
+    concertsMiddleware as never,
+    newsMiddleware as never,
+    carouselMiddleware as never, // TODO: fix these "never"
   ),
 );
 

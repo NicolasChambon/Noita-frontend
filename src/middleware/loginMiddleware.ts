@@ -3,10 +3,10 @@ import { loginSuccess, loginFailure } from '../actions/login/loginActions';
 
 // Types
 import { Dispatch } from 'redux';
-import { AppStore } from '../store';
 import { LoginActionsEnum } from '../actions/actionsIndex';
 import { LoginAction } from '../actions/login/loginActionTypes';
 import { ErrorResponse } from './middlewareTypes';
+import { AppStore } from '../store';
 
 // Local types
 interface LoginResponse {
