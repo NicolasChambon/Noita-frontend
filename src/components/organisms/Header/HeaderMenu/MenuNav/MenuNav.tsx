@@ -1,15 +1,21 @@
+// Dependencies
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+// Utils
 import {
   scrollIfOnSamePage,
   handleLinkClick,
 } from '../../../../../utils/scrollUtils';
 
+// Types
+import { RootState } from '../../../../../reducers/indexReducer';
+
+// Styles
 import './MenuNav.scss';
 
 const MenuNav = () => {
-  const language = useSelector((state) => state.global.language);
+  const language = useSelector((state: RootState) => state.global.language);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -18,6 +24,7 @@ const MenuNav = () => {
       <ul className="MenuNav-list">
         <li className="MenuNav-list-item">
           <Link
+            to="/"
             className="MenuNav-list-item-link"
             onClick={(e) => {
               e.preventDefault();
@@ -29,6 +36,7 @@ const MenuNav = () => {
         </li>
         <li className="MenuNav-list-item">
           <Link
+            to="/"
             className="MenuNav-list-item-link"
             onClick={(e) => {
               e.preventDefault();
@@ -40,6 +48,7 @@ const MenuNav = () => {
         </li>
         <li className="MenuNav-list-item">
           <Link
+            to="/"
             className="MenuNav-list-item-link"
             onClick={(e) => {
               e.preventDefault();
@@ -51,6 +60,7 @@ const MenuNav = () => {
         </li>
         <li className="MenuNav-list-item">
           <Link
+            to="/"
             className="MenuNav-list-item-link"
             onClick={(e) => {
               e.preventDefault();

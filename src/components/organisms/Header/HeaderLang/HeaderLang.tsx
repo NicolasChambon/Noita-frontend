@@ -1,12 +1,19 @@
+// Dependencies
 import { useSelector, useDispatch } from 'react-redux';
 
+// Actions
 import { toogleLanguage } from '../../../../actions/global/globalActions';
 
+// Types
+import { RootState } from '../../../../reducers/indexReducer';
+import { AppDispatch } from '../../../../store';
+
+// Styles
 import './HeaderLang.scss';
 
 const HeaderLang = () => {
-  const lang = useSelector((state) => state.global.language);
-  const dispatch = useDispatch();
+  const lang = useSelector((state: RootState) => state.global.language);
+  const dispatch = useDispatch<AppDispatch>();
 
   return (
     <div className="HeaderLang">

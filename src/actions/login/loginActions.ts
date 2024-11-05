@@ -16,9 +16,8 @@ export const changeLoginInput = (
   identifier,
 });
 
-export const postLoginForm = (navigate: () => void): PostLoginForm => ({
+export const postLoginForm = (): PostLoginForm => ({
   type: LoginActionsEnum.POST_LOGIN_FORM,
-  navigate,
 });
 
 export const loginSuccess = (

@@ -1,15 +1,21 @@
+// Dependencies
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+// Utils
 import {
   scrollIfOnSamePage,
   handleLinkClick,
 } from '../../../../utils/scrollUtils';
 
+// Types
+import { RootState } from '../../../../reducers/indexReducer';
+
+// Styles
 import './HeaderNav.scss';
 
 const HeaderNav = () => {
-  const language = useSelector((state) => state.global.language);
+  const language = useSelector((state: RootState) => state.global.language);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -18,6 +24,7 @@ const HeaderNav = () => {
       <ul className="HeaderNav-list">
         <li className="HeaderNav-list-item">
           <Link
+            to="/"
             className="HeaderNav-list-item-link"
             onClick={(e) => {
               e.preventDefault();
@@ -29,6 +36,7 @@ const HeaderNav = () => {
         </li>
         <li className="HeaderNav-list-item">
           <Link
+            to="/"
             className="HeaderNav-list-item-link"
             onClick={(e) => {
               e.preventDefault();
@@ -40,6 +48,7 @@ const HeaderNav = () => {
         </li>
         <li className="HeaderNav-list-item">
           <Link
+            to="/"
             className="HeaderNav-list-item-link"
             onClick={(e) => {
               e.preventDefault();
@@ -51,6 +60,7 @@ const HeaderNav = () => {
         </li>
         <li className="HeaderNav-list-item">
           <Link
+            to="/"
             className="HeaderNav-list-item-link"
             onClick={(e) => {
               e.preventDefault();

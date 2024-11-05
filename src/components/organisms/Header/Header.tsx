@@ -1,15 +1,21 @@
+// Dependencies
 import { useSelector } from 'react-redux';
 
+// Types
+import { RootState } from '../../../reducers/indexReducer';
+
+// Components
 import HeaderLogo from './HeaderLogo/HeaderLogo';
 import HeaderNav from './HeaderNav/HeaderNav';
 import HeaderLang from './HeaderLang/HeaderLang';
 import MenuBtn from './MenuBtn/MenuBtn';
 import HeaderMenu from './HeaderMenu/HeaderMenu';
 
+// Styles
 import './Header.scss';
 
 const Header = () => {
-  const isMenuOpen = useSelector((state) => state.global.headerMenu);
+  const isMenuOpen = useSelector((state: RootState) => state.global.headerMenu);
 
   return (
     <header className="Header">

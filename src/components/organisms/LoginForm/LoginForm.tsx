@@ -1,19 +1,29 @@
+// Dependencies
 import { useDispatch, useSelector } from 'react-redux';
 
+// Actions
 import {
   changeLoginInput,
   postLoginForm,
 } from '../../../actions/login/loginActions';
 
+// Types
+import { RootState } from '../../../reducers/indexReducer';
+import { AppDispatch } from '../../../store';
+
+// Components
 import FailureMessages from '../FailureMessages/FailureMessages';
 
+// Styles
 import './LoginForm.scss';
 
 const LoginForm = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
-  const login = useSelector((state) => state.login);
-  const failureMessages = useSelector((state) => state.login.failureMessages);
+  const login = useSelector((state: RootState) => state.login);
+  const failureMessages = useSelector(
+    (state: RootState) => state.login.failureMessages,
+  );
 
   return (
     <div className="LoginForm">

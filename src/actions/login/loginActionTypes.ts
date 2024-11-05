@@ -8,7 +8,6 @@ export interface ChangeLoginInput {
 
 export interface PostLoginForm {
   type: typeof LoginActionsEnum.POST_LOGIN_FORM;
-  navigate: () => void;
 }
 
 export interface LoginSuccess {
