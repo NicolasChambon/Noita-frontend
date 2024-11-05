@@ -66,7 +66,7 @@ export interface DeleteConcert {
   concertId: number;
 }
 
-export type ConcertsAction =
+export type ConcertAction =
   | FetchConcertList
   | StoreConcertList
   | DisplayRemoveBox

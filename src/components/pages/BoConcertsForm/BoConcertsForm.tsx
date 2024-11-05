@@ -2,7 +2,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
 
 // Subcomponents
 import BoHeader from '../../organisms/BoHeader/BoHeader';
@@ -19,15 +18,21 @@ import {
   fetchConcertDetails,
 } from '../../../actions/concert/concertsActions';
 
+// Types
+import { RootState } from '../../../reducers/indexReducer';
+
 // Styles
 import './BoConcertsForm.scss';
 
-const BoConcertsForm = ({ type, title }) => {
+const BoConcertsForm: (props: {
+  type: string;
+  title: string;
+}) => JSX.Element | undefined = ({ type, title }) => {
   // Hooks
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // we reset the form when we navigate to the form
+  // Reset the form when we navigate to the form
   useEffect(() => {
     dispatch(changeConcertInput('', 'city'));
     dispatch(changeConcertInput('', 'eventDate'));
@@ -37,12 +42,14 @@ const BoConcertsForm = ({ type, title }) => {
     dispatch(concertFailure([]));
   }, [dispatch]);
 
-  const isLogged = useSelector((state) => state.login.isLogged);
-  const formInputs = useSelector((state) => state.concerts.form);
+  const isLogged = useSelector((state: RootState) => state.login.isLogged);
+  const formInputs = useSelector((state: RootState) => state.concerts.form);
   const failureMessages = useSelector(
-    (state) => state.concerts.failureMessages,
+    (state: RootState) => state.concerts.failureMessages,
   );
-  const concertDetails = useSelector((state) => state.concerts.concertDetails);
+  const concertDetails = useSelector(
+    (state: RootState) => state.concerts.concertDetails,
+  );
 
   // we search url params to fetch concert details
   useEffect(() => {
@@ -55,7 +62,7 @@ const BoConcertsForm = ({ type, title }) => {
 
   // we fill the form with concert details
   useEffect(() => {
-    if (type === 'edit' && concertDetails.city) {
+    if (type === 'edit' && concertDetails?.city) {
       dispatch(changeConcertInput(concertDetails.city, 'city'));
       dispatch(changeConcertInput(concertDetails.event_date, 'eventDate'));
       dispatch(changeConcertInput(concertDetails.venue, 'venue'));
@@ -63,6 +70,10 @@ const BoConcertsForm = ({ type, title }) => {
       dispatch(changeConcertInput(concertDetails.event_url, 'link'));
     }
   }, [type, concertDetails, dispatch]);
+
+  if (concertDetails === null) {
+    return;
+  }
 
   return (
     <>
@@ -160,11 +171,6 @@ const BoConcertsForm = ({ type, title }) => {
       {!isLogged && <LoginForm />}
     </>
   );
-};
-
-BoConcertsForm.propTypes = {
-  type: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default BoConcertsForm;

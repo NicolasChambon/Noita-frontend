@@ -1,8 +1,5 @@
 import { ConcertActionsEnum } from '../actions/actionsIndex';
-import {
-  Concert,
-  ConcertsAction,
-} from '../actions/concert/concertsActionTypes';
+import { Concert, ConcertAction } from '../actions/concert/concertsActionTypes';
 
 // TODO à déplacer ?
 export interface ConcertForm {
@@ -39,7 +36,7 @@ export const initialState: ConcertState = {
 
 const concertsReducer = (
   state: ConcertState = initialState,
-  action: ConcertsAction,
+  action: ConcertAction,
 ): ConcertState => {
   switch (action.type) {
     case ConcertActionsEnum.STORE_CONCERT_LIST:

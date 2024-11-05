@@ -11,17 +11,14 @@ import { logout, loginFailure } from '../actions/login/loginActions';
 import { Dispatch } from 'redux';
 import { AppStore } from '../store';
 import { ConcertActionsEnum } from '../actions/actionsIndex';
-import {
-  ConcertsAction,
-  Concert,
-} from '../actions/concert/concertsActionTypes';
+import { ConcertAction, Concert } from '../actions/concert/concertsActionTypes';
 import { ErrorResponse } from './middlewareTypes';
 import { ConcertForm } from '../reducers/concertsReducer';
 
 const concertsMiddleware =
   (store: AppStore) =>
-  (next: Dispatch<ConcertsAction>) =>
-  async (action: ConcertsAction) => {
+  (next: Dispatch<ConcertAction>) =>
+  async (action: ConcertAction) => {
     switch (action.type) {
       case ConcertActionsEnum.FETCH_CONCERT_LIST: {
         try {

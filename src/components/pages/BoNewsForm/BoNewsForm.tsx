@@ -29,7 +29,6 @@ const BoNewsForm: (props: {
   type: string;
   title: string;
 }) => JSX.Element | undefined = ({ type, title }) => {
-  console.log('BoNewsForm rendering');
   // Hooks
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -52,15 +51,9 @@ const BoNewsForm: (props: {
   );
   const newsDetails = useSelector((state: RootState) => state.news.newsDetails);
 
-  console.log('type:', type);
-  console.log('isLogged:', isLogged);
-  console.log('condition', isLogged && type === 'edit');
-
   // Search url params to fetch news details for editing
   useEffect(() => {
-    console.log('useEffect before if');
     if (isLogged && type === 'edit') {
-      console.log('useEffect inside if');
       const url = window.location.href;
       const newsId = Number(url.split('/').pop());
       dispatch(fetchNewsDetails(newsId));
