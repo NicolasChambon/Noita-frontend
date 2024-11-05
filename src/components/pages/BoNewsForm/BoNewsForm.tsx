@@ -2,7 +2,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
 
 // Sub-components
 import BoHeader from '../../organisms/BoHeader/BoHeader';
@@ -20,10 +19,17 @@ import {
   fetchNewsDetails,
 } from '../../../actions/news/newsActions';
 
+// Types
+import { RootState } from '../../../reducers/indexReducer';
+
 // Styles
 import './BoNewsForm.scss';
 
-const BoNewsForm = ({ type, title }) => {
+const BoNewsForm: (props: {
+  type: string;
+  title: string;
+}) => JSX.Element | undefined = ({ type, title }) => {
+  console.log('BoNewsForm rendering');
   // Hooks
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -39,29 +45,42 @@ const BoNewsForm = ({ type, title }) => {
   }, [dispatch]);
 
   // Redux state
-  const isLogged = useSelector((state) => state.login.isLogged);
-  const formInputs = useSelector((state) => state.news.form);
-  const failureMessages = useSelector((state) => state.news.failureMessages);
-  const newsDetails = useSelector((state) => state.news.newsDetails);
+  const isLogged = useSelector((state: RootState) => state.login.isLogged);
+  const formInputs = useSelector((state: RootState) => state.news.form);
+  const failureMessages = useSelector(
+    (state: RootState) => state.news.failureMessages,
+  );
+  const newsDetails = useSelector((state: RootState) => state.news.newsDetails);
+
+  console.log('type:', type);
+  console.log('isLogged:', isLogged);
+  console.log('condition', isLogged && type === 'edit');
 
   // Search url params to fetch news details for editing
   useEffect(() => {
+    console.log('useEffect before if');
     if (isLogged && type === 'edit') {
+      console.log('useEffect inside if');
       const url = window.location.href;
-      const newsId = url.split('/').pop();
+      const newsId = Number(url.split('/').pop());
       dispatch(fetchNewsDetails(newsId));
     }
   }, [isLogged, type, dispatch]);
 
   // Form pre-filling with news details for editing
   useEffect(() => {
-    if (type === 'edit' && newsDetails.title_fr) {
+    if (type === 'edit' && newsDetails?.title_fr) {
       dispatch(changeNewsInput(newsDetails.title_fr, 'titleFr'));
       dispatch(changeNewsInput(newsDetails.title_de, 'titleDe'));
       dispatch(changeNewsInput(newsDetails.content_fr, 'contentFr'));
       dispatch(changeNewsInput(newsDetails.content_de, 'contentDe'));
     }
   }, [type, newsDetails, dispatch]);
+
+  // If newsDetails is not fetched yet we don't display the form
+  if (newsDetails === null) {
+    return;
+  }
 
   return (
     <>
@@ -148,11 +167,6 @@ const BoNewsForm = ({ type, title }) => {
       {!isLogged && <LoginForm />}
     </>
   );
-};
-
-BoNewsForm.propTypes = {
-  type: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default BoNewsForm;
