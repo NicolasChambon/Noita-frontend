@@ -1,40 +1,41 @@
 import { NewsActionsEnum } from '../actionsIndex';
 import {
-  FetchNewsListReturn,
+  FetchNewsList,
   News,
-  StoreNewsListReturn,
-  DisplayRemoveBoxReturn,
-  HideRemoveBoxReturn,
-  ChangeNewsInputReturn,
-  PostAddNewsFormReturn,
-  PostEditNewsFormReturn,
-  NewsFailureReturn,
-  FetchNewsDetailsReturn,
-  StoreNewsDetailsReturn,
-  DeleteNewsReturn,
+  StoreNewsList,
+  DisplayRemoveBox,
+  HideRemoveBox,
+  ChangeNewsInput,
+  PostAddNewsForm,
+  PostEditNewsForm,
+  NewsFailure,
+  FetchNewsDetails,
+  StoreNewsDetails,
+  DeleteNews,
 } from './newsActionTypes';
+import { NavigateFunction } from 'react-router';
 
-export const fetchNewsList = (): FetchNewsListReturn => {
+export const fetchNewsList = (): FetchNewsList => {
   return {
     type: NewsActionsEnum.FETCH_NEWS_LIST,
   };
 };
 
-export const storeNewsList = (newsList: News[]): StoreNewsListReturn => {
+export const storeNewsList = (newsList: News[]): StoreNewsList => {
   return {
     type: NewsActionsEnum.STORE_NEWS_LIST,
     newsList,
   };
 };
 
-export const displayRemoveBox = (newsId: number): DisplayRemoveBoxReturn => {
+export const displayRemoveBox = (newsId: number): DisplayRemoveBox => {
   return {
     type: NewsActionsEnum.DISPLAY_REMOVE_BOX,
     newsId,
   };
 };
 
-export const hideRemoveBox = (): HideRemoveBoxReturn => {
+export const hideRemoveBox = (): HideRemoveBox => {
   return {
     type: NewsActionsEnum.HIDE_REMOVE_BOX,
   };
@@ -43,7 +44,7 @@ export const hideRemoveBox = (): HideRemoveBoxReturn => {
 export const changeNewsInput = (
   value: string,
   identifier: 'titleFr' | 'titleDe' | 'contentFr' | 'contentDe' | 'img64',
-): ChangeNewsInputReturn => {
+): ChangeNewsInput => {
   return {
     type: NewsActionsEnum.CHANGE_NEWS_INPUT,
     value,
@@ -52,8 +53,8 @@ export const changeNewsInput = (
 };
 
 export const postAddNewsForm = (
-  navigate: () => void,
-): PostAddNewsFormReturn => {
+  navigate: NavigateFunction,
+): PostAddNewsForm => {
   return {
     type: NewsActionsEnum.POST_ADD_NEWS_FORM,
     navigate,
@@ -61,36 +62,36 @@ export const postAddNewsForm = (
 };
 
 export const postEditNewsForm = (
-  navigate: () => void,
-): PostEditNewsFormReturn => {
+  navigate: NavigateFunction,
+): PostEditNewsForm => {
   return {
     type: NewsActionsEnum.POST_EDIT_NEWS_FORM,
     navigate,
   };
 };
 
-export const newsFailure = (failureMessages: string[]): NewsFailureReturn => {
+export const newsFailure = (failureMessages: string[]): NewsFailure => {
   return {
     type: NewsActionsEnum.NEWS_FAILURE,
     failureMessages,
   };
 };
 
-export const fetchNewsDetails = (newsId: number): FetchNewsDetailsReturn => {
+export const fetchNewsDetails = (newsId: number): FetchNewsDetails => {
   return {
     type: NewsActionsEnum.FETCH_NEWS_DETAILS,
     newsId,
   };
 };
 
-export const storeNewsDetails = (newsDetails: News): StoreNewsDetailsReturn => {
+export const storeNewsDetails = (newsDetails: News): StoreNewsDetails => {
   return {
     type: NewsActionsEnum.STORE_NEWS_DETAILS,
     newsDetails,
   };
 };
 
-export const deleteNews = (newsId: number): DeleteNewsReturn => {
+export const deleteNews = (newsId: number): DeleteNews => {
   return {
     type: NewsActionsEnum.DELETE_NEWS,
     newsId,

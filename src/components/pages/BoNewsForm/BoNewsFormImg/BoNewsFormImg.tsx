@@ -8,6 +8,9 @@ import { changeNewsInput } from '../../../../actions/news/newsActions';
 // Utils
 import { handleImageChange } from '../../../../utils/imgUtils';
 
+// Types
+import { RootState } from '../../../../reducers/indexReducer';
+
 // React-icons
 import { LuImagePlus } from 'react-icons/lu';
 
@@ -22,8 +25,10 @@ const BoNewsFormImg = () => {
   const location = useLocation();
 
   // Redux state
-  const formInputs = useSelector((state) => state.news.form);
-  const imgUrl = useSelector((state) => state.news.newsDetails.image_url);
+  const formInputs = useSelector((state: RootState) => state.news.form);
+  const imgUrl = useSelector(
+    (state: RootState) => state.news.newsDetails?.image_url,
+  );
 
   // Image to display
   const isEdit = location.pathname.includes('edit');

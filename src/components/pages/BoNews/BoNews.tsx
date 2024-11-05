@@ -15,6 +15,10 @@ import {
   hideRemoveBox,
 } from '../../../actions/news/newsActions';
 
+// Types
+import { RootState } from '../../../reducers/indexReducer';
+import { AppDispatch } from '../../../store';
+
 // Subcomponents
 import BoHeader from '../../organisms/BoHeader/BoHeader';
 import LoginForm from '../../organisms/LoginForm/LoginForm';
@@ -25,16 +29,16 @@ import './BoNews.scss';
 
 const BoNews = () => {
   // Hooks
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   // Redux state
-  const isLogged = useSelector((state) => state.login.isLogged);
-  const news = useSelector((state) => state.news.newsList);
+  const isLogged = useSelector((state: RootState) => state.login.isLogged);
+  const news = useSelector((state: RootState) => state.news.newsList);
 
   const isRemoveBoxDisplayed = useSelector(
-    (state) => state.news.isRemoveBoxDisplayed,
+    (state: RootState) => state.news.isRemoveBoxDisplayed,
   );
-  const removeBoxId = useSelector((state) => state.news.removeBoxId);
+  const removeBoxId = useSelector((state: RootState) => state.news.removeBoxId);
 
   // Fetch news list
   useEffect(() => {
@@ -74,38 +78,37 @@ const BoNews = () => {
             </tr>
           </thead>
           <tbody className="BoNews-table-body">
-            {news &&
-              news.map((oneNews) => (
-                <tr key={oneNews.id} className="BoNews-table-body-row">
-                  <td className="BoNews-table-body-row-cell">{oneNews.id}</td>
-                  <td className="BoNews-table-body-row-cell">
-                    {oneNews.title_fr}
-                  </td>
-                  <td className="BoNews-table-body-row-cell">
-                    {oneNews.createdAt.slice(0, 10)}
-                  </td>
-                  <td className="BoNews-table-body-row-cell actions">
-                    <Link
-                      className="BoNews-table-body-row-cell actions-btn edit"
-                      to={`/admin/news/edit/${oneNews.id}`}
-                    >
-                      <FaEdit />
-                    </Link>
-                    <button
-                      className="BoNews-table-body-row-cell actions-btn remove"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        dispatch(displayRemoveBox(oneNews.id));
-                      }}
-                    >
-                      <FaTrashAlt />
-                    </button>
-                    {isRemoveBoxDisplayed && removeBoxId === oneNews.id && (
-                      <ConfirmBox id={oneNews.id} type="news" />
-                    )}
-                  </td>
-                </tr>
-              ))}
+            {news?.map((oneNews) => (
+              <tr key={oneNews.id} className="BoNews-table-body-row">
+                <td className="BoNews-table-body-row-cell">{oneNews.id}</td>
+                <td className="BoNews-table-body-row-cell">
+                  {oneNews.title_fr}
+                </td>
+                <td className="BoNews-table-body-row-cell">
+                  {oneNews.createdAt.slice(0, 10)}
+                </td>
+                <td className="BoNews-table-body-row-cell actions">
+                  <Link
+                    className="BoNews-table-body-row-cell actions-btn edit"
+                    to={`/admin/news/edit/${oneNews.id}`}
+                  >
+                    <FaEdit />
+                  </Link>
+                  <button
+                    className="BoNews-table-body-row-cell actions-btn remove"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      dispatch(displayRemoveBox(oneNews.id));
+                    }}
+                  >
+                    <FaTrashAlt />
+                  </button>
+                  {isRemoveBoxDisplayed && removeBoxId === oneNews.id && (
+                    <ConfirmBox id={oneNews.id} type="news" />
+                  )}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </main>

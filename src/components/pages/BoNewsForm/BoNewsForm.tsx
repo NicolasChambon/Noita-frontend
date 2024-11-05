@@ -24,13 +24,14 @@ import { RootState } from '../../../reducers/indexReducer';
 
 // Styles
 import './BoNewsForm.scss';
+import { AppDispatch } from '../../../store';
 
 const BoNewsForm: (props: {
   type: string;
   title: string;
 }) => JSX.Element | undefined = ({ type, title }) => {
   // Hooks
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   // Reset the form when we navigate to the form
@@ -88,9 +89,11 @@ const BoNewsForm: (props: {
           className="BoNewsForm-form"
           onSubmit={(e) => {
             e.preventDefault();
-            type === 'add'
-              ? dispatch(postAddNewsForm(navigate))
-              : dispatch(postEditNewsForm(navigate));
+            if (type === 'add') {
+              dispatch(postAddNewsForm(navigate));
+            } else {
+              dispatch(postEditNewsForm(navigate));
+            }
           }}
         >
           <label htmlFor="titleFr" className="BoNewsForm-form-label">

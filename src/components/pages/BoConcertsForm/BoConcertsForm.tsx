@@ -20,6 +20,7 @@ import {
 
 // Types
 import { RootState } from '../../../reducers/indexReducer';
+import { AppDispatch } from '../../../store';
 
 // Styles
 import './BoConcertsForm.scss';
@@ -29,7 +30,7 @@ const BoConcertsForm: (props: {
   title: string;
 }) => JSX.Element | undefined = ({ type, title }) => {
   // Hooks
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   // Reset the form when we navigate to the form
@@ -55,7 +56,7 @@ const BoConcertsForm: (props: {
   useEffect(() => {
     if (isLogged && type === 'edit') {
       const url = window.location.href;
-      const concertId = url.split('/').pop();
+      const concertId = Number(url.split('/').pop());
       dispatch(fetchConcertDetails(concertId));
     }
   }, [isLogged, type, dispatch]);
@@ -88,9 +89,11 @@ const BoConcertsForm: (props: {
           className="BoConcertsForm-form"
           onSubmit={(e) => {
             e.preventDefault();
-            type === 'add'
-              ? dispatch(postAddConcertForm(navigate))
-              : dispatch(postEditConcertForm(navigate));
+            if (type === 'add') {
+              dispatch(postAddConcertForm(navigate));
+            } else {
+              dispatch(postEditConcertForm(navigate));
+            }
           }}
         >
           <label htmlFor="city" className="BoConcertsForm-form-label">

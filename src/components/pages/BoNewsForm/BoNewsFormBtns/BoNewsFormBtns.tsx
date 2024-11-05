@@ -1,8 +1,11 @@
+// Dependencies
 import { Link } from 'react-router-dom';
 
+// Icons
 import { FiPlusCircle } from 'react-icons/fi';
 import { IoIosReturnLeft } from 'react-icons/io';
 
+// Styles
 import './BoNewsFormBtns.scss';
 
 const BoNewsFormBtns = () => {

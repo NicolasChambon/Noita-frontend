@@ -1,7 +1,6 @@
 // Dependencies
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { PropTypes } from 'prop-types';
 
 // React-icons
 import { FaArrowCircleLeft } from 'react-icons/fa';
@@ -20,19 +19,27 @@ import {
 // Utils
 import { handleImageChange } from '../../../../utils/imgUtils';
 
+// Types
+import { RootState } from '../../../../reducers/indexReducer';
+
 // Subcomponents
 import ConfirmBox from '../../../organisms/ConfirmBox/ConfirmBox';
 
 // Styles
 import './BoCarouselCard.scss';
+import { AppDispatch } from '../../../../store';
 
-const BoCarouselCard = ({ url, id, position }) => {
+const BoCarouselCard: (props: {
+  url: string;
+  id: number;
+  position: string;
+}) => JSX.Element = ({ url, id, position }) => {
   // Hooks
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   // Redux state
   const { isRemoveBoxDisplayed, removeBoxId } = useSelector(
-    (state) => state.carousel,
+    (state: RootState) => state.carousel,
   );
 
   // Close confirm box when clicking elsewhere
@@ -101,12 +108,6 @@ const BoCarouselCard = ({ url, id, position }) => {
       </div>
     </div>
   );
-};
-
-BoCarouselCard.propTypes = {
-  url: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
-  position: PropTypes.string.isRequired,
 };
 
 export default BoCarouselCard;
