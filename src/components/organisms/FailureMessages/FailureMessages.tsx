@@ -1,8 +1,8 @@
-import { PropTypes } from 'prop-types';
-
 import './FailureMessages.scss';
 
-const FailureMessages = ({ failureMessages }) => {
+const FailureMessages: (props: {
+  failureMessages: string[];
+}) => JSX.Element = ({ failureMessages }) => {
   return (
     <ul className="FailureMessages">
       {failureMessages.map((message, index) => (
@@ -12,10 +12,6 @@ const FailureMessages = ({ failureMessages }) => {
       ))}
     </ul>
   );
-};
-
-FailureMessages.propTypes = {
-  failureMessages: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default FailureMessages;

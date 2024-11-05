@@ -1,10 +1,15 @@
+// Dependencies
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+// Types
+import { RootState } from '../../../../reducers/indexReducer';
+
+// Styles
 import './FooterBottom.scss';
 
 const FooterBottom = () => {
-  const language = useSelector((state) => state.global.language);
+  const language = useSelector((state: RootState) => state.global.language);
 
   return (
     <div className="FooterBottom">

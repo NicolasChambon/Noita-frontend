@@ -2,13 +2,14 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { logout } from '../../../../actions/login/loginActions';
+import { AppDispatch } from '../../../../store';
 
 import { IoMdLogOut } from 'react-icons/io';
 
 import './BoHeaderSign.scss';
 
 const BoHeaderSign = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   return (

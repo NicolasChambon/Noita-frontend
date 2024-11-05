@@ -1,14 +1,22 @@
+// Dependencies
 import { useDispatch } from 'react-redux';
-import { PropTypes } from 'prop-types';
 
+// Actions
 import { deleteConcert } from '../../../actions/concert/concertsActions';
 import { deleteNews } from '../../../actions/news/newsActions';
 import { deletePicture } from '../../../actions/carousel/carouselActions';
 
+// Types
+import { AppDispatch } from '../../../store';
+
+// Styles
 import './ConfirmBox.scss';
 
-const ConfirmBox = ({ id, type }) => {
-  const dispatch = useDispatch();
+const ConfirmBox: (props: { id: number; type: string }) => JSX.Element = ({
+  id,
+  type,
+}) => {
+  const dispatch = useDispatch<AppDispatch>();
 
   return (
     <div className={`ConfirmBox ${type}`}>
@@ -19,9 +27,13 @@ const ConfirmBox = ({ id, type }) => {
         <button
           className="ConfirmBox-buttons-yes"
           onClick={() => {
-            type === 'news' && dispatch(deleteNews(id));
-            type === 'concert' && dispatch(deleteConcert(id));
-            type === 'picture' && dispatch(deletePicture(id));
+            if (type === 'news') {
+              dispatch(deleteNews(id));
+            } else if (type === 'concert') {
+              dispatch(deleteConcert(id));
+            } else if (type === 'picture') {
+              dispatch(deletePicture(id));
+            }
           }}
         >
           Yes
@@ -30,11 +42,6 @@ const ConfirmBox = ({ id, type }) => {
       </div>
     </div>
   );
-};
-
-ConfirmBox.propTypes = {
-  id: PropTypes.number.isRequired,
-  type: PropTypes.string.isRequired,
 };
 
 export default ConfirmBox;

@@ -1,12 +1,18 @@
+// Dependencies
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+// Utils
 import { scrollIfOnSamePage } from '../../../../utils/scrollUtils';
 
+// Types
+import { RootState } from '../../../../reducers/indexReducer';
+
+// Styles
 import './FooterNews.scss';
 
 const FooterNews = () => {
-  const language = useSelector((state) => state.global.language);
+  const language = useSelector((state: RootState) => state.global.language);
 
   return (
     <div className="FooterNews">
