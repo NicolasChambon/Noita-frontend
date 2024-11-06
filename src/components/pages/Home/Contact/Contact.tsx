@@ -1,12 +1,18 @@
+// Dependencies
 import { useSelector } from 'react-redux';
 
+// Types
+import { RootState } from '../../../../reducers/indexReducer';
+
+// Components
 import ContactTextBox from './ContactTextBox/ContactTextBox';
 import ContactLink from './ContactLink/ContactLink';
 
+// Styles
 import './Contact.scss';
 
 const Contact = () => {
-  const language = useSelector((state) => state.global.language);
+  const language = useSelector((state: RootState) => state.global.language);
 
   return (
     <section className="Contact" id="contact">

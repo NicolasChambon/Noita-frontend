@@ -5,6 +5,10 @@ import { useSelector, useDispatch } from 'react-redux';
 // Redux actions
 import { fetchConcertList } from '../../../../actions/concert/concertsActions';
 
+// Types
+import { RootState } from '../../../../reducers/indexReducer';
+import { AppDispatch } from '../../../../store';
+
 // Subcomponents
 import ConcertDate from './ConcertDate/ConcertDate';
 
@@ -13,11 +17,13 @@ import './Dates.scss';
 
 const Dates = () => {
   // Hooks
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   // Redux state
-  const language = useSelector((state) => state.global.language);
-  const concerts = useSelector((state) => state.concerts.concertList);
+  const language = useSelector((state: RootState) => state.global.language);
+  const concerts = useSelector(
+    (state: RootState) => state.concerts.concertList,
+  );
 
   // Fetch concert list
   useEffect(() => {
@@ -65,7 +71,6 @@ const Dates = () => {
         </h2>
         {pastConcerts.map((concert) => (
           <ConcertDate
-            className="Dates-list-item"
             key={concert.id}
             date={concert.event_date}
             place={concert.venue}

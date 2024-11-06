@@ -1,8 +1,11 @@
+// Component
 import FullLogoBottomDivider from './FullLogoBottomDivider/FullLogoBottomDivider';
 
+// Logos
 import moonLandscape from '../../../../assets/images/noita-fullmoon.jpg';
 import noitaTextLogo from '../../../../assets/logos/noita-text-logo-white.svg';
 
+// Styles
 import './FullLogo.scss';
 
 const FullLogo = () => {

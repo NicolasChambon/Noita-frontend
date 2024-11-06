@@ -1,18 +1,30 @@
 // Dependencies
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
+// Types
+import { RootState } from '../../../../../reducers/indexReducer';
 
 // Styles
 import './ConcertDate.scss';
 
-const ConcertDate = ({ date, place, city, event, link }) => {
+const ConcertDate: (props: {
+  date: string;
+  place: string;
+  city: string;
+  event: string;
+  link: string;
+}) => JSX.Element = ({ date, place, city, event, link }) => {
   // Redux state
-  const language = useSelector((state) => state.global.language);
+  const language = useSelector((state: RootState) => state.global.language);
 
   // Convert AAAA-MM-DD to DD Mounth AAAA
   const dateObj = new Date(date);
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const options: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
   const dateFr = dateObj.toLocaleDateString('fr-FR', options);
   const dateDe = dateObj.toLocaleDateString('de-DE', options);
 
@@ -35,14 +47,6 @@ const ConcertDate = ({ date, place, city, event, link }) => {
       </Link>
     </li>
   );
-};
-
-ConcertDate.propTypes = {
-  date: PropTypes.string.isRequired,
-  place: PropTypes.string,
-  city: PropTypes.string.isRequired,
-  event: PropTypes.string,
-  link: PropTypes.string.isRequired,
 };
 
 export default ConcertDate;

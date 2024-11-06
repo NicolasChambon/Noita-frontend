@@ -8,6 +8,10 @@ import { fetchNewsList } from '../../../actions/news/newsActions';
 // Utils
 import { scrollUpInstantly } from '../../../utils/scrollUtils';
 
+// Types
+import { RootState } from '../../../reducers/indexReducer';
+import { AppDispatch } from '../../../store';
+
 // Subcomponents
 import Header from '../../organisms/Header/Header';
 import Post from './Post/Post';
@@ -18,11 +22,11 @@ import './News.scss';
 
 const News = () => {
   // Hooks
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   // Redux state
-  const language = useSelector((state) => state.global.language);
-  const news = useSelector((state) => state.news.newsList);
+  const language = useSelector((state: RootState) => state.global.language);
+  const news = useSelector((state: RootState) => state.news.newsList);
 
   useEffect(() => {
     scrollUpInstantly();

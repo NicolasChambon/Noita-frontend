@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 
-import PropTypes from 'prop-types';
-
 import './ContactTextBox.scss';
 
-const ContactTextBox = ({ question, text }) => {
+const ContactTextBox: (props: {
+  question: string;
+  text: string;
+}) => JSX.Element = ({ question, text }) => {
   return (
     <div className="ContactTextBox">
       <Link
@@ -18,11 +19,6 @@ const ContactTextBox = ({ question, text }) => {
       </Link>
     </div>
   );
-};
-
-ContactTextBox.propTypes = {
-  question: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
 };
 
 export default ContactTextBox;

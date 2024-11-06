@@ -1,3 +1,4 @@
+import { SectionId } from '../../types/sectionId.type';
 import { GlobalActionsEnum } from '../actionsIndex';
 import {
   ToogleLanguage,
@@ -15,7 +16,7 @@ export const toogleHeaderMenu = (): ToogleHeaderMenu => ({
 });
 
 export const setTargetSection = (
-  targetSection: 'identity' | 'media' | 'dates' | 'contact',
+  targetSection: SectionId,
 ): SetTargetSection => ({
   type: GlobalActionsEnum.SET_TARGET_SECTION,
   targetSection,

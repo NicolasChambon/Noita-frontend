@@ -1,11 +1,17 @@
+// Dependencies
 import { useSelector } from 'react-redux';
 
+// Types
+import { RootState } from '../../../../reducers/indexReducer';
+
+// Components
 import IdentityBottomDivider from './IdentityBottomDivider/IdentityBottomDivider';
 
+// Styles
 import './Identity.scss';
 
 const Identity = () => {
-  const language = useSelector((state) => state.global.language);
+  const language = useSelector((state: RootState) => state.global.language);
 
   return (
     <section className="Identity" id="identity">

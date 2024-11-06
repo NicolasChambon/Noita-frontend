@@ -1,3 +1,4 @@
+import { SectionId } from '../../types/sectionId.type';
 import { GlobalActionsEnum } from '../actionsIndex';
 
 export interface ToogleLanguage {
@@ -11,7 +12,7 @@ export interface ToogleHeaderMenu {
 
 export interface SetTargetSection {
   type: typeof GlobalActionsEnum.SET_TARGET_SECTION;
-  targetSection: 'identity' | 'media' | 'dates' | 'contact';
+  targetSection: SectionId;
 }
 
 export type GlobalAction = ToogleLanguage | ToogleHeaderMenu | SetTargetSection;

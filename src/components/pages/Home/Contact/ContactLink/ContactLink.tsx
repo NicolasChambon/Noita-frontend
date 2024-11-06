@@ -1,12 +1,18 @@
+// Dependencies
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+// Types
+import { RootState } from '../../../../../reducers/indexReducer';
+
+// Icons
 import { FaArrowRight } from 'react-icons/fa';
 
+// Styles
 import './ContactLink.scss';
 
 const ContactLink = () => {
-  const language = useSelector((state) => state.global.language);
+  const language = useSelector((state: RootState) => state.global.language);
 
   return (
     <Link

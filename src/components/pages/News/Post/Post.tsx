@@ -1,8 +1,12 @@
-import PropTypes from 'prop-types';
-
+// Styles
 import './Post.scss';
 
-const Post = ({ title, date, content, urlImage }) => {
+const Post: React.FC<{
+  title: string;
+  date: string;
+  content: string;
+  urlImage: string;
+}> = ({ title, date, content, urlImage }) => {
   return (
     <div className="Post">
       <div className="Post-titleDatePicture">
@@ -26,13 +30,6 @@ const Post = ({ title, date, content, urlImage }) => {
       </div>
     </div>
   );
-};
-
-Post.propTypes = {
-  title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
-  urlImage: PropTypes.string.isRequired,
 };
 
 export default Post;

@@ -1,10 +1,11 @@
 import { GlobalActionsEnum } from '../actions/actionsIndex';
 import { GlobalAction } from '../actions/global/globalActionTypes';
+import { SectionId } from '../types/sectionId.type';
 
 export interface GlobalState {
   language: 'de' | 'fr';
   headerMenu: boolean;
-  targetSection: 'identity' | 'media' | 'dates' | 'contact' | ''; // TODO réfléchir créer un type SectionType (car utilisé dans plusieurs fichiers)
+  targetSection: SectionId;
 }
 
 export const initialState: GlobalState = {

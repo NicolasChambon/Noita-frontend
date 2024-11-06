@@ -1,5 +1,14 @@
+// Dependencies
+import { Location, NavigateFunction } from 'react-router-dom';
+
+// Store
 import { store } from '../store';
+
+// Actions
 import { setTargetSection } from '../actions/global/globalActions';
+
+// Types
+import { SectionId } from '../types/sectionId.type';
 
 export const scrollIfOnSamePage = (path: string): void => {
   if (window.location.pathname === path) {
@@ -29,7 +38,11 @@ export const scrollToSection = (id: string): void => {
   }
 };
 
-export const handleLinkClick = (id, location, navigate) => {
+export const handleLinkClick = (
+  id: SectionId,
+  location: Location,
+  navigate: NavigateFunction,
+): void => {
   if (location.pathname !== '/') {
     navigate('/');
     store.dispatch(setTargetSection(id));
@@ -40,18 +53,18 @@ export const handleLinkClick = (id, location, navigate) => {
 
 export const scrollUpInstantly = () => {
   const page = document.querySelector('.App');
-  page.scrollIntoView({
-    top: 0,
-    left: 0,
+  page?.scrollIntoView({
+    block: 'start',
+    inline: 'nearest',
   });
 };
 
 export const handleLogoClick = () => {
   if (window.location.pathname === '/') {
     const page = document.querySelector('.App');
-    page.scrollIntoView({
-      top: 0,
-      left: 0,
+    page?.scrollIntoView({
+      block: 'start',
+      inline: 'nearest',
       behavior: 'smooth',
     });
   }

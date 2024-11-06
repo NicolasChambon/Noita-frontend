@@ -1,10 +1,14 @@
 // Dependencies
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ImageGallery from 'react-image-gallery';
 
-// Redux actions
+// Actions
 import { fetchCarouselPictures } from '../../../../../actions/carousel/carouselActions';
+
+// Types
+import { RootState } from '../../../../../reducers/indexReducer';
+import { AppDispatch } from '../../../../../store';
+import ImageGallery from 'react-image-gallery';
 
 // Styles
 import 'react-image-gallery/styles/css/image-gallery.css';
@@ -12,11 +16,13 @@ import './Carousel.scss';
 
 const Carousel = () => {
   // Hooks
-  const dispatch = useDispatch();
-  const galleryRef = useRef(null);
+  const dispatch = useDispatch<AppDispatch>();
+  const galleryRef = useRef<ImageGallery | null>(null);
 
   // Redux state
-  const pictures = useSelector((state) => state.carousel.pictureList);
+  const pictures = useSelector(
+    (state: RootState) => state.carousel.pictureList,
+  );
 
   // Local state
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -38,7 +44,6 @@ const Carousel = () => {
       galleryRef.current.toggleFullScreen();
       setIsFullscreen(!isFullscreen);
       const newIsFullscreen = !isFullscreen;
-
       newIsFullscreen ? galleryRef.current.pause() : galleryRef.current.play();
     }
   };
