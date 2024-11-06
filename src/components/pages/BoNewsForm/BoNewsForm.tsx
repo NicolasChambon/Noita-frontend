@@ -21,10 +21,10 @@ import {
 
 // Types
 import { RootState } from '../../../reducers/indexReducer';
+import { AppDispatch } from '../../../store';
 
 // Styles
 import './BoNewsForm.scss';
-import { AppDispatch } from '../../../store';
 
 const BoNewsForm: (props: {
   type: string;
@@ -72,7 +72,8 @@ const BoNewsForm: (props: {
   }, [type, newsDetails, dispatch]);
 
   // If newsDetails is not fetched yet we don't display the form
-  if (newsDetails === null) {
+  if (type === 'edit' && newsDetails === null) {
+    navigate('/admin/concerts');
     return;
   }
 
@@ -81,7 +82,7 @@ const BoNewsForm: (props: {
       <BoHeader />
       <main className="BoNewsForm">
         {type === 'edit' ? (
-          <h2 className="BoNewsForm-title">{`${title} : id ${newsDetails.id}`}</h2>
+          <h2 className="BoNewsForm-title">{`${title} : id ${newsDetails!.id}`}</h2>
         ) : (
           <h2 className="BoNewsForm-title">{title}</h2>
         )}

@@ -29,6 +29,8 @@ const BoConcertsForm: (props: {
   type: string;
   title: string;
 }) => JSX.Element | undefined = ({ type, title }) => {
+  console.log('BoConcertsForm');
+
   // Hooks
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
@@ -43,6 +45,7 @@ const BoConcertsForm: (props: {
     dispatch(concertFailure([]));
   }, [dispatch]);
 
+  // Redux state
   const isLogged = useSelector((state: RootState) => state.login.isLogged);
   const formInputs = useSelector((state: RootState) => state.concerts.form);
   const failureMessages = useSelector(
@@ -52,7 +55,7 @@ const BoConcertsForm: (props: {
     (state: RootState) => state.concerts.concertDetails,
   );
 
-  // we search url params to fetch concert details
+  // Search url params to fetch news details for editing
   useEffect(() => {
     if (isLogged && type === 'edit') {
       const url = window.location.href;
@@ -61,9 +64,9 @@ const BoConcertsForm: (props: {
     }
   }, [isLogged, type, dispatch]);
 
-  // we fill the form with concert details
+  // Form pre-filling with news details for editing
   useEffect(() => {
-    if (type === 'edit' && concertDetails?.city) {
+    if (type === 'edit' && concertDetails) {
       dispatch(changeConcertInput(concertDetails.city, 'city'));
       dispatch(changeConcertInput(concertDetails.event_date, 'eventDate'));
       dispatch(changeConcertInput(concertDetails.venue, 'venue'));
@@ -72,7 +75,9 @@ const BoConcertsForm: (props: {
     }
   }, [type, concertDetails, dispatch]);
 
-  if (concertDetails === null) {
+  // If we are not logged in, we display the login form
+  if (type === 'edit' && concertDetails === null) {
+    navigate('/admin/concerts');
     return;
   }
 
@@ -81,7 +86,7 @@ const BoConcertsForm: (props: {
       <BoHeader />
       <main className="BoConcertsForm">
         {type === 'edit' ? (
-          <h2 className="BoConcertsForm-title">{`${title} : id ${concertDetails.id}`}</h2>
+          <h2 className="BoConcertsForm-title">{`${title} : id ${concertDetails!.id}`}</h2>
         ) : (
           <h2 className="BoConcertsForm-title">{title}</h2>
         )}
