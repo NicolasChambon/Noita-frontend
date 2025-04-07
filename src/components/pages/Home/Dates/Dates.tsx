@@ -21,9 +21,9 @@ const Dates = () => {
 
   // Redux state
   const language = useSelector((state: RootState) => state.global.language);
-  const concerts = useSelector(
-    (state: RootState) => state.concerts.concertList,
-  );
+  let concerts = useSelector((state: RootState) => state.concerts.concertList);
+
+  console.log('concerts', concerts);
 
   // Fetch concert list
   useEffect(() => {
@@ -31,13 +31,20 @@ const Dates = () => {
   }, [dispatch]);
 
   // Sort concerts in 2 arrays: upcoming and past
-  const upcomingConcerts = concerts.filter((concert) => {
+  let upcomingConcerts = concerts.filter((concert) => {
     const concertDate = new Date(concert.event_date);
     return concertDate > new Date();
   });
   const pastConcerts = concerts.filter((concert) => {
     const concertDate = new Date(concert.event_date);
     return concertDate < new Date();
+  });
+
+  // Sort upcoming concerts by date
+  upcomingConcerts = upcomingConcerts.sort((a, b) => {
+    const dateA = new Date(a.event_date);
+    const dateB = new Date(b.event_date);
+    return dateA.getTime() - dateB.getTime();
   });
 
   return (
